@@ -1,0 +1,39 @@
+<!-- 
+    Crear una página que consiga mostrar en una animación una serie de 10 rectángulos de color gris.
+    Los rectángulos tendrán un ancho de 5 píxeles y una altura de 50.
+    Uno de los rectángulos será de color negro y se irá cambiando a gris a la vez que el siguiente cambia 
+    a negro en cada décima de segundo.
+    Puede ser usada como capa que muestre la animación cuando se cargan elementos en segundo plano. En esta 
+    práctica basta con lograr la animación.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animacion cargando...</title>
+</head>
+<body>
+    <canvas id="lienzo" width="100px" height="50px"></canvas>
+    <script>
+        function dibujaRect(ctx, n = 1){
+            for(let i=1;i<=10;i++){
+                if(n==i) ctx.fillStyle="black";
+                else ctx.fillStyle="gray";
+                ctx.fillRect((i-1)*10,0,5,50);
+            }
+        }
+            window.addEventListener("DOMContentLoaded", (ev) =>{
+                let lienzo=document.getElementById("lienzo");
+                let cont = 0;
+                ctx=lienzo.getContext("2d");
+                setInterval(()=>{
+                    cont ++;
+                    dibujaRect(ctx, cont);
+                    if(cont==10) cont=0;
+                },100);
+            })
+    </script>
+</body>
+</html>

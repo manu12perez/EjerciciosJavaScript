@@ -1,0 +1,44 @@
+<!-- 
+    Los objetos de tipo Array (en definitiva, los arrays) poseen numerosos métodos que resultan muy útiles.
+    Vemos interesante añadir un método a todos los arrays para el cálculo de la suma de sus elementos.
+    Modifica el prototipo de los arrays para añadir dicho método.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Suma</title>
+</head>
+<body>
+    <!--
+    <script>
+        function suma(array){
+            var cuenta=0;
+            for(let i=0;i<array.length;i++){
+                cuenta += array[i];
+            }
+            document.write(`El resultado de la cuenta es = ${cuenta} `);
+        }
+        var cuenta1 = [12,25,7,3];
+        document.write(`Array: ${cuenta1}<br/>`);
+        suma(cuenta1);
+    </script>
+    -->
+
+    <!-- OTRA FORMA DE HACERLO -->
+
+    <script>
+        Array.prototype.suma = function(){
+            //reduce-> array.reduce(función (acumulador, valorVector))-> devuelve el acumulador
+            let resultado = this.reduce((anterior,actual)=>(anterior+actual));
+            return resultado;
+        }
+        let a = [10,20,30,4,5,6];
+        console.log(a);
+        console.log(a.suma());
+    </script>   
+  
+</body>
+</html>

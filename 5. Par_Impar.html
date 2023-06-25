@@ -1,0 +1,38 @@
+<!-- 
+   En esta práctica debes crear una función muy sencilla que devuelve la palabra “par” si le enviamos un número par. En caso contrario retorna la palabra “impar”.
+   Conseguir que se escriban en una página web 500 números aleatorios del 1 al 10000 y que a su lado se diga si es par o impar gracias a la función anterior.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNCION DE PARES E IMPARES</title>
+    <script src="../../../../Working%20files/Manuel%20P�rez%20Benavent/TAREA%20U3%20FUNCI�N%20DE%20PARES%20E%20IMPARES/par.js" ></script>
+    <script src="../../../../Working%20files/Manuel%20P�rez%20Benavent/TAREA%20U3%20FUNCI�N%20DE%20PARES%20E%20IMPARES/aleatorio.js" ></script>
+</head>
+<body>
+   <script>
+     
+      function aleatorio(min, max){
+      return Math.round(Math.random()*(max-min)+(min)); 
+      }
+
+      function par(x){
+      return(x%2==0) ? "par" : "impar"; 
+      }
+
+     let contador=0; //Se añade un contador 
+         for(let i = 1; i <=500 ; i++){
+            let numero = aleatorio(1,10000);
+            let parImpar = par(numero);
+            contador ++;
+            document.write(`<p> ${numero}  ${parImpar} </p>`);
+           
+         }
+      document.write(`<p> Hay ${contador} números aleatorios</p>`);
+
+   </script>  
+</body>
+</html>

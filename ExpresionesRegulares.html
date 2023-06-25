@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones Regulares</title>
+</head>
+<body>
+    <script>
+        let expresion=/a/i;
+        console.log(expresion.test('ordenador'));
+
+        //^ --> obliga a que el siguiente simbolo de la expresions sea el primero obligatoriamente
+        //let expresion = /^a/;
+        //console.log(expresion.test('ordenador'))
+
+        //$ --> obliga que el caracter anterior sea, obligatoriamente, el ultimo del texto
+        //let expresion = /$a/;
+        //console.log(expresion.test('casa'));
+
+        //. --> representa un caracter cualquiera
+        let expresion= /a.e/;
+        console.log(expresion.test('caserío'));
+        console.log(expresion.test('aéreo'));
+
+        //[ ] --> se permite cualquiera de estos simbolos
+        let expresion= [ao]$;
+        console.log(expresion.test('casa')); //false
+        console.log(expresion.test('movil')); //true
+
+        // --> intervalos
+        let expresion=/^[^aeiou]/
+        console.log(expresion.test('enemigo'));
+
+        /*
+        x+ --> La expresion a la izquierda se puede repetir una o mas veces
+        x* --> se puede repetir cero o mas veces
+        x? --> se repite 0 o 1 vez
+        x{n} --> se tiene que repetir n veces
+        x{n,} --> se repite n o mas veces
+        x{m,n} --> se repite de m a n veces
+        */
+        let expresion=/^[AEIOU].+a/;
+        console.log(expresion.test('Asa')); //true
+        console.log(expresion.test('Estacion')); //true
+        console.log(expresion.test('Ea')); //ture
+        let expresion=/^[AEIOU].*a/;
+        console.log(expresion.test('Asa')); //ture
+        console.log(expresion.test('Estacion')); //true
+        console.log(expresion.test('Ea')); // ture
+
+        //Parentesis --> permite agrupar expresiones
+        let expresion=/([a-z]{2}[0-9]) {3}/;
+        console.log(expresion.test('ad3rf1hj4')); //true
+        console.log(expresion.test('a3f1j4')); //false
+
+        //Opciones
+        //| --> Permite indicarque se da por valida la expresion de la izquierda o la de la derecha
+        let expresion=/^([A-Z][0-9]{6}) | ([0-9][A-Z]){6}$/
+        console.log(expresion.test('A123456')); //true
+        console.log(expresion.test('1ABCDEF')); //ture
+
+        /* SIGNOS ABREVIADOS
+        \d --> Digito, vale cualquier digito numerico
+        \D --> Cualquier caracter salvo los digitos numericos
+        \s --> Espacio en blanco
+        \S --> Cualquier caracter excepto el espacio en blanco
+        \w --> Cualquier caracter alfanumerico
+        \W --> ....
+        \0 --> nulo
+        \ n --> nueva linea
+        \t --> tabulador
+        */
+
+    </script>
+</body>
+</html>

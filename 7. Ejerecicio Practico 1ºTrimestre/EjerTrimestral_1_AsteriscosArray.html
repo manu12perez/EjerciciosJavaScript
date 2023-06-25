@@ -1,0 +1,72 @@
+<!--Ejercicio 1:
+        •	Genera un array con 20 números aleatorios del 1 al 50.
+        •	Recorre el array mostrando tantos asteriscos como indique en el número de cada elemento.
+
+    -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Trimestral 1 </title>
+    <script src="../../../../Working%20files/Manuel%20P�rez%20Benavent/EJERCICIO%20PR�CTICO%201�%20TRIMESTRAL/aleatorio.js" ></script>
+</head>
+<body>
+    <script>
+        
+        function aleatorio(min, max){
+        return Math.round(Math.random()*(max-min)+(min));
+        }
+
+        let arrayNumerosAleatorios = []; //declaramos el array 
+        for(let i =1; i<=20;i++){ //recorremos el array marcando la longitud
+            arrayNumerosAleatorios.push(aleatorio(1, 50)); /*
+                                                            guardamos los numeros generadosaleatoriamente
+                                                            entre los valores marcados en el array
+                                                           */
+        }
+
+        document.write(arrayNumerosAleatorios); // imprimimos el listado 
+        document.write("<br>"); //imprimimos espacio
+        document.write("<br>"); //imprimimos espacio
+        for(let i=0 ; i<=arrayNumerosAleatorios.length; i++){   /*
+                                                                recorremos el listado guardado 
+                                                                hasta la última posición
+                                                                */
+            posicion=arrayNumerosAleatorios[i]; //llamamos numero al listado
+            document.write("<br>"); //imprimimos espacio
+            document.write(posicion); //imprimimos cada uno de los números del listado
+            document.write("<br>"); //imprimimos espacio
+            
+
+            for(let j = 1; j<=posicion; j++ ){  //recorremos listado imprimiendo el números de asteríscos
+            document.write("*");                //correspondientes a cada una de las posiciones del listado
+            }
+        }        
+    </script>
+
+    <!-- OTRA FORMA DE HACERLO
+        <script>
+        //Math.floor->Redondea hacia el número entero anterior (9.8->9)
+        //Math.random->Devuelve números aleatorios entre 0 y 1 sin incluir el 1
+        //push-> Introducir números en un array 
+        
+        //Generar un array con 20 números aleatorios del 1 al 50
+        var numeros = [];
+        for(var i=0; i<20; i++){
+            numeros.push(Math.floor(Math.random()*50)+1);
+        }
+
+        //Recorrer el array y mostrar asteriscos
+        for(var i=0; i<numeros.length; i++){
+            var asteriscos ="";
+            for(var j=0;j<numeros[i];j++){
+                asteriscos +="*"
+            }
+            console.log(numeros[i]+"\t"+asteriscos);
+        }
+        </script>
+     -->
+</body>
+</html>

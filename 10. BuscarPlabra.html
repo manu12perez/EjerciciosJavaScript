@@ -1,0 +1,2360 @@
+<!-- 
+    Crear una página que tenga mucho texto como contenido.
+    Crear una aplicación que busque una palabra escrita por el usuario en un cuadro dentro del documento.
+    La aplicación hará scroll hacia la palabra y esta aparecerá remarcada.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar palbras en un texto</title>
+</head>
+<body>
+    <div class="center"><h2><ul class="saltos" id="I_1_"><li><a href="#I_0_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_2_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Primera parte</h2></div>
+    <div class="center"><h3><ul class="saltos" id="I_2_"><li><a href="#I_1_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_3_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Al duque de B&eacute;jar</h3></div>   <div class="center"><p>Marqu&eacute;s de Gibrale&oacute;n,
+    conde de Benalc&aacute;zar y Ba&ntilde;ares, vizconde de
+    La Puebla de Alcocer, se&ntilde;or de las villas de Capilla,
+    Curiel y Burguillos</p></div>  <p id="V_0" class="justificado texto-indentado">En fe del buen acogimiento y honra que
+    hace Vuestra Excelencia a toda suerte de libros, como pr&iacute;ncipe
+    tan inclinado a favorecer las buenas artes, mayormente las
+    que por su nobleza no se abaten al servicio y granjer&iacute;as
+    del vulgo, he determinado de sacar a luz <em>El ingenioso hidalgo
+    don Quijote de la Mancha</em>, al abrigo del clar&iacute;simo
+    nombre de Vuestra Excelencia, a quien, con el acatamiento
+    que debo a tanta grandeza, suplico le reciba agradablemente
+    en su protecci&oacute;n, para que a su sombra, aunque desnudo
+    de aquel precioso ornamento de elegancia y erudici&oacute;n
+    de que suelen andar vestidas las obras que se componen en
+    las casas de los hombres que saben, ose parecer seguramente
+    en el juicio de algunos que, conteni&eacute;ndose en los
+    l&iacute;mites de su ignorancia, suelen condenar con m&aacute;s
+    rigor y menos justicia los trabajos ajenos; que, poniendo
+    los ojos la prudencia de Vuestra Excelencia en mi buen deseo,
+    f&iacute;o que no desde&ntilde;ar&aacute; la cortedad de
+    tan humilde servicio.</p>  <p id="V_1" class="derecha texto-indentado">Miguel de Cervantes Saavedra.</p>   
+    <div class="espacio-altura-doble"></div><div class="center"><h3><ul class="saltos" id="I_3_"><li><a href="#I_2_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_4_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Pr&oacute;logo</h3></div><p id="V_2" class="justificado texto-indentado">Desocupado lector, sin juramento me podr&aacute;s creer
+    que quisiera que este libro, como hijo del entendimiento,
+    fuera el m&aacute;s hermoso, el m&aacute;s gallardo y m&aacute;s
+    discreto que pudiera imaginarse. Pero no he podido yo contravenir
+    al orden de naturaleza; que en ella cada cosa engendra su
+    semejante. Y as&iacute;, &iquest;qu&eacute; podr&aacute; engendrar
+    el est&eacute;ril y mal cultivado ingenio m&iacute;o, sino
+    la historia de un hijo seco, avellanado, antojadizo y lleno
+    de pensamientos varios y nunca imaginados de otro alguno,
+    bien como quien se engendr&oacute; en una c&aacute;rcel,
+    donde toda incomodidad tiene su asiento y donde todo triste
+    ruido hace su habitaci&oacute;n? El sosiego, el lugar apacible,
+    la amenidad de los campos, la serenidad de los cielos, el
+    murmurar de las fuentes, la quietud del esp&iacute;ritu son
+    grande parte para que las musas m&aacute;s est&eacute;riles
+    se muestren fecundas y ofrezcan partos al mundo que le colmen
+    de maravilla y de contento. Acontece tener un padre un hijo
+    feo y sin gracia alguna, y el amor que le tiene le pone una
+    venda en los ojos para que no vea sus faltas, antes las juzga
+    por discreciones y lindezas y las cuenta a sus amigos por
+    agudezas y donaires. Pero yo, que, aunque parezco padre,
+    soy padrastro de <em>Don Quijote</em>, no quiero irme con la corriente
+    del uso, ni suplicarte, casi con las l&aacute;grimas en los
+    ojos, como otros hacen, lector car&iacute;simo, que perdones
+    o disimules las faltas que en este mi hijo vieres, pues ni
+    eres su pariente ni su amigo, y tienes tu alma en tu cuerpo
+    y tu libre albedr&iacute;o como el m&aacute;s pintado, y
+    est&aacute;s en tu casa, donde eres se&ntilde;or della, como
+    el rey de sus alcabalas, y sabes lo que com&uacute;nmente
+    se dice, que debajo de mi manto, al rey mato. Todo lo cual
+    te exenta y hace libre de todo respecto y obligaci&oacute;n,
+    y as&iacute;, puedes decir de la historia todo aquello que
+    te pareciere, sin temor que te calunien por el mal ni te
+    premien por el bien que dijeres della.</p>  <p id="V_3" class="justificado texto-indentado">S&oacute;lo quisiera
+    d&aacute;rtela monda y desnuda, sin el ornato de pr&oacute;logo,
+    ni de la inumerabilidad y cat&aacute;logo de los acostumbrados
+    sonetos, epigramas y elogios que al principio de los libros
+    suelen ponerse. Porque te s&eacute; decir que, aunque me
+    cost&oacute; alg&uacute;n trabajo componerla, ninguno tuve
+    por mayor que hacer esta prefaci&oacute;n que vas leyendo.
+    Muchas veces tom&eacute; la pluma para escribille, y muchas
+    la dej&eacute;, por no saber lo que escribir&iacute;a; y
+    estando una suspenso, con el papel delante, la pluma en la
+    oreja, el codo en el bufete y la mano en la mejilla, pensando
+    lo que dir&iacute;a, entr&oacute; a deshora un amigo m&iacute;o,
+    gracioso y bien entendido, el cual, vi&eacute;ndome tan imaginativo,
+    me pregunt&oacute; la causa, y, no encubri&eacute;ndosela
+    yo, le dije que pensaba en el pr&oacute;logo que hab&iacute;a
+    de hacer a la historia de don Quijote, y que me ten&iacute;a
+    de suerte que ni quer&iacute;a hacerle, ni menos sacar a
+    luz las haza&ntilde;as de tan noble caballero. &laquo;Porque, &iquest;c&oacute;mo
+    quer&eacute;is vos que no me tenga confuso el qu&eacute;
+    dir&aacute; el antiguo legislador que llaman vulgo cuando
+    vea que, al cabo de tantos a&ntilde;os como ha que duermo
+    en el silencio del olvido, salgo ahora, con todos mis a&ntilde;os
+    a cuestas, con una leyenda seca como un esparto, ajena de
+    invenci&oacute;n, menguada de estilo, pobre de concetos y
+    falta de toda erudici&oacute;n y doctrina; sin acotaciones
+    en las m&aacute;rgenes y sin anotaciones en el fin del libro,
+    como veo que est&aacute;n otros libros, aunque sean fabulosos
+    y profanos, tan llenos de sentencias de Arist&oacute;teles,
+    de Plat&oacute;n y de toda la caterva de fil&oacute;sofos,
+    que admiran a los leyentes, y tienen a sus autores por hombres
+    le&iacute;dos, eruditos y elocuentes? &iexcl;Pues qu&eacute;, cuando
+    citan la Divina Escritura! No dir&aacute;n sino que son unos
+    santos Tomases y otros doctores de la Iglesia; guardando
+    en esto un decoro tan ingenioso que en un rengl&oacute;n
+    han pintado un enamorado distra&iacute;do y en otro hacen
+    un sermoncico cristiano, que es un contento y un regalo o&iacute;lle
+    o leelle. De todo esto ha de carecer mi libro, porque ni
+    tengo qu&eacute; acotar en el margen, ni qu&eacute; anotar
+    en el fin, ni menos s&eacute; qu&eacute; autores sigo en
+    &eacute;l, para ponerlos al principio, como hacen todos,
+    por las letras del A B C, comenzando en Arist&oacute;teles
+    y acabando en Xenofonte y en Zoilo o Zeuxis, aunque fue maldiciente
+    el uno y pintor el otro. Tambi&eacute;n ha de carecer mi
+    libro de sonetos al principio, a lo menos de sonetos cuyos
+    autores sean duques, marqueses, condes, obispos, damas o
+    poetas celeb&eacute;rrimos; aunque, si yo los pidiese a dos
+    o tres oficiales amigos, yo s&eacute; que me los dar&iacute;an,
+    y tales, que no les igualasen los de aqu&eacute;llos que
+    tienen m&aacute;s nombre en nuestra Espa&ntilde;a. En fin,
+    se&ntilde;or y amigo m&iacute;o -prosegu&iacute;-, yo determino
+    que el se&ntilde;or don Quijote se quede sepultado en sus
+    archivos en la Mancha, hasta que el cielo depare quien le
+    adorne de tantas cosas como le faltan; porque yo me hallo
+    incapaz de remediarlas, por mi insuficiencia y pocas letras,
+    y porque naturalmente soy poltr&oacute;n y perezoso de andarme
+    buscando autores que digan lo que yo me s&eacute; decir sin
+    ellos.</p>  <p id="V_4" class="justificado texto-indentado">De aqu&iacute; nace la suspensi&oacute;n y elevamiento
+    en que me hallastes: bastante causa para ponerme en ella
+    la que de m&iacute; hab&eacute;is o&iacute;do.&raquo;</p>  <p id="V_5" class="justificado texto-indentado">Oyendo lo
+    cual mi amigo, d&aacute;ndose una palmada en la frente y
+    disparando en una larga risa, me dijo:</p>  <p id="V_6" class="justificado texto-indentado">-Por Dios, hermano,
+    que ahora me acabo de desenga&ntilde;ar de un enga&ntilde;o
+    en que he estado todo el mucho tiempo que ha que os conozco,
+    en el cual siempre os he tenido por discreto y prudente en
+    todas vuestras acciones. Pero agora veo que est&aacute;is
+    tan lejos de serlo como lo est&aacute; el cielo de la tierra.
+    &iquest;C&oacute;mo que es posible que cosas de tan poco momento
+    y tan f&aacute;ciles de remediar puedan tener fuerzas de
+    suspender y absortar un ingenio tan maduro como el vuestro,
+    y tan hecho a romper y atropellar por otras dificultades
+    mayores? A la fe, esto no nace de falta de habilidad, sino
+    de sobra de pereza y penuria de discurso. &iquest;Quer&eacute;is
+    ver si es verdad lo que digo? Pues estadme atento y ver&eacute;is
+    c&oacute;mo en un abrir y cerrar de ojos confundo todas vuestras
+    dificultades, y remedio todas las faltas que dec&iacute;s
+    que os suspenden y acobardan para dejar de sacar a la luz
+    del mundo la historia de vuestro famoso don Quijote, luz
+    y espejo de toda la caballer&iacute;a andante.</p>  <p id="V_7" class="justificado texto-indentado">-Decid -le
+    repliqu&eacute; yo, oyendo lo que me dec&iacute;a-: &iquest;de qu&eacute;
+    modo pens&aacute;is llenar el vac&iacute;o de mi temor y
+    reducir a claridad el caos de mi confusi&oacute;n?</p>  <p id="V_8" class="justificado texto-indentado">A lo
+    cual &eacute;l dijo:</p>  <p id="V_9" class="justificado texto-indentado">-Lo primero en que repar&aacute;is
+    de los sonetos, epigramas o elogios que os faltan para el
+    principio, y que sean de personajes graves y de t&iacute;tulo,
+    se puede remediar en que vos mesmo tom&eacute;is alg&uacute;n
+    trabajo en hacerlos, y despu&eacute;s los pod&eacute;is bautizar
+    y poner el nombre que quisi&eacute;redes, ahij&aacute;ndolos
+    al Preste Juan de las Indias o al Emperador de Trapisonda,
+    de quien yo s&eacute; que hay noticia que fueron famosos
+    poetas; y cuando no lo hayan sido y hubiere algunos pedantes
+    y bachilleres que por detr&aacute;s os muerdan y murmuren
+    desta verdad, no se os d&eacute; dos maraved&iacute;s; porque
+    ya que os averig&uuml;en la mentira, no os han de cortar
+    la mano con que lo escribistes.</p>  <p id="V_10" class="justificado texto-indentado">En lo de citar en las m&aacute;rgenes
+    los libros y autores de donde sac&aacute;redes las sentencias
+    y dichos que pusi&eacute;redes en vuestra historia, no hay
+    m&aacute;s sino hacer, de manera que venga a pelo, algunas
+    sentencias o latines que vos sep&aacute;is de memoria, o,
+    a lo menos, que os cuesten poco trabajo el buscallos, como
+    ser&aacute; poner, tratando de libertad y cautiverio:</p>  <div class="fragmento"><div id="V_11" class="versos-partidos"><div class="verso"><em lang="la" xml:lang="la" class="foreign">Non
+    bene pro toto libertas venditur auro.</em></div><div class="numeracion-derecha"></div><br></div><br></div>  <p id="V_12" class="justificado texto-indentado">Y luego, en el margen,
+    citar a Horacio, o a quien lo dijo. Si trat&aacute;redes
+    del poder de la muerte, acudir luego con:</p>   <div class="fragmento"><div id="V_13" class="versos-partidos"><div class="verso">
+    <em lang="la" xml:lang="la" class="foreign">Pallida mors aequo pulsat pede pauperum tabernas,</em></div><div class="numeracion-derecha"></div><br><div class="verso"><em lang="la" xml:lang="la" class="foreign">Regumque turres.</em></div><div class="numeracion-derecha"></div><br></div><br></div><p id="V_14" class="justificado texto-indentado">Si de la amistad y amor que Dios manda
+    que se tenga al enemigo, entraros luego al punto por la Escritura
+    Divina, que lo pod&eacute;is hacer con tantico de curiosidad,
+    y decir las palabras, por lo menos, del mismo Dios: <em lang="la" xml:lang="la" class="foreign">Ego autem
+    dico vobis: diligite inimicos vestros</em>. Si trat&aacute;redes
+    de malos pensamientos, acudid con el Evangelio: <em lang="la" xml:lang="la" class="foreign">De corde
+    exeunt cogitationes malae</em>. Si de la instabilidad de los amigos,
+    ah&iacute; est&aacute; Cat&oacute;n, que os dar&aacute; su
+    d&iacute;stico:</p>   <div class="fragmento"><div id="V_15" class="versos-partidos"><div class="verso"><em lang="la" xml:lang="la" class="foreign">Donec eris felix, multos numerabis
+    amicos,</em></div><div class="numeracion-derecha"></div><br><div class="verso"> <em lang="la" xml:lang="la" class="foreign">Tempora si fuerint
+    nubila, solus eris.</em></div><div class="numeracion-derecha"></div><br></div><br></div><p id="V_16" class="justificado texto-indentado">Y con estos latinicos y otros tales
+    os tendr&aacute;n siquiera por gram&aacute;tico, que el serlo
+    no es de poca honra y provecho el d&iacute;a de hoy.</p>  <p id="V_17" class="justificado texto-indentado">En
+    lo que toca al poner anotaciones al fin del libro, seguramente
+    lo pod&eacute;is hacer, desta manera: si nombr&aacute;is
+    alg&uacute;n gigante en vuestro libro, hacelde que sea el
+    gigante Gol&iacute;as, y con s&oacute;lo esto, que os costar&aacute;
+    casi nada, ten&eacute;is una grande anotaci&oacute;n, pues
+    pod&eacute;is poner: <em>El gigante Gol&iacute;as, o Goliat,
+    fue un filisteo a quien el pastor David mat&oacute; de una
+    gran pedrada, en el valle de Terebinto, seg&uacute;n se cuenta
+    en el libro de los Reyes</em>, en el cap&iacute;tulo que vos hall&aacute;redes
+    que se escribe.</p>  <p id="V_18" class="justificado texto-indentado">Tras esto, para mostraros hombre erudito
+    en letras humanas y cosm&oacute;grafo, haced de modo como
+    en vuestra historia se nombre el r&iacute;o Tajo, y ver&eacute;isos
+    luego con otra famosa anotaci&oacute;n, poniendo: <em>El r&iacute;o
+    Tajo fue as&iacute; dicho por un rey de las Espa&ntilde;as;
+    tiene su nacimiento en tal lugar y muere en el mar Oc&eacute;ano,
+    besando los muros de la famosa ciudad de Lisboa, y es opini&oacute;n
+    que tiene las arenas de oro</em>, etc. Si trat&aacute;redes de
+    ladrones, yo os dar&eacute; la historia de Caco, que la s&eacute;
+    de coro; si de mujeres rameras, ah&iacute; est&aacute; el
+    obispo de Mondo&ntilde;edo, que os prestar&aacute; a Lamia,
+    Laida y Flora, cuya anotaci&oacute;n os dar&aacute; gran
+    cr&eacute;dito; si de crueles, Ovidio os entregar&aacute;
+    a Medea; si de encantadores y hechiceras, Homero tiene a
+    Calipso, y Virgilio a Circe; si de capitanes valerosos, el
+    mismo Julio C&eacute;sar os prestar&aacute; a s&iacute; mismo
+    en sus <em>Comentarios</em>, y Plutarco os dar&aacute; mil Alejandros.
+    Si trat&aacute;redes de amores, con dos onzas que sep&aacute;is
+    de la lengua toscana, topar&eacute;is con Le&oacute;n Hebreo,
+    que os hincha las medidas. Y si no quer&eacute;is andaros
+    por tierras extra&ntilde;as, en vuestra casa ten&eacute;is
+    a Fonseca, <em>Del amor de Dios</em>, donde se cifra todo lo que vos
+    y el m&aacute;s ingenioso acertare a desearle en tal materia.
+    En resoluci&oacute;n, no hay m&aacute;s sino que vos procur&eacute;is
+    nombrar estos nombres, o tocar en la vuestra estas historias
+    que aqu&iacute; he dicho, y dejadme a m&iacute; el cargo
+    de poner las anotaciones y acotaciones; que yo os voto a
+    tal de llenaros las m&aacute;rgenes y de gastar cuatro pliegos
+    en el fin del libro.</p>  <p id="V_19" class="justificado texto-indentado">Vengamos ahora a la citaci&oacute;n
+    de los autores que los otros libros tienen, que en el vuestro
+    os faltan. El remedio que esto tiene es muy f&aacute;cil,
+    porque no hab&eacute;is de hacer otra cosa que buscar un
+    libro que los acote todos, desde la A hasta la Z, como vos
+    dec&iacute;s. Pues ese mismo abecedario pondr&eacute;is vos
+    en vuestro libro; que, puesto que a la clara se vea la mentira,
+    por la poca necesidad que vos ten&iacute;ades de aprovecharos
+    dellos, no importa nada; y quiz&aacute; alguno habr&aacute;
+    tan simple que crea que de todos os hab&eacute;is aprovechado
+    en la simple y sencilla historia vuestra; y cuando no sirva
+    de otra cosa, por lo menos servir&aacute; aquel largo cat&aacute;logo
+    de autores a dar de improviso autoridad al libro. Y m&aacute;s,
+    que no habr&aacute; quien se ponga a averiguar si los seguistes
+    o no los seguistes, no y&eacute;ndole nada en ello. Cuanto
+    m&aacute;s que, si bien caigo en la cuenta, este vuestro
+    libro no tiene necesidad de ninguna cosa de aqu&eacute;llas
+    que vos dec&iacute;s que le faltan, porque todo &eacute;l
+    es una invectiva contra los libros de caballer&iacute;as,
+    de quien nunca se acord&oacute; Arist&oacute;teles, ni dijo
+    nada San Basilio, ni alcanz&oacute; Cicer&oacute;n; ni caen
+    debajo de la cuenta de sus fabulosos disparates las puntualidades
+    de la verdad, ni las observaciones de la Astrolog&iacute;a;
+    ni le son de importancia las medidas geom&eacute;tricas,
+    ni la confutaci&oacute;n de los argumentos de quien se sirve
+    la ret&oacute;rica; ni tiene para qu&eacute; predicar a ninguno,
+    mezclando lo humano con lo divino, que es un g&eacute;nero
+    de mezcla de quien no se ha de vestir ning&uacute;n cristiano
+    entendimiento. S&oacute;lo tiene que aprovecharse de la imitaci&oacute;n
+    en lo que fuere escribiendo; que cuanto ella fuere m&aacute;s
+    perfecta, tanto mejor ser&aacute; lo que se escribiere. Y,
+    pues esta vuestra escritura no mira a m&aacute;s que a deshacer
+    la autoridad y cabida que en el mundo y en el vulgo tienen
+    los libros de caballer&iacute;as, no hay para qu&eacute;
+    and&eacute;is mendigando sentencias de fil&oacute;sofos,
+    consejos de la Divina Escritura, f&aacute;bulas de poetas,
+    oraciones de ret&oacute;ricos, milagros de santos, sino procurar
+    que a la llana, con palabras significantes, honestas y bien
+    colocadas, salga vuestra oraci&oacute;n y per&iacute;odo
+    sonoro y festivo; pintando, en todo lo que alcanz&aacute;redes
+    y fuere posible, vuestra intenci&oacute;n; dando a entender
+    vuestros conceptos sin intricarlos y escurecerlos. Procurad
+    tambi&eacute;n que, leyendo vuestra historia el melanc&oacute;lico
+    se mueva a risa, el risue&ntilde;o la acreciente, el simple
+    no se enfade, el discreto se admire de la invenci&oacute;n,
+    el grave no la desprecie, ni el prudente deje de alabarla.
+    En efecto, llevad la mira puesta a derribar la m&aacute;quina
+    mal fundada destos caballerescos libros, aborrecidos de tantos
+    y alabados de muchos m&aacute;s; que si esto alcanz&aacute;sedes,
+    no habr&iacute;ades alcanzado poco.</p>  <p id="V_20" class="justificado texto-indentado">Con silencio grande
+    estuve escuchando lo que mi amigo me dec&iacute;a, y de tal
+    manera se imprimieron en m&iacute; sus razones que, sin ponerlas
+    en disputa, las aprob&eacute; por buenas y de ellas mismas
+    quise hacer este pr&oacute;logo, en el cual ver&aacute;s,
+    lector suave, la discreci&oacute;n de mi amigo, la buena
+    ventura m&iacute;a en hallar en tiempo tan necesitado tal
+    consejero, y el alivio tuyo en hallar tan sincera y tan sin
+    revueltas la historia del famoso don Quijote de la Mancha,
+    de quien hay opini&oacute;n por todos los habitadores del
+    distrito del campo de Montiel, que fue el m&aacute;s casto
+    enamorado y el m&aacute;s valiente caballero que de muchos
+    a&ntilde;os a esta parte se vio en aquellos contornos. Yo
+    no quiero encarecerte el servicio que te hago en darte a
+    conocer tan noble y tan honrado caballero; pero quiero que
+    me agradezcas el conocimiento que tendr&aacute;s del famoso
+    Sancho Panza, su escudero, en quien, a mi parecer, te doy
+    cifradas todas las gracias escuderiles que en la caterva
+    de los libros vanos de caballer&iacute;as est&aacute;n esparcidas.
+    Y con esto, Dios te d&eacute; salud, y a m&iacute; no olvide.
+    Vale.</p>  <div class="espacio-altura-doble"></div>
+    <div class="center"><h3><ul class="saltos" id="I_4_"><li><a href="#I_3_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_5_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Al libro de don Quijote de la Mancha</h3></div><div class="poema"><div id="V_21" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>Urganda la desconocida</strong></h3></div><div class="poema"><div id="V_22" class="versos-partidos"><div class="verso">&nbsp;&nbsp;&nbsp;        Si
+    de llegarte a los bue-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Libro, fueres con letu-,</div><div class="numeracion-derecha"></div><br><div class="verso"> No te
+    dir&aacute; el boquirru-</div><div class="numeracion-derecha"></div><br><div class="verso"> Que no pones bien los de-.</div><div class="numeracion-derecha"></div><br><div class="verso"> Mas
+    si el pan no se te cue-</div><div class="numeracion-derecha"></div><br><div class="verso"> Por ir a manos de idio-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Ver&aacute;s
+    de manos a bo-</div><div class="numeracion-derecha"></div><br><div class="verso"> Aun no dar una en el cla-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Si bien se comen
+    las ma-</div><div class="numeracion-derecha"></div><br><div class="verso"> Por mostrar que son curio-.</div><div class="numeracion-derecha"></div><br></div></div><div class="poema"><div id="V_23" class="versos-partidos"><div class="verso">&nbsp;&nbsp;&nbsp;    Y,
+    pues la expiriencia ense-</div><div class="numeracion-derecha"></div><br><div class="verso"> Que el que a buen &aacute;rbol
+    se arri-</div><div class="numeracion-derecha"></div><br><div class="verso"> Buena sombra le cobi-,</div><div class="numeracion-derecha"></div><br><div class="verso"> En B&eacute;jar tu buena
+    estre-</div><div class="numeracion-derecha"></div><br><div class="verso"> Un &aacute;rbol real te ofre-</div><div class="numeracion-derecha"></div><br><div class="verso"> Que da pr&iacute;ncipes
+    por fru-,</div><div class="numeracion-derecha"></div><br><div class="verso"> En el cual floreci&oacute; un Du-</div><div class="numeracion-derecha"></div><br><div class="verso"> Que es nuevo
+    Alejandro Ma-:</div><div class="numeracion-derecha"></div><br><div class="verso"> Llega a su sombra, que a osa-</div><div class="numeracion-derecha"></div><br><div class="verso"> Favorece la
+    fortu-.</div><div class="numeracion-derecha"></div><br></div></div><div class="poema"><div id="V_24" class="versos-partidos"><div class="verso">&nbsp;&nbsp;&nbsp;    De un noble hidalgo manche-</div><div class="numeracion-derecha"></div><br><div class="verso"> Contar&aacute;s las aventu-,</div><div class="numeracion-derecha"></div><br><div class="verso"> A quien ociosas letu-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Trastornaron
+    la cabe-:</div><div class="numeracion-derecha"></div><br><div class="verso"> Damas, armas, caballe-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Le provocaron de mo-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Que, cual Orlando furio-</div><div class="numeracion-derecha"></div><br><div class="verso"> Templado a lo enamora-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Alcanz&oacute;
+    a fuerza de bra-</div><div class="numeracion-derecha"></div><br><div class="verso"> a Dulcinea del Tobo-.</div><div class="numeracion-derecha"></div><br></div></div><div class="poema"><div id="V_25" class="versos-partidos"><div class="verso">&nbsp;&nbsp;&nbsp;    No
+    indiscretos hierogl&iacute;-</div><div class="numeracion-derecha"></div><br><div class="verso"> Estampes en el escu-;</div><div class="numeracion-derecha"></div><br><div class="verso"> Que
+    cuando es todo figu-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Con ruines puntos se envi-.</div><div class="numeracion-derecha"></div><br><div class="verso"> Si en
+    la direcci&oacute;n te humi-,</div><div class="numeracion-derecha"></div><br><div class="verso"> No dir&aacute;, mofante, algu-:</div><div class="numeracion-derecha"></div><br><div class="verso"> &laquo;&iexcl;Qu&eacute; don &Aacute;lvaro de Lu-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Qu&eacute; An&iacute;bal
+    el de Carta-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Qu&eacute; rey Francisco en Espa-</div><div class="numeracion-derecha"></div><br><div class="verso"> Se queja
+    de la fortu-!&raquo;</div><div class="numeracion-derecha"></div><br><div class="verso"> Pues al cielo no le plu-</div><div class="numeracion-derecha"></div><br><div class="verso"> Que salieses tan
+    ladi-</div><div class="numeracion-derecha"></div><br><div class="verso"> Como el negro Juan Lati-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Hablar latines rehu-.</div><div class="numeracion-derecha"></div><br><div class="verso">
+    No me despuntes de agu-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Ni me alegues con fil&oacute;-;</div><div class="numeracion-derecha"></div><br><div class="verso"> Porque, torciendo la bo-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Dir&aacute; el que entiende la
+    le-,</div><div class="numeracion-derecha"></div><br><div class="verso"> No un palmo de las ore-:</div><div class="numeracion-derecha"></div><br><div class="verso"> &laquo;&iquest;Para qu&eacute; conmigo
+    flo-?&raquo;</div><div class="numeracion-derecha"></div><br></div></div><div class="poema"><div id="V_26" class="versos-partidos"><div class="verso">&nbsp;&nbsp;&nbsp;    No te metas en dibu-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Ni
+    en saber vidas aje-;</div><div class="numeracion-derecha"></div><br><div class="verso"> Que en lo que no va ni vie-</div><div class="numeracion-derecha"></div><br><div class="verso"> Pasar
+    de largo es cordu-.</div><div class="numeracion-derecha"></div><br><div class="verso"> Que suelen en caperu-</div><div class="numeracion-derecha"></div><br><div class="verso"> Darles a los
+    que grace-;</div><div class="numeracion-derecha"></div><br><div class="verso"> Mas t&uacute; qu&eacute;mate las ce-</div><div class="numeracion-derecha"></div><br><div class="verso"> S&oacute;lo
+    en cobrar buena fa-:</div><div class="numeracion-derecha"></div><br><div class="verso"> que el que imprime neceda-</div><div class="numeracion-derecha"></div><br><div class="verso"> Dalas a
+    censo perpe-.</div><div class="numeracion-derecha"></div><br></div></div><div class="poema"><div id="V_27" class="versos-partidos"><div class="verso">&nbsp;&nbsp;&nbsp;    Advierte que es desati-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Siendo de vidrio el teja-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Tomar piedras en la ma-</div><div class="numeracion-derecha"></div><br><div class="verso"> Para
+    tirar al veci-.</div><div class="numeracion-derecha"></div><br><div class="verso"> Deja que el hombre de jui-,</div><div class="numeracion-derecha"></div><br><div class="verso"> En las obras
+    que compo-</div><div class="numeracion-derecha"></div><br><div class="verso"> Se vaya con pies de plo-:</div><div class="numeracion-derecha"></div><br><div class="verso"> Que el que saca a
+    luz pape-</div><div class="numeracion-derecha"></div><br><div class="verso"> Para entretener donce-</div><div class="numeracion-derecha"></div><br><div class="verso"> Escribe a tontas y a lo-.</div><div class="numeracion-derecha"></div><br></div></div></div><br></div><div class="poema"><div id="V_28" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>Amad&iacute;s de Gaula a don Quijote de la Mancha </strong></h3></div><span class="espacio-altura-simple"></span><div class="center"><p>Soneto</p></div><div class="verso">&nbsp;&nbsp;&nbsp;        T&uacute;,
+    que imitaste la llorosa vida</div><div class="numeracion-derecha"></div><br><div class="verso"> Que tuve, ausente y desde&ntilde;ado
+    sobre</div><div class="numeracion-derecha"></div><br><div class="verso"> El gran ribazo de la Pe&ntilde;a Pobre,</div><div class="numeracion-derecha"></div><br><div class="verso"> De alegre
+    a penitencia reducida,</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    T&uacute;, a quien
+    los ojos dieron la bebida</div><div class="numeracion-derecha"></div><br><div class="verso"> De abundante licor, aunque salobre,</div><div class="numeracion-derecha"></div><br><div class="verso"> Y alz&aacute;ndote la plata, esta&ntilde;o y cobre,</div><div class="numeracion-derecha"></div><br><div class="verso"> Te
+    dio la tierra en tierra la comida,</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Vive
+    seguro de que eternamente,</div><div class="numeracion-derecha"></div><br><div class="verso"> En tanto, al menos, que en la
+    cuarta esfera</div><div class="numeracion-derecha"></div><br><div class="verso"> Sus caballos aguije el rubio Apolo,</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Tendr&aacute;s
+    claro renombre de valiente;</div><div class="numeracion-derecha"></div><br><div class="verso"> Tu patria ser&aacute; en todas
+    la primera;</div><div class="numeracion-derecha"></div><br><div class="verso"> Tu sabio autor, al mundo &uacute;nico y solo.</div><div class="numeracion-derecha"></div><br></div><br></div><div class="poema"><div id="V_29" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>Don Belian&iacute;s de Grecia a don Quijote de la Mancha </strong></h3></div><span class="espacio-altura-simple"></span><div class="center"><p>Soneto</p></div><div class="verso">&nbsp;&nbsp;&nbsp;        Romp&iacute;,
+    cort&eacute;, aboll&eacute;, y dije y hice</div><div class="numeracion-derecha"></div><br><div class="verso"> M&aacute;s que
+    en el orbe caballero andante;</div><div class="numeracion-derecha"></div><br><div class="verso"> Fui diestro, fui valiente,
+    fui arrogante;</div><div class="numeracion-derecha"></div><br><div class="verso"> Mil agravios vengu&eacute;, cien mil deshice.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Haza&ntilde;as di a la Fama que eternice;</div><div class="numeracion-derecha"></div><br><div class="verso"> Fui comedido y regalado amante;</div><div class="numeracion-derecha"></div><br><div class="verso"> Fue enano para m&iacute;
+    todo gigante</div><div class="numeracion-derecha"></div><br><div class="verso"> Y al duelo en cualquier punto satisfice.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Tuve
+    a mis pies postrada la Fortuna,</div><div class="numeracion-derecha"></div><br><div class="verso"> Y trajo del copete mi cordura</div><div class="numeracion-derecha"></div><br><div class="verso"> A la calva Ocasi&oacute;n al estricote.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    M&aacute;s,
+    aunque sobre el cuerno de la luna</div><div class="numeracion-derecha"></div><br><div class="verso"> Siempre se vio encumbrada
+    mi ventura,</div><div class="numeracion-derecha"></div><br><div class="verso"> Tus proezas envidio, &iexcl;oh gran Quijote!</div><div class="numeracion-derecha"></div><br></div><br></div><div class="poema"><div id="V_30" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>La
+    se&ntilde;ora Oriana a Dulcinea del Toboso </strong></h3></div><span class="espacio-altura-simple"></span><div class="center"><p>Soneto</p></div><div class="verso">&nbsp;&nbsp;&nbsp;    
+    &iexcl;Oh, qui&eacute;n tuviera, hermosa Dulcinea,</div><div class="numeracion-derecha"></div><br><div class="verso"> Por m&aacute;s comodidad y m&aacute;s reposo,</div><div class="numeracion-derecha"></div><br><div class="verso"> A Miraflores
+    puesto en el Toboso,</div><div class="numeracion-derecha"></div><br><div class="verso"> Y trocara sus Londres con tu aldea!</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    &iexcl;Oh, qui&eacute;n de tus deseos y librea</div><div class="numeracion-derecha"></div><br><div class="verso"> Alma y cuerpo adornara, y del famoso</div><div class="numeracion-derecha"></div><br><div class="verso"> Caballero que hiciste
+    venturoso</div><div class="numeracion-derecha"></div><br><div class="verso"> Mirara alguna desigual pelea!</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    &iexcl;Oh,
+    qui&eacute;n tan castamente se escapara</div><div class="numeracion-derecha"></div><br><div class="verso"> Del se&ntilde;or
+    Amad&iacute;s como t&uacute; hiciste</div><div class="numeracion-derecha"></div><br><div class="verso"> Del comedido hidalgo
+    don Quijote!</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Que as&iacute; envidiada
+    fuera, y no envidiara,</div><div class="numeracion-derecha"></div><br><div class="verso"> Y fuera alegre el tiempo que fue
+    triste,</div><div class="numeracion-derecha"></div><br><div class="verso"> Y gozara los gustos sin escote.</div><div class="numeracion-derecha"></div><br></div><br></div><div class="poema"><div id="V_31" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>Gandal&iacute;n,
+    escudero de Amad&iacute;s de Gaula, a Sancho Panza, escudero
+    de don Quijote </strong></h3></div><span class="espacio-altura-simple"></span><div class="center"><p>Soneto</p></div><div class="verso">&nbsp;&nbsp;&nbsp;        Salve,
+    var&oacute;n famoso, a quien Fortuna,</div><div class="numeracion-derecha"></div><br><div class="verso"> Cuando en el trato
+    escuderil te puso,</div><div class="numeracion-derecha"></div><br><div class="verso"> Tan blanda y cuerdamente lo dispuso,</div><div class="numeracion-derecha"></div><br><div class="verso"> Que lo pasaste sin desgracia alguna.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Ya
+    la azada o la hoz poco repugna</div><div class="numeracion-derecha"></div><br><div class="verso"> Al andante ejercicio; ya
+    est&aacute; en uso</div><div class="numeracion-derecha"></div><br><div class="verso"> La llaneza escudera, con que acuso</div><div class="numeracion-derecha"></div><br><div class="verso"> Al
+    soberbio que intenta hollar la luna.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Envidio
+    a tu jumento y a tu nombre,</div><div class="numeracion-derecha"></div><br><div class="verso"> Y a tus alforjas igualmente
+    envidio,</div><div class="numeracion-derecha"></div><br><div class="verso"> Que mostraron tu cuerda providencia.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Salve
+    otra vez, &iexcl;oh Sancho!, tan buen hombre,</div><div class="numeracion-derecha"></div><br><div class="verso"> Que a solo t&uacute;
+    nuestro espa&ntilde;ol Ovidio</div><div class="numeracion-derecha"></div><br><div class="verso"> Con buzcorona te hace reverencia.</div><div class="numeracion-derecha"></div><br></div><br></div><div class="poema"><div id="V_32" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>Del Donoso, poeta entreverado, a Sancho Panza y Rocinante</strong></h3></div><div class="verso">&nbsp;&nbsp;&nbsp;        Soy
+    Sancho Panza, escude-</div><div class="numeracion-derecha"></div><br><div class="verso"> Del manchego don Quijo-;</div><div class="numeracion-derecha"></div><br><div class="verso"> Puse pies
+    en polvoro-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Por vivir a lo discre-:</div><div class="numeracion-derecha"></div><br><div class="verso"> Que el t&aacute;cito
+    Villadie-</div><div class="numeracion-derecha"></div><br><div class="verso"> Toda su raz&oacute;n de esta-</div><div class="numeracion-derecha"></div><br><div class="verso"> Cifr&oacute; en
+    una retira-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Seg&uacute;n siente Celesti-,</div><div class="numeracion-derecha"></div><br><div class="verso"> Libro, en mi
+    opini&oacute;n, divi-</div><div class="numeracion-derecha"></div><br><div class="verso"> Si encubriera m&aacute;s lo huma-.</div><div class="numeracion-derecha"></div><br></div><br></div><div class="poema"><div id="V_33" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>A  Rocinante</strong></h3></div><div class="verso">&nbsp;&nbsp;&nbsp;        Soy
+    Rocinante, el famo-</div><div class="numeracion-derecha"></div><br><div class="verso"> Bisnieto del gran Babie-;</div><div class="numeracion-derecha"></div><br><div class="verso"> Por pecados
+    de flaque-</div><div class="numeracion-derecha"></div><br><div class="verso"> Fui a poder de un don Quijo-.</div><div class="numeracion-derecha"></div><br><div class="verso"> Parejas corr&iacute;
+    a lo flo-;</div><div class="numeracion-derecha"></div><br><div class="verso"> Mas, por u&ntilde;a de caba-</div><div class="numeracion-derecha"></div><br><div class="verso"> No se me escap&oacute;
+    ceba-;</div><div class="numeracion-derecha"></div><br><div class="verso"> Que esto saqu&eacute; a Lazari-</div><div class="numeracion-derecha"></div><br><div class="verso"> Cuando, para hurtar
+    el vi-</div><div class="numeracion-derecha"></div><br><div class="verso"> Al ciego, le di la pa-.</div><div class="numeracion-derecha"></div><br></div><br></div><div class="poema"><div id="V_34" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>Orlando Furioso a don Quijote
+    de la Mancha </strong></h3></div><span class="espacio-altura-simple"></span><div class="center"><p>Soneto</p></div><div class="verso">&nbsp;&nbsp;&nbsp;        Si
+    no eres par, tampoco le has tenido;</div><div class="numeracion-derecha"></div><br><div class="verso"> Que par pudieras ser
+    entre mil pares;</div><div class="numeracion-derecha"></div><br><div class="verso"> Ni puede haberle donde t&uacute; te hallares,</div><div class="numeracion-derecha"></div><br><div class="verso"> Invicto vencedor, jam&aacute;s vencido.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Orlando
+    soy, Quijote, que, perdido</div><div class="numeracion-derecha"></div><br><div class="verso"> Por Ang&eacute;lica, vi remotos
+    mares,</div><div class="numeracion-derecha"></div><br><div class="verso"> Ofreciendo a la Fama en sus altares</div><div class="numeracion-derecha"></div><br><div class="verso"> Aquel valor
+    que respet&oacute; el olvido.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    No puedo
+    ser tu igual; que este decoro</div><div class="numeracion-derecha"></div><br><div class="verso"> Se debe a tus proezas y a
+    tu fama,</div><div class="numeracion-derecha"></div><br><div class="verso"> Puesto que, como yo, perdiste el seso.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Mas
+    serlo has m&iacute;o, si al soberbio Moro</div><div class="numeracion-derecha"></div><br><div class="verso"> Y Cita fiero domas,
+    que hoy nos llama</div><div class="numeracion-derecha"></div><br><div class="verso"> Iguales en amor con mal suceso.</div><div class="numeracion-derecha"></div><br></div><br></div><div class="poema"><div id="V_35" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>El caballero
+    del Febo a don Quijote de la Mancha</strong></h3></div><span class="espacio-altura-simple"></span><div class="center"><p>Soneto</p></div><div class="verso">&nbsp;&nbsp;&nbsp;    
+    A vuestra espada no igual&oacute; la m&iacute;a,</div><div class="numeracion-derecha"></div><br><div class="verso"> Febo espa&ntilde;ol, curioso cortesano,</div><div class="numeracion-derecha"></div><br><div class="verso"> Ni a la alta gloria
+    de valor mi mano,</div><div class="numeracion-derecha"></div><br><div class="verso"> Que rayo fue do nace y muere el d&iacute;a.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Imperios despreci&eacute;: la monarqu&iacute;a</div><div class="numeracion-derecha"></div><br><div class="verso"> Que me ofreci&oacute; el Oriente rojo en vano</div><div class="numeracion-derecha"></div><br><div class="verso"> Dej&eacute;,
+    por ver el rostro soberano</div><div class="numeracion-derecha"></div><br><div class="verso"> De Claridiana, aurora hermosa
+    m&iacute;a.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Am&eacute;la por milagro &uacute;nico
+    y raro,</div><div class="numeracion-derecha"></div><br><div class="verso"> Y, ausente en su desgracia, el propio infierno</div><div class="numeracion-derecha"></div><br><div class="verso">
+    Temi&oacute; mi brazo, que dom&oacute; su rabia.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Mas
+    vos, godo Quijote, ilustre y claro,</div><div class="numeracion-derecha"></div><br><div class="verso"> Por Dulcinea sois al
+    mundo eterno,</div><div class="numeracion-derecha"></div><br><div class="verso"> Y ella, por vos, famosa, honesta y sabia.</div><div class="numeracion-derecha"></div><br></div><br></div><div class="poema"><div id="V_36" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>De Solisd&aacute;n a don Quijote de la Mancha</strong></h3></div><span class="espacio-altura-simple"></span><div class="center"><p>Soneto</p></div><div class="verso">&nbsp;&nbsp;&nbsp;        Maguer, se&ntilde;or
+    Quijote, que sandeces</div><div class="numeracion-derecha"></div><br><div class="verso"> Vos tengan el cerbelo derrumbado,</div><div class="numeracion-derecha"></div><br><div class="verso"> Nunca ser&eacute;is de alguno reprochado</div><div class="numeracion-derecha"></div><br><div class="verso"> Por home de obras
+    viles y soeces.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Ser&aacute;n vuesas faza&ntilde;as
+    los joeces,</div><div class="numeracion-derecha"></div><br><div class="verso"> Pues tuertos desfaciendo hab&eacute;is andado,</div><div class="numeracion-derecha"></div><br><div class="verso"> Siendo vegadas mil apaleado</div><div class="numeracion-derecha"></div><br><div class="verso"> Por follones cautivos y raheces.</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    Y si la vuesa linda Dulcinea</div><div class="numeracion-derecha"></div><br><div class="verso"> Desaguisado
+    contra vos comete,</div><div class="numeracion-derecha"></div><br><div class="verso"> Ni a vuesas cuitas muestra buen talante,</div><div class="numeracion-derecha"></div><br><div class="verso">&nbsp;&nbsp;&nbsp;    En tal desm&aacute;n, vueso conorte sea</div><div class="numeracion-derecha"></div><br><div class="verso"> Que Sancho Panza fue mal alcag&uuml;ete,</div><div class="numeracion-derecha"></div><br><div class="verso"> Necio &eacute;l,
+    dura ella, y vos no amante.</div><div class="numeracion-derecha"></div><br></div><br></div><div class="poema"><div id="V_37" class="versos-partidos"><span class="espacio-altura-simple"></span><div class="center"><h3 class="notoc"><strong>Di&aacute;logo entre Babieca
+    y Rocinante </strong></h3></div><span class="espacio-altura-simple"></span><div class="center"><p>Soneto</p></div><div class="verso">B. &iquest;C&oacute;mo
+    est&aacute;is, Rocinante, tan delgado?</div><div class="numeracion-derecha"></div><br><div class="verso">R. Porque nunca se
+    come, y se trabaja.</div><div class="numeracion-derecha"></div><br><div class="verso">B. Pues, &iquest;qu&eacute; es de la cebada
+    y de la paja?</div><div class="numeracion-derecha"></div><br><div class="verso">R. No me deja mi amo ni un bocado.</div><div class="numeracion-derecha"></div><br><div class="verso">B. And&aacute;,
+    se&ntilde;or, que est&aacute;is muy mal criado,</div><div class="numeracion-derecha"></div><br><div class="verso"> Pues vuestra
+    lengua de asno al amo ultraja.</div><div class="numeracion-derecha"></div><br><div class="verso">R. Asno se es de la cuna a
+    la mortaja.</div><div class="numeracion-derecha"></div><br><div class="verso"> &iquest;Quer&eacute;islo ver? Miraldo enamorado.</div><div class="numeracion-derecha"></div><br><div class="verso">B. &iquest;Es necedad amar?</div><div class="numeracion-derecha"></div><br><div class="verso"><div style="margin-left: 12rem;"> R. No es gran prudencia.</div></div><div class="numeracion-derecha"></div><br><div class="verso">B. Metaf&iacute;sico est&aacute;is. </div><div class="numeracion-derecha"></div><br><div class="verso"><div style="margin-left: 13.2rem;">R. Es que no como.</div></div><div class="numeracion-derecha"></div><br><div class="verso">B.
+    Quejaos del escudero.</div><div class="numeracion-derecha"></div><br><div class="verso"><div style="margin-left: 14.399999999999999rem;"> R. No es bastante.</div></div><div class="numeracion-derecha"></div><br><div class="verso">    &iquest;C&oacute;mo
+    me he de quejar en mi dolencia,</div><div class="numeracion-derecha"></div><br><div class="verso"> Si el amo y escudero o mayordomo</div><div class="numeracion-derecha"></div><br><div class="verso"> Son tan rocines como Rocinante?</div><div class="numeracion-derecha"></div><br></div><br></div>
+    <div class="espacio-altura-doble"></div><div class="center"><h3><ul class="saltos" id="I_5_"><li><a href="#I_4_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_6_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Cap&iacute;tulo I</h3></div>  <div class="center"><p>Que trata de la condici&oacute;n y ejercicio del famoso
+    hidalgo don Quijote de la Mancha</p></div><p id="V_38" class="justificado texto-indentado">En un lugar de la Mancha,
+    de cuyo nombre no quiero acordarme, no ha mucho tiempo que
+    viv&iacute;a un hidalgo de los de lanza en astillero, adarga
+    antigua, roc&iacute;n flaco y galgo corredor. Una olla de
+    algo m&aacute;s vaca que carnero, salpic&oacute;n las m&aacute;s
+    noches, duelos y quebrantos los s&aacute;bados, lantejas
+    los viernes, alg&uacute;n palomino de a&ntilde;adidura los
+    domingos, consum&iacute;an las tres partes de su hacienda.
+    El resto della conclu&iacute;an sayo de velarte, calzas de
+    velludo para las fiestas, con sus pantuflos de lo mesmo,
+    y los d&iacute;as de entresemana se honraba con su vellor&iacute;
+    de lo m&aacute;s fino. Ten&iacute;a en su casa una ama que
+    pasaba de los cuarenta, y una sobrina que no llegaba a los
+    veinte, y un mozo de campo y plaza, que as&iacute; ensillaba
+    el roc&iacute;n como tomaba la podadera. Frisaba la edad
+    de nuestro hidalgo con los cincuenta a&ntilde;os; era de
+    complexi&oacute;n recia, seco de carnes, enjuto de rostro,
+    gran madrugador y amigo de la caza. Quieren decir que ten&iacute;a
+    el sobrenombre de Quijada, o Quesada, que en esto hay alguna
+    diferencia en los autores que deste caso escriben; aunque
+    por conjeturas veros&iacute;miles se deja entender que se
+    llamaba Quijana. Pero esto importa poco a nuestro cuento:
+    basta que en la narraci&oacute;n d&eacute;l no se salga un
+    punto de la verdad.</p>  <p id="V_39" class="justificado texto-indentado">Es, pues, de saber que este sobredicho
+    hidalgo, los ratos que estaba ocioso, que eran los m&aacute;s
+    del a&ntilde;o, se daba a leer libros de caballer&iacute;as,
+    con tanta afici&oacute;n y gusto, que olvid&oacute; casi
+    de todo punto el ejercicio de la caza, y aun la administraci&oacute;n
+    de su hacienda; y lleg&oacute; a tanto su curiosidad y desatino
+    en esto, que vendi&oacute; muchas hanegas de tierra de sembradura
+    para comprar libros de caballer&iacute;as en que leer, y
+    as&iacute;, llev&oacute; a su casa todos cuantos pudo haber
+    dellos; y de todos, ningunos le parec&iacute;an tan bien
+    como los que compuso el famoso Feliciano de Silva; porque
+    la claridad de su prosa y aquellas entricadas razones suyas
+    le parec&iacute;an de perlas, y m&aacute;s cuando llegaba
+    a leer aquellos requiebros y cartas de desaf&iacute;os, donde
+    en muchas partes hallaba escrito: &laquo;La raz&oacute;n de la
+    sinraz&oacute;n que a mi raz&oacute;n se hace, de tal manera
+    mi raz&oacute;n enflaquece, que con raz&oacute;n me quejo
+    de la vuestra fermosura&raquo;. Y tambi&eacute;n cuando le&iacute;a:
+    &laquo;... los altos cielos que de vuestra divinidad divinamente
+    con las estrellas os fortifican, y os hacen merecedora del
+    merecimiento que merece la vuestra grandeza&raquo;.</p>  <p id="V_40" class="justificado texto-indentado">Con estas
+    razones perd&iacute;a el pobre caballero el juicio, y desvel&aacute;base
+    por entenderlas y desentra&ntilde;arles el sentido, que no
+    se lo sacara ni las entendiera el mesmo Arist&oacute;teles,
+    si resucitara para s&oacute;lo ello. No estaba muy bien con
+    las heridas que don Belian&iacute;s daba y receb&iacute;a,
+    porque se imaginaba que, por grandes maestros que le hubiesen
+    curado, no dejar&iacute;a de tener el rostro y todo el cuerpo
+    lleno de cicatrices y se&ntilde;ales. Pero, con todo, alababa
+    en su autor aquel acabar su libro con la promesa de aquella
+    inacabable aventura, y muchas veces le vino deseo de tomar
+    la pluma y dalle fin al pie de la letra, como all&iacute;
+    se promete; y sin duda alguna lo hiciera, y aun saliera con
+    ello, si otros mayores y continuos pensamientos no se lo
+    estorbaran. Tuvo muchas veces competencia con el cura de
+    su lugar (que era hombre docto, graduado en Sig&uuml;enza),
+    sobre cu&aacute;l hab&iacute;a sido mejor caballero: Palmer&iacute;n
+    de Ingalaterra, o Amad&iacute;s de Gaula; mas maese Nicol&aacute;s,
+    barbero del mismo pueblo, dec&iacute;a que ninguno llegaba
+    al Caballero del Febo, y que si alguno se le pod&iacute;a
+    comparar, era don Galaor, hermano de Amad&iacute;s de Gaula,
+    porque ten&iacute;a muy acomodada condici&oacute;n para todo;
+    que no era caballero melindroso, ni tan llor&oacute;n como
+    su hermano, y que en lo de la valent&iacute;a no le iba en
+    zaga.</p>  <p id="V_41" class="justificado texto-indentado">En resoluci&oacute;n, &eacute;l se enfrasc&oacute;
+    tanto en su lectura, que se le pasaban las noches leyendo
+    de claro en claro, y los d&iacute;as de turbio en turbio;
+    y as&iacute;, del poco dormir y del mucho leer se le sec&oacute;
+    el celebro de manera, que vino a perder el juicio. Llen&oacute;sele
+    la fantas&iacute;a de todo aquello que le&iacute;a en los
+    libros, as&iacute; de encantamentos como de pendencias, batallas,
+    desaf&iacute;os, heridas, requiebros, amores, tormentas y
+    disparates imposibles; y asent&oacute;sele de tal modo en
+    la imaginaci&oacute;n que era verdad toda aquella m&aacute;quina
+    de aquellas so&ntilde;adas invenciones que le&iacute;a, que
+    para &eacute;l no hab&iacute;a otra historia m&aacute;s cierta
+    en el mundo. Dec&iacute;a &eacute;l que el Cid Ruy D&iacute;az
+    hab&iacute;a sido muy buen caballero; pero que no ten&iacute;a
+    que ver con el Caballero de la Ardiente Espada, que de s&oacute;lo
+    un rev&eacute;s hab&iacute;a partido por medio dos fieros
+    y descomunales gigantes. Mejor estaba con Bernardo del Carpio,
+    porque en Roncesvalles hab&iacute;a muerto a Rold&aacute;n
+    el encantado, vali&eacute;ndose de la industria de H&eacute;rcules,
+    cuando ahog&oacute; a Anteo, el hijo de la Tierra, entre
+    los brazos. Dec&iacute;a mucho bien del gigante Morgante,
+    porque, con ser de aquella generaci&oacute;n gigantea, que
+    todos son soberbios y descomedidos, &eacute;l solo era afable
+    y bien criado. Pero, sobre todos, estaba bien con Reinaldos
+    de Montalb&aacute;n, y m&aacute;s cuando le ve&iacute;a salir
+    de su castillo y robar cuantos topaba, y cuando en allende
+    rob&oacute; aquel &iacute;dolo de Mahoma que era todo de
+    oro, seg&uacute;n dice su historia. Diera &eacute;l, por
+    dar una mano de coces al traidor de Galal&oacute;n, al ama
+    que ten&iacute;a, y aun a su sobrina de a&ntilde;adidura.</p>
+    <p id="V_42" class="justificado texto-indentado">En efeto, rematado ya su juicio, vino a dar en el m&aacute;s
+    extra&ntilde;o pensamiento que jam&aacute;s dio loco en el
+    mundo; y fue que le pareci&oacute; convenible y necesario,
+    as&iacute; para el aumento de su honra como para el servicio
+    de su rep&uacute;blica, hacerse caballero andante, y irse
+    por todo el mundo con sus armas y caballo a buscar las aventuras
+    y a ejercitarse en todo aquello que &eacute;l hab&iacute;a
+    le&iacute;do que los caballeros andantes se ejercitaban,
+    deshaciendo todo g&eacute;nero de agravio, y poni&eacute;ndose
+    en ocasiones y peligros donde, acab&aacute;ndolos, cobrase
+    eterno nombre y fama. Imagin&aacute;base el pobre ya coronado
+    por el valor de su brazo, por lo menos, del imperio de Trapisonda;
+    y as&iacute;, con estos tan agradables pensamientos, llevado
+    del extra&ntilde;o gusto que en ellos sent&iacute;a, se dio
+    priesa a poner en efeto lo que deseaba. Y lo primero que
+    hizo fue limpiar unas armas que hab&iacute;an sido de sus
+    bisabuelos, que, tomadas de or&iacute;n y llenas de moho,
+    luengos siglos hab&iacute;a que estaban puestas y olvidadas
+    en un rinc&oacute;n. Limpi&oacute;las y aderez&oacute;las
+    lo mejor que pudo, pero vio que ten&iacute;an una gran falta,
+    y era que no ten&iacute;an celada de encaje, sino morri&oacute;n
+    simple; mas a esto supli&oacute; su industria, porque de
+    cartones hizo un modo de media celada, que, encajada con
+    el morri&oacute;n, hac&iacute;an una apariencia de celada
+    entera. Es verdad que para probar si era fuerte y pod&iacute;a
+    estar al riesgo de una cuchillada, sac&oacute; su espada
+    y le dio dos golpes, y con el primero y en un punto deshizo
+    lo que hab&iacute;a hecho en una semana; y no dej&oacute;
+    de parecerle mal la facilidad con que la hab&iacute;a hecho
+    pedazos, y, por asegurarse deste peligro, la torn&oacute;
+    a hacer de nuevo, poni&eacute;ndole unas barras de hierro
+    por de dentro, de tal manera, que &eacute;l qued&oacute;
+    satisfecho de su fortaleza y, sin querer hacer nueva experiencia
+    della, la diput&oacute; y tuvo por celada fin&iacute;sima
+    de encaje.</p>  <p id="V_43" class="justificado texto-indentado">Fue luego a ver su roc&iacute;n, y aunque ten&iacute;a
+    m&aacute;s cuartos que un real y m&aacute;s tachas que el
+    caballo de Gonela, que <em lang="la" xml:lang="la" class="foreign">tantum pellis et ossa fuit</em>, le pareci&oacute;
+    que ni el Buc&eacute;falo de Alejandro ni Babieca el del
+    Cid con &eacute;l se igualaban. Cuatro d&iacute;as se le
+    pasaron en imaginar qu&eacute; nombre le pondr&iacute;a;
+    porque (seg&uacute;n se dec&iacute;a &eacute;l a s&iacute;
+    mesmo) no era raz&oacute;n que caballo de caballero tan famoso,
+    y tan bueno &eacute;l por s&iacute;, estuviese sin nombre
+    conocido; y ans&iacute;, procuraba acomod&aacute;rsele de
+    manera que declarase qui&eacute;n hab&iacute;a sido antes
+    que fuese de caballero andante, y lo que era entonces; pues
+    estaba muy puesto en raz&oacute;n que, mudando su se&ntilde;or
+    estado, mudase &eacute;l tambi&eacute;n el nombre, y le cobrase
+    famoso y de estruendo, como conven&iacute;a a la nueva orden
+    y al nuevo ejercicio que ya profesaba; y as&iacute;, despu&eacute;s
+    de muchos nombres que form&oacute;, borr&oacute; y quit&oacute;,
+    a&ntilde;adi&oacute;, deshizo y torn&oacute; a hacer en su
+    memoria e imaginaci&oacute;n, al fin le vino a llamar <em>Rocinante</em>,
+    nombre, a su parecer, alto, sonoro y significativo de lo
+    que hab&iacute;a sido cuando fue roc&iacute;n, antes de lo
+    que ahora era, que era antes y primero de todos los rocines
+    del mundo.</p>  <p id="V_44" class="justificado texto-indentado">Puesto nombre, y tan a su gusto, a su caballo,
+    quiso pon&eacute;rsele a s&iacute; mismo, y en este pensamiento
+    dur&oacute; otros ocho d&iacute;as, y al cabo se vino a llamar
+    <em>don Quijote</em>; de donde, como queda dicho, tomaron ocasi&oacute;n
+    los autores desta tan verdadera historia que, sin duda, se
+    deb&iacute;a de llamar Quijada, y no Quesada, como otros
+    quisieron decir. Pero, acord&aacute;ndose que el valeroso
+    Amad&iacute;s no s&oacute;lo se hab&iacute;a contentado con
+    llamarse Amad&iacute;s a secas, sino que a&ntilde;adi&oacute;
+    el nombre de su reino y patria, por hacerla famosa, y se
+    llam&oacute; Amad&iacute;s de Gaula, as&iacute; quiso, como
+    buen caballero, a&ntilde;adir al suyo el nombre de la suya
+    y llamarse <em>don Quijote de la Mancha</em>, con que, a su parecer,
+    declaraba muy al vivo su linaje y patria, y la honraba con
+    tomar el sobrenombre della.</p>  <p id="V_45" class="justificado texto-indentado">Limpias, pues, sus armas, hecho
+    del morri&oacute;n celada, puesto nombre a su roc&iacute;n
+    y confirm&aacute;ndose a s&iacute; mismo, se dio a entender
+    que no le faltaba otra cosa sino buscar una dama de quien
+    enamorarse: porque el caballero andante sin amores era &aacute;rbol
+    sin hojas y sin fruto y cuerpo sin alma. Dec&iacute;ase &eacute;l:
+    &laquo;Si yo, por malos de mis pecados, o por mi buena suerte,
+    me encuentro por ah&iacute; con alg&uacute;n gigante, como
+    de ordinario les acontece a los caballeros andantes, y le
+    derribo de un encuentro, o le parto por mitad del cuerpo,
+    o, finalmente, le venzo y le rindo, &iquest;no ser&aacute; bien
+    tener a quien enviarle presentado, y que entre y se hinque
+    de rodillas ante mi dulce se&ntilde;ora, y diga con voz humilde
+    y rendida: &laquo;Yo, se&ntilde;ora, soy el gigante Caraculiambro,
+    se&ntilde;or de la &iacute;nsula Malindrania, a quien venci&oacute;
+    en singular batalla el jam&aacute;s como se debe alabado
+    caballero don Quijote de la Mancha, el cual me mand&oacute;
+    que me presentase ante vuestra merced, para que la vuestra
+    grandeza disponga de m&iacute; a su talante&raquo;? &iexcl;Oh, c&oacute;mo
+    se holg&oacute; nuestro buen caballero cuando hubo hecho
+    este discurso, y m&aacute;s cuando hall&oacute; a quien dar
+    nombre de su dama! Y fue, a lo que se cree, que en un lugar
+    cerca del suyo hab&iacute;a una moza labradora de muy buen
+    parecer, de quien &eacute;l un tiempo anduvo enamorado, aunque,
+    seg&uacute;n se entiende, ella jam&aacute;s lo supo, ni le
+    dio cata dello. Llam&aacute;base Aldonza Lorenzo, y a &eacute;sta
+    le pareci&oacute; ser bien darle t&iacute;tulo de se&ntilde;ora
+    de sus pensamientos; y, busc&aacute;ndole nombre que no desdijese
+    mucho del suyo, y que tirase y se encaminase al de princesa
+    y gran se&ntilde;ora, vino a llamarla <em>Dulcinea del Toboso</em>,
+    porque era natural del Toboso; nombre, a su parecer, m&uacute;sico
+    y peregrino y significativo, como todos los dem&aacute;s
+    que a &eacute;l y a sus cosas hab&iacute;a puesto.</p>   
+
+    <div class="espacio-altura-doble"></div><div class="center"><h3><ul class="saltos" id="I_6_"><li><a href="#I_5_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_7_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Cap&iacute;tulo II</h3></div>  <div class="center"><p>Que trata de la primera salida que de su tierra hizo el
+    ingenioso don Quijote</p></div>
+    <p id="V_46" class="justificado texto-indentado">Hechas, pues, estas prevenciones,
+    no quiso aguardar m&aacute;s tiempo a poner en efeto su pensamiento,
+    apret&aacute;ndole a ello la falta que &eacute;l pensaba
+    que hac&iacute;a en el mundo su tardanza, seg&uacute;n eran
+    los agravios que pensaba deshacer, tuertos que enderezar,
+    sinrazones que enmendar, y abusos que mejorar, y deudas que
+    satisfacer. Y as&iacute;, sin dar parte a persona alguna
+    de su intenci&oacute;n, y sin que nadie le viese, una ma&ntilde;ana,
+    antes del d&iacute;a, que era uno de los calurosos del mes
+    de julio, se arm&oacute; de todas sus armas, subi&oacute;
+    sobre Rocinante, puesta su mal compuesta celada, embraz&oacute;
+    su adarga, tom&oacute; su lanza, y, por la puerta falsa de
+    un corral, sali&oacute; al campo con grand&iacute;simo contento
+    y alborozo de ver con cu&aacute;nta facilidad hab&iacute;a
+    dado principio a su buen deseo. Mas, apenas se vio en el
+    campo, cuando le asalt&oacute; un pensamiento terrible, y
+    tal, que por poco le hiciera dejar la comenzada empresa;
+    y fue que le vino a la memoria que no era armado caballero,
+    y que, conforme a ley de caballer&iacute;a, ni pod&iacute;a
+    ni deb&iacute;a tomar armas con ning&uacute;n caballero;
+    y, puesto que lo fuera, hab&iacute;a de llevar armas blancas,
+    como novel caballero, sin empresa en el escudo, hasta que
+    por su esfuerzo la ganase. Estos pensamientos le hicieron
+    titubear en su prop&oacute;sito; mas, pudiendo m&aacute;s
+    su locura que otra raz&oacute;n alguna, propuso de hacerse
+    armar caballero del primero que topase, a imitaci&oacute;n
+    de otros muchos que as&iacute; lo hicieron, seg&uacute;n
+    &eacute;l hab&iacute;a le&iacute;do en los libros que tal
+    le ten&iacute;an. En lo de las armas blancas, pensaba limpiarlas
+    de manera, en teniendo lugar, que lo fuesen m&aacute;s que
+    un armi&ntilde;o; y con esto se quiet&oacute; y prosigui&oacute;
+    su camino, sin llevar otro que aqu&eacute;l que su caballo
+    quer&iacute;a, creyendo que en aquello consist&iacute;a la
+    fuerza de las aventuras.</p>  <p id="V_47" class="justificado texto-indentado">Yendo, pues, caminando nuestro
+    flamante aventurero, iba hablando consigo mesmo y diciendo:
+    &laquo;&iquest;Qui&eacute;n duda sino que en los venideros tiempos, cuando
+    salga a luz la verdadera historia de mis famosos hechos,
+    que el sabio que los escribiere no ponga, cuando llegue a
+    contar esta mi primera salida tan de ma&ntilde;ana, desta
+    manera?: 'Apenas hab&iacute;a el rubicundo Apolo tendido
+    por la faz de la ancha y espaciosa tierra las doradas hebras
+    de sus hermosos cabellos, y apenas los peque&ntilde;os y
+    pintados pajarillos con sus harpadas lenguas hab&iacute;an
+    saludado con dulce y meliflua armon&iacute;a la venida de
+    la rosada aurora, que, dejando la blanda cama del celoso
+    marido, por las puertas y balcones del manchego horizonte
+    a los mortales se mostraba, cuando el famoso caballero don
+    Quijote de la Mancha, dejando las ociosas plumas, subi&oacute;
+    sobre su famoso caballo Rocinante; y comenz&oacute; a caminar
+    por el antiguo y conocido campo de Montiel&raquo;. Y era la verdad
+    que por &eacute;l caminaba. Y a&ntilde;adi&oacute; diciendo:
+    &laquo;Dichosa edad, y siglo dichoso aqu&eacute;l adonde saldr&aacute;n
+    a luz las famosas haza&ntilde;as m&iacute;as, dignas de entallarse
+    en bronces, esculpirse en m&aacute;rmoles y pintarse en tablas,
+    para memoria en lo futuro. &iexcl;Oh t&uacute;, sabio encantador,
+    quienquiera que seas, a quien ha de tocar el ser coronista
+    desta peregrina historia! Ru&eacute;gote que no te olvides
+    de mi buen Rocinante, compa&ntilde;ero eterno m&iacute;o
+    en todos mis caminos y carreras&raquo;. Luego volv&iacute;a diciendo,
+    como si verdaderamente fuera enamorado: &laquo;&iexcl;Oh princesa Dulcinea,
+    se&ntilde;ora deste cautivo coraz&oacute;n! Mucho agravio
+    me habedes fecho en despedirme y reprocharme con el riguroso
+    afincamiento de mandarme no parecer ante la vuestra fermosura.
+    Pl&eacute;gaos, se&ntilde;ora, de membraros deste vuestro
+    sujeto coraz&oacute;n, que tantas cuitas por vuestro amor
+    padece&raquo;.</p>  <p id="V_48" class="justificado texto-indentado">Con &eacute;stos iba ensartando otros disparates,
+    todos al modo de los que sus libros le hab&iacute;an ense&ntilde;ado,
+    imitando en cuanto pod&iacute;a su lenguaje; y, con esto,
+    caminaba tan despacio, y el sol entraba tan apriesa y con
+    tanto ardor, que fuera bastante a derretirle los sesos, si
+    algunos tuviera.</p>  <p id="V_49" class="justificado texto-indentado">Casi todo aquel d&iacute;a camin&oacute;
+    sin acontecerle cosa que de contar fuese, de lo cual se desesperaba,
+    porque quisiera topar luego luego con quien hacer experiencia
+    del valor de su fuerte brazo. Autores hay que dicen que la
+    primera aventura que le avino fue la del Puerto L&aacute;pice;
+    otros dicen que la de los molinos de viento; pero, lo que
+    yo he podido averiguar en este caso, y lo que he hallado
+    escrito en los anales de la Mancha, es que &eacute;l anduvo
+    todo aquel d&iacute;a, y, al anochecer, su roc&iacute;n y
+    &eacute;l se hallaron cansados y muertos de hambre; y que,
+    mirando a todas partes por ver si descubrir&iacute;a alg&uacute;n
+    castillo o alguna majada de pastores donde recogerse y adonde
+    pudiese remediar su mucha hambre y necesidad, vio, no lejos
+    del camino por donde iba, una venta, que fue como si viera
+    una estrella que, no a los portales, sino a los alc&aacute;zares
+    de su redenci&oacute;n le encaminaba. Diose priesa a caminar,
+    y lleg&oacute; a ella a tiempo que anochec&iacute;a.</p>  <p id="V_50" class="justificado texto-indentado">Estaban
+    acaso a la puerta dos mujeres mozas, destas que llaman <em>del
+    partido</em>, las cuales iban a Sevilla con unos arrieros que
+    en la venta aquella noche acertaron a hacer jornada; y como
+    a nuestro aventurero todo cuanto pensaba, ve&iacute;a o imaginaba
+    le parec&iacute;a ser hecho y pasar al modo de lo que hab&iacute;a
+    le&iacute;do, luego que vio la venta se le represent&oacute;
+    que era un castillo con sus cuatro torres y chapiteles de
+    luciente plata, sin faltarle su puente levadiza y honda cava,
+    con todos aquellos adherentes que semejantes castillos se
+    pintan. Fuese llegando a la venta, que a &eacute;l le parec&iacute;a
+    castillo, y a poco trecho della detuvo las riendas a Rocinante,
+    esperando que alg&uacute;n enano se pusiese entre las almenas
+    a dar se&ntilde;al con alguna trompeta de que llegaba caballero
+    al castillo. Pero como vio que se tardaban y que Rocinante
+    se daba priesa por llegar a la caballeriza, se lleg&oacute;
+    a la puerta de la venta, y vio a las dos distra&iacute;das
+    mozas que all&iacute; estaban, que a &eacute;l le parecieron
+    dos hermosas doncellas o dos graciosas damas que delante
+    de la puerta del castillo se estaban solazando. En esto sucedi&oacute;
+    acaso que un porquero que andaba recogiendo de unos rastrojos
+    una manada de puercos (que, sin perd&oacute;n, as&iacute;
+    se llaman) toc&oacute; un cuerno, a cuya se&ntilde;al ellos
+    se recogen, y al instante se le represent&oacute; a don Quijote
+    lo que deseaba, que era que alg&uacute;n enano hac&iacute;a
+    se&ntilde;al de su venida, y as&iacute;, con extra&ntilde;o
+    contento lleg&oacute; a la venta y a las damas, las cuales,
+    como vieron venir un hombre de aquella suerte armado, y con
+    lanza y adarga, llenas de miedo se iban a entrar en la venta;
+    pero don Quijote, coligiendo por su huida su miedo, alz&aacute;ndose
+    la visera de papel&oacute;n y descubriendo su seco y polvoroso
+    rostro, con gentil talante y voz reposada, les dijo:</p>  <p id="V_51" class="justificado texto-indentado">-Non
+    fuyan las vuestras mercedes, ni teman desaguisado alguno;
+    ca a la orden de caballer&iacute;a que profeso non toca ni
+    ata&ntilde;e facerle a ninguno, cuanto m&aacute;s a tan altas
+    doncellas como vuestras presencias demuestran.</p>  <p id="V_52" class="justificado texto-indentado">Mir&aacute;banle
+    las mozas, y andaban con los ojos busc&aacute;ndole el rostro,
+    que la mala visera le encubr&iacute;a; mas como se oyeron
+    llamar doncellas, cosa tan fuera de su profesi&oacute;n,
+    no pudieron tener la risa, y fue de manera que don Quijote
+    vino a correrse y a decirles:</p>  <p id="V_53" class="justificado texto-indentado">-Bien parece la mesura en
+    las fermosas, y es mucha sandez, adem&aacute;s, la risa que
+    de leve causa procede; pero no vos lo digo porque os acuitedes
+    ni mostredes mal talante; que el m&iacute;o non es de &aacute;l
+    que de serviros.</p>  <p id="V_54" class="justificado texto-indentado">El lenguaje, no entendido de las se&ntilde;oras,
+    y el mal talle de nuestro caballero acrecentaba en ellas
+    la risa, y en &eacute;l el enojo, y pasara muy adelante si
+    a aquel punto no saliera el ventero, hombre que, por ser
+    muy gordo, era muy pac&iacute;fico, el cual, viendo aquella
+    figura contrahecha, armada de armas tan desiguales como eran
+    la brida, lanza, adarga y coselete, no estuvo en nada en
+    acompa&ntilde;ar a las doncellas en las muestras de su contento.
+    Mas, en efeto, temiendo la m&aacute;quina de tantos pertrechos,
+    determin&oacute; de hablarle comedidamente, y as&iacute;
+    le dijo:</p>  <p id="V_55" class="justificado texto-indentado">-Si vuestra merced, se&ntilde;or caballero, busca
+    posada, am&eacute;n del lecho (porque en esta venta no hay
+    ninguno), todo lo dem&aacute;s se hallar&aacute; en ella
+    en mucha abundancia.</p>  <p id="V_56" class="justificado texto-indentado">Viendo don Quijote la humildad del
+    alcaide de la fortaleza, que tal le pareci&oacute; a &eacute;l
+    el ventero y la venta, respondi&oacute;:</p>  <p id="V_57" class="justificado texto-indentado">-Para m&iacute;,
+    se&ntilde;or castellano, cualquiera cosa basta, porque mis
+    arreos son las armas, mi descanso el pelear, etc.</p>  <p id="V_58" class="justificado texto-indentado">Pens&oacute;
+    el hu&eacute;sped que el haberle llamado castellano hab&iacute;a
+    sido por haberle parecido de los sanos de Castilla, aunque
+    &eacute;l era andaluz, y de los de la playa de Sanl&uacute;car,
+    no menos ladr&oacute;n que Caco, ni menos maleante que estudiante
+    o paje, y as&iacute; le respondi&oacute;:</p>  <p id="V_59" class="justificado texto-indentado">-Seg&uacute;n
+    eso, las camas de vuestra merced ser&aacute;n duras pe&ntilde;as,
+    y su dormir, siempre velar; y siendo as&iacute;, bien se
+    puede apear, con seguridad de hallar en esta choza ocasi&oacute;n
+    y ocasiones para no dormir en todo un a&ntilde;o, cuanto
+    m&aacute;s en una noche.</p>  <p id="V_60" class="justificado texto-indentado">Y, diciendo esto, fue a tener el
+    estribo a don Quijote, el cual se ape&oacute; con mucha dificultad
+    y trabajo, como aqu&eacute;l que en todo aquel d&iacute;a
+    no se hab&iacute;a desayunado.</p>  <p id="V_61" class="justificado texto-indentado">Dijo luego al hu&eacute;sped
+    que le tuviese mucho cuidado de su caballo, porque era la
+    mejor pieza que com&iacute;a pan en el mundo. Mir&oacute;le
+    el ventero, y no le pareci&oacute; tan bueno como don Quijote
+    dec&iacute;a, ni aun la mitad; y acomod&aacute;ndole en la
+    caballeriza, volvi&oacute; a ver lo que su hu&eacute;sped
+    mandaba, al cual estaban desarmando las doncellas, que ya
+    se hab&iacute;an reconciliado con &eacute;l; las cuales,
+    aunque le hab&iacute;an quitado el peto y el espaldar, jam&aacute;s
+    supieron ni pudieron desencajarle la gola, ni quitalle la
+    contrahecha celada, que tra&iacute;a atada con unas cintas
+    verdes, y era menester cortarlas, por no poderse quitar los
+    &ntilde;udos; mas &eacute;l no lo quiso consentir en ninguna
+    manera, y as&iacute;, se qued&oacute; toda aquella noche
+    con la celada puesta, que era la m&aacute;s graciosa y extra&ntilde;a
+    figura que se pudiera pensar; y al desarmarle, como &eacute;l
+    se imaginaba que aquellas tra&iacute;das y llevadas que le
+    desarmaban eran algunas principales se&ntilde;oras y damas
+    de aquel castillo, les dijo con mucho donaire:</p>   <div class="fragmento"><div id="V_62" class="versos-partidos"><div class="verso">&nbsp;&nbsp;&nbsp;    
+    -Nunca fuera caballero</div><div class="numeracion-derecha"></div><br><div class="verso"> De damas tan bien
+    servido</div><div class="numeracion-derecha"></div><br><div class="verso"> Como fuera don Quijote</div><div class="numeracion-derecha"></div><br><div class="verso"> Cuando de su aldea vino:</div><div class="numeracion-derecha"></div><br><div class="verso"> Doncellas curaban d&eacute;l;</div><div class="numeracion-derecha"></div><br><div class="verso"> Princesas, del su rocino.</div><div class="numeracion-derecha"></div><br></div><br></div><p id="V_63" class="justificado texto-indentado">O Rocinante, que &eacute;ste es el nombre, se&ntilde;oras
+    m&iacute;as, de mi caballo, y don Quijote de la Mancha el
+    m&iacute;o; que, puesto que no quisiera descubrirme fasta
+    que las faza&ntilde;as fechas en vuestro servicio y pro me
+    descubrieran, la fuerza de acomodar al prop&oacute;sito presente
+    este romance viejo de Lanzarote ha sido causa que sep&aacute;is
+    mi nombre antes de toda saz&oacute;n; pero, tiempo vendr&aacute;
+    en que las vuestras se&ntilde;or&iacute;as me manden y yo
+    obedezca, y el valor de mi brazo descubra el deseo que tengo
+    de serviros.</p>  <p id="V_64" class="justificado texto-indentado">Las mozas, que no estaban hechas a o&iacute;r
+    semejantes ret&oacute;ricas, no respond&iacute;an palabra;
+    s&oacute;lo le preguntaron si quer&iacute;a comer alguna
+    cosa.</p>  <p id="V_65" class="justificado texto-indentado">-Cualquiera yantar&iacute;a yo -respondi&oacute; don
+    Quijote-, porque, a lo que entiendo, me har&iacute;a mucho
+    al caso.</p>  <p id="V_66" class="justificado texto-indentado">A dicha, acert&oacute; a ser viernes aquel d&iacute;a,
+    y no hab&iacute;a en toda la venta sino unas raciones de
+    un pescado que en Castilla llaman abadejo, y en Andaluc&iacute;a
+    bacallao, y en otras partes curadillo, y en otras truchuela.
+    Pregunt&aacute;ronle si por ventura comer&iacute;a su merced
+    truchuela; que no hab&iacute;a otro pescado que dalle a comer.</p>
+    <p id="V_67" class="justificado texto-indentado">-Como haya muchas truchuelas -respondi&oacute; don Quijote-,
+    podr&aacute;n servir de una trucha; porque eso se me da que
+    me den ocho reales en sencillos que en una pieza de a ocho.
+    Cuanto m&aacute;s, que podr&iacute;a ser que fuesen estas
+    truchuelas como la ternera, que es mejor que la vaca, y el
+    cabrito que el cabr&oacute;n. Pero, sea lo que fuere, venga
+    luego; que el trabajo y peso de las armas no se puede llevar
+    sin el gobierno de las tripas.</p>  <p id="V_68" class="justificado texto-indentado">Pusi&eacute;ronle la mesa
+    a la puerta de la venta, por el fresco, y tr&uacute;jole
+    el hu&eacute;sped una porci&oacute;n del mal remojado y peor
+    cocido bacallao y un pan tan negro y mugriento como sus armas;
+    pero era materia de grande risa verle comer, porque, como
+    ten&iacute;a puesta la celada y alzada la visera, no pod&iacute;a
+    poner nada en la boca con sus manos si otro no se lo daba
+    y pon&iacute;a, y ans&iacute;, una de aquellas se&ntilde;oras
+    serv&iacute;a deste menester. Mas al darle de beber, no fue
+    posible, ni lo fuera si el ventero no horadara una ca&ntilde;a,
+    y puesto el un cabo en la boca, por el otro le iba echando
+    el vino; y todo esto lo receb&iacute;a en paciencia, a trueco
+    de no romper las cintas de la celada. Estando en esto, lleg&oacute;
+    acaso a la venta un castrador de puercos; y, as&iacute; como
+    lleg&oacute;, son&oacute; su silbato de ca&ntilde;as cuatro
+    o cinco veces, con lo cual acab&oacute; de confirmar don
+    Quijote que estaba en alg&uacute;n famoso castillo, y que
+    le serv&iacute;an con m&uacute;sica, y que el abadejo eran
+    truchas; el pan candeal, y las rameras, damas, y el ventero
+    castellano del castillo, y con esto daba por bien empleada
+    su determinaci&oacute;n y salida. Mas lo que m&aacute;s le
+    fatigaba era el no verse armado caballero, por parecerle
+    que no se podr&iacute;a poner leg&iacute;timamente en aventura
+    alguna sin recebir la orden de caballer&iacute;a.</p>   
+
+    <div class="espacio-altura-doble"></div>
+
+    <div class="center"><h3><ul class="saltos" id="I_7_"><li><a href="#I_6_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_8_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Cap&iacute;tulo III</h3></div>  <div class="center"><p>Donde se cuenta la graciosa manera que tuvo don Quijote
+    en armarse caballero</p></div>   <p id="V_69" class="justificado texto-indentado">Y as&iacute;, fatigado deste pensamiento,
+    abrevi&oacute; su venteril y limitada cena; la cual acabada,
+    llam&oacute; al ventero y, encerr&aacute;ndose con &eacute;l
+    en la caballeriza, se hinc&oacute; de rodillas ante &eacute;l,
+    dici&eacute;ndole:</p>  <p id="V_70" class="justificado texto-indentado">-No me levantar&eacute; jam&aacute;s
+    de donde estoy, valeroso caballero, fasta que la vuestra
+    cortes&iacute;a me otorgue un don que pedirle quiero, el
+    cual redundar&aacute; en alabanza vuestra y en pro del g&eacute;nero
+    humano.</p>  <p id="V_71" class="justificado texto-indentado">El ventero, que vio a su hu&eacute;sped a sus pies
+    y oy&oacute; semejantes razones, estaba confuso mir&aacute;ndole,
+    sin saber qu&eacute; hacerse ni decirle, y porfiaba con &eacute;l
+    que se levantase, y jam&aacute;s quiso, hasta que le hubo
+    de decir que &eacute;l le otorgaba el don que le ped&iacute;a.</p>
+    <p id="V_72" class="justificado texto-indentado">-No esperaba yo menos de la gran magnificencia vuestra,
+    se&ntilde;or m&iacute;o -respondi&oacute; don Quijote-; y
+    as&iacute;, os digo que el don que os he pedido y de vuestra
+    liberalidad me ha sido otorgado es que ma&ntilde;ana en aquel
+    d&iacute;a me hab&eacute;is de armar caballero, y esta noche
+    en la capilla deste vuestro castillo velar&eacute; las armas,
+    y ma&ntilde;ana, como tengo dicho, se cumplir&aacute; lo
+    que tanto deseo, para poder, como se debe ir por todas las
+    cuatro partes del mundo buscando las aventuras, en pro de
+    los menesterosos, como est&aacute; a cargo de la caballer&iacute;a
+    y de los caballeros andantes, como yo soy, cuyo deseo a semejantes
+    faza&ntilde;as es inclinado.</p>  <p id="V_73" class="justificado texto-indentado">El ventero, que, como est&aacute;
+    dicho, era un poco socarr&oacute;n y ya ten&iacute;a algunos
+    barruntos de la falta de juicio de su hu&eacute;sped, acab&oacute;
+    de creerlo cuando acab&oacute; de o&iacute;rle semejantes
+    razones, y, por tener qu&eacute; re&iacute;r aquella noche,
+    determin&oacute; de seguirle el humor; y as&iacute;, le dijo
+    que andaba muy acertado en lo que deseaba y ped&iacute;a
+    y que tal prosupuesto era propio y natural de los caballeros
+    tan principales como &eacute;l parec&iacute;a y como su gallarda
+    presencia mostraba; y que &eacute;l, ansimesmo, en los a&ntilde;os
+    de su mocedad, se hab&iacute;a dado a aquel honroso ejercicio,
+    andando por diversas partes del mundo buscando sus aventuras,
+    sin que hubiese dejado los Percheles de M&aacute;laga, Islas
+    de Riar&aacute;n, Comp&aacute;s de Sevilla, Azoguejo de Segovia,
+    la Olivera de Valencia, Rondilla de Granada, Playa de Sanl&uacute;car,
+    Potro de C&oacute;rdoba y las Ventillas de Toledo, y otras
+    diversas partes, donde hab&iacute;a ejercitado la ligereza
+    de sus pies y sutileza de sus manos, haciendo muchos tuertos,
+    recuestando muchas viudas, deshaciendo algunas doncellas
+    y enga&ntilde;ando a algunos pupilos, y, finalmente, d&aacute;ndose
+    a conocer por cuantas audiencias y tribunales hay casi en
+    toda Espa&ntilde;a; y que, a lo &uacute;ltimo, se hab&iacute;a
+    venido a recoger a aquel su castillo, donde viv&iacute;a
+    con su hacienda y con las ajenas, recogiendo en &eacute;l
+    a todos los caballeros andantes, de cualquiera calidad y
+    condici&oacute;n que fuesen, s&oacute;lo por la mucha afici&oacute;n
+    que les ten&iacute;a y porque partiesen con &eacute;l de
+    sus haberes, en pago de su buen deseo. D&iacute;jole tambi&eacute;n
+    que en aquel su castillo no hab&iacute;a capilla alguna donde
+    poder velar las armas, porque estaba derribada para hacerla
+    de nuevo; pero que, en caso de necesidad, &eacute;l sab&iacute;a
+    que se pod&iacute;an velar dondequiera, y que aquella noche
+    las podr&iacute;a velar en un patio del castillo; que a la
+    ma&ntilde;ana, siendo Dios servido, se har&iacute;an las
+    debidas ceremonias, de manera que &eacute;l quedase armado
+    caballero, y tan caballero, que no pudiese ser m&aacute;s
+    en el mundo.</p>  <p id="V_74" class="justificado texto-indentado">Pregunt&oacute;le si tra&iacute;a dineros;
+    respondi&oacute; don Quijote que no tra&iacute;a blanca,
+    porque &eacute;l nunca hab&iacute;a le&iacute;do en las historias
+    de los caballeros andantes que ninguno los hubiese tra&iacute;do.
+    a esto dijo el ventero que se enga&ntilde;aba: que, puesto
+    caso que en las historias no se escrib&iacute;a, por haberles
+    parecido a los autores dellas que no era menester escrebir
+    una cosa tan clara y tan necesaria de traerse como eran dineros
+    y camisas limpias, no por eso se hab&iacute;a de creer que
+    no los trujeron; y as&iacute;, tuviese por cierto y averiguado
+    que todos los caballeros andantes, de que tantos libros est&aacute;n
+    llenos y atestados, llevaban bien herradas las bolsas, por
+    lo que pudiese sucederles; y que asimismo llevaban camisas
+    y una arqueta peque&ntilde;a llena de ung&uuml;entos para
+    curar las heridas que receb&iacute;an, porque no todas veces
+    en los campos y desiertos donde se combat&iacute;an y sal&iacute;an
+    heridos hab&iacute;a quien los curase, si ya no era que ten&iacute;an
+    alg&uacute;n sabio encantador por amigo, que luego los socorr&iacute;a,
+    trayendo por el aire, en alguna nube, alguna doncella o enano
+    con alguna redoma de agua de tal virtud, que en gustando
+    alguna gota della, luego al punto quedaban sanos de sus llagas
+    y heridas, como si mal alguno hubiesen tenido; mas que, en
+    tanto que esto no hubiese, tuvieron los pasados caballeros
+    por cosa acertada que sus escuderos fuesen prove&iacute;dos
+    de dineros y de otras cosas necesarias, como eran hilas y
+    ung&uuml;entos para curarse; y cuando suced&iacute;a que
+    los tales caballeros no ten&iacute;an escuderos (que eran
+    pocas y raras veces), ellos mesmos lo llevaban todo en unas
+    alforjas muy sutiles, que casi no se parec&iacute;an, a las
+    ancas del caballo, como que era otra cosa de m&aacute;s importancia;
+    porque, no siendo por ocasi&oacute;n semejante, esto de llevar
+    alforjas no fue muy admitido entre los caballeros andantes;
+    y por esto le daba por consejo, pues a&uacute;n se lo pod&iacute;a
+    mandar como a su ahijado, que tan presto lo hab&iacute;a
+    de ser, que no caminase de all&iacute; adelante sin dineros
+    y sin las prevenciones referidas, y que ver&iacute;a cu&aacute;n
+    bien se hallaba con ellas cuando menos se pensase.</p>  <p id="V_75" class="justificado texto-indentado">Prometi&oacute;le
+    don Quijote de hacer lo que se le aconsejaba, con toda puntualidad,
+    y as&iacute;, se dio luego orden como velase las armas en
+    un corral grande que a un lado de la venta estaba; y recogi&eacute;ndolas
+    don Quijote todas, las puso sobre una pila que junto a un
+    pozo estaba, y, embrazando su adarga, asi&oacute; de su lanza,
+    y con gentil continente se comenz&oacute; a pasear delante
+    de la pila; y cuando comenz&oacute; el paseo comenzaba a
+    cerrar la noche.</p>  <p id="V_76" class="justificado texto-indentado">Cont&oacute; el ventero a todos cuantos
+    estaban en la venta la locura de su hu&eacute;sped, la vela
+    de las armas y la armaz&oacute;n de caballer&iacute;a que
+    esperaba. Admir&aacute;ronse de tan extra&ntilde;o g&eacute;nero
+    de locura y fu&eacute;ronselo a mirar desde lejos, y vieron
+    que, con sosegado adem&aacute;n, unas veces se paseaba; otras,
+    arrimado a su lanza, pon&iacute;a los ojos en las armas,
+    sin quitarlos por un buen espacio dellas. Acab&oacute; de
+    cerrar la noche; pero con tanta claridad de la luna, que
+    pod&iacute;a competir con el que se la prestaba, de manera
+    que cuanto el novel caballero hac&iacute;a era bien visto
+    de todos. Antoj&oacute;sele en esto a uno de los arrieros
+    que estaban en la venta ir a dar agua a su recua, y fue menester
+    quitar las armas de don Quijote, que estaban sobre la pila;
+    el cual, vi&eacute;ndole llegar, en voz alta le dijo:</p>  <p id="V_77" class="justificado texto-indentado">-&iexcl;Oh
+    t&uacute;, quienquiera que seas, atrevido caballero, que
+    llegas a tocar las armas del m&aacute;s valeroso andante
+    que jam&aacute;s se ci&ntilde;&oacute; espada! Mira lo que
+    haces y no las toques, si no quieres dejar la vida en pago
+    de tu atrevimiento.</p>  <p id="V_78" class="justificado texto-indentado">No se cur&oacute; el arriero destas
+    razones (y fuera mejor que se curara, porque fuera curarse
+    en salud); antes, trabando de las correas, las arroj&oacute;
+    gran trecho de s&iacute;. Lo cual visto por don Quijote,
+    alz&oacute; los ojos al cielo y, puesto el pensamiento (a
+    lo que pareci&oacute;) en su se&ntilde;ora Dulcinea, dijo:</p>
+    <p id="V_79" class="justificado texto-indentado">-Acorredme, se&ntilde;ora m&iacute;a, en esta primera afrenta
+    que a este vuestro avasallado pecho se le ofrece: no me desfallezca
+    en este primero trance vuestro favor y amparo.</p>  <p id="V_80" class="justificado texto-indentado">Y diciendo
+    &eacute;stas y otras semejantes razones, soltando la adarga,
+    alz&oacute; la lanza a dos manos y dio con ella tan gran
+    golpe al arriero en la cabeza, que le derrib&oacute; en el
+    suelo, tan maltrecho, que si segundara con otro, no tuviera
+    necesidad de maestro que le curara. Hecho esto, recogi&oacute;
+    sus armas y torn&oacute; a pasearse con el mismo reposo que
+    primero. Desde all&iacute; a poco, sin saberse lo que hab&iacute;a
+    pasado (porque a&uacute;n estaba aturdido el arriero), lleg&oacute;
+    otro con la mesma intenci&oacute;n de dar agua a sus mulos
+    y, llegando a quitar las armas para desembarazar la pila,
+    sin hablar don Quijote palabra y sin pedir favor a nadie,
+    solt&oacute; otra vez la adarga y alz&oacute; otra vez la
+    lanza y, sin hacerla pedazos, hizo m&aacute;s de tres la
+    cabeza del segundo arriero, porque se la abri&oacute; por
+    cuatro. Al ruido acudi&oacute; toda la gente de la venta,
+    y entre ellos el ventero. Viendo esto don Quijote, embraz&oacute;
+    su adarga y, puesta mano a su espada, dijo:</p>  <p id="V_81" class="justificado texto-indentado">-&iexcl;Oh se&ntilde;ora
+    de la fermosura, esfuerzo y vigor del debilitado coraz&oacute;n
+    m&iacute;o! Ahora es tiempo que vuelvas los ojos de tu grandeza
+    a este tu cautivo caballero, que tama&ntilde;a aventura est&aacute;
+    atendiendo.</p>  <p id="V_82" class="justificado texto-indentado">Con esto cobr&oacute;, a su parecer, tanto &aacute;nimo,
+    que si le acometieran todos los arrieros del mundo, no volviera
+    el pie atr&aacute;s. Los compa&ntilde;eros de los heridos,
+    que tales los vieron, comenzaron desde lejos a llover piedras
+    sobre don Quijote, el cual, lo mejor que pod&iacute;a, se
+    reparaba con su adarga, y no se osaba apartar de la pila,
+    por no desamparar las armas. El ventero daba voces que le
+    dejasen, porque ya les hab&iacute;a dicho como era loco,
+    y que por loco se librar&iacute;a, aunque los matase a todos.
+    Tambi&eacute;n don Quijote las daba, mayores, llam&aacute;ndolos
+    de alevosos y traidores, y que el se&ntilde;or del castillo
+    era un foll&oacute;n y mal nacido caballero, pues de tal
+    manera consent&iacute;a que se tratasen los andantes caballeros;
+    y que si &eacute;l hubiera recebido la orden de caballer&iacute;a,
+    que &eacute;l le diera a entender su alevos&iacute;a: -pero
+    de vosotros, soez y baja canalla, no hago caso alguno: tirad,
+    llegad, venid, y ofendedme en cuanto pudi&eacute;redes; que
+    vosotros ver&eacute;is el pago que llev&aacute;is de vuestra
+    sandez y demas&iacute;a.</p>  <p id="V_83" class="justificado texto-indentado">Dec&iacute;a esto con tanto br&iacute;o
+    y denuedo, que infundi&oacute; un terrible temor en los que
+    le acomet&iacute;an; y as&iacute; por esto como por las persuasiones
+    del ventero, le dejaron de tirar, y &eacute;l dej&oacute;
+    retirar a los heridos y torn&oacute; a la vela de sus armas,
+    con la misma quietud y sosiego que primero.</p>  <p id="V_84" class="justificado texto-indentado">No le parecieron
+    bien al ventero las burlas de su hu&eacute;sped, y determin&oacute;
+    abreviar y darle la negra orden de caballer&iacute;a luego,
+    antes que otra desgracia sucediese. Y as&iacute;, lleg&aacute;ndose
+    a &eacute;l, se desculp&oacute; de la insolencia que aquella
+    gente baja con &eacute;l hab&iacute;a usado, sin que &eacute;l
+    supiese cosa alguna; pero que bien castigados quedaban de
+    su atrevimiento. D&iacute;jole como ya le hab&iacute;a dicho
+    que en aquel castillo no hab&iacute;a capilla, y para lo
+    que restaba de hacer tampoco era necesaria; que todo el toque
+    de quedar armado caballero consist&iacute;a en la pescozada
+    y en el espaldarazo, seg&uacute;n &eacute;l ten&iacute;a
+    noticia del ceremonial de la orden, y que aquello en mitad
+    de un campo se pod&iacute;a hacer; y que ya hab&iacute;a
+    cumplido con lo que tocaba al velar de las armas, que con
+    solas dos horas de vela se cumpl&iacute;a, cuanto m&aacute;s
+    que &eacute;l hab&iacute;a estado m&aacute;s de cuatro. Todo
+    se lo crey&oacute; don Quijote, y dijo que &eacute;l estaba
+    all&iacute; pronto para obedecerle, y que concluyese con
+    la mayor brevedad que pudiese; porque si fuese otra vez acometido
+    y se viese armado caballero, no pensaba dejar persona viva
+    en el castillo, eceto aqu&eacute;llas que &eacute;l le mandase,
+    a quien por su respeto dejar&iacute;a.</p>  <p id="V_85" class="justificado texto-indentado">Advertido y medroso
+    desto el castellano, trujo luego un libro donde asentaba
+    la paja y cebada que daba a los arrieros, y con un cabo de
+    vela que le tra&iacute;a un muchacho, y con las dos ya dichas
+    doncellas, se vino adonde don Quijote estaba, al cual mand&oacute;
+    hincar de rodillas; y, leyendo en su manual (como que dec&iacute;a
+    alguna devota oraci&oacute;n), en mitad de la leyenda alz&oacute;
+    la mano y diole sobre el cuello un buen golpe, y tras &eacute;l,
+    con su mesma espada, un gentil espaldazaro, siempre murmurando
+    entre dientes, como que rezaba. Hecho esto, mand&oacute;
+    a una de aquellas damas que le ci&ntilde;ese la espada, la
+    cual lo hizo con mucha desenvoltura y discreci&oacute;n,
+    porque no fue menester poca para no reventar de risa a cada
+    punto de las ceremonias; pero las proezas que ya hab&iacute;an
+    visto del novel caballero les ten&iacute;an la risa a raya.
+    Al ce&ntilde;irle la espada, dijo la buena se&ntilde;ora:</p>
+    <p id="V_86" class="justificado texto-indentado">-Dios haga a vuestra merced muy venturoso caballero y le
+    d&eacute; ventura en lides.</p>  <p id="V_87" class="justificado texto-indentado">Don Quijote le pregunt&oacute;
+    c&oacute;mo se llamaba, porque &eacute;l supiese de all&iacute;
+    adelante a qui&eacute;n quedaba obligado por la merced recebida,
+    porque pensaba darle alguna parte de la honra que alcanzase
+    por el valor de su brazo. Ella respondi&oacute; con mucha
+    humildad que se llamaba la Tolosa, y que era hija de un remend&oacute;n
+    natural de Toledo que viv&iacute;a a las tendillas de Sancho
+    Bienaya, y que dondequiera que ella estuviese le servir&iacute;a
+    y le tendr&iacute;a por se&ntilde;or. Don Quijote le replic&oacute;
+    que, por su amor, le hiciese merced que de all&iacute; adelante
+    se pusiese don y se llamase do&ntilde;a Tolosa. Ella se lo
+    prometi&oacute;, y la otra le calz&oacute; la espuela; con
+    la cual le pas&oacute; casi el mismo coloquio que con la
+    de la espada. Pregunt&oacute;le su nombre, y dijo que se
+    llamaba la Molinera y que era hija de un honrado molinero
+    de Antequera; a la cual tambi&eacute;n rog&oacute; don Quijote
+    que se pusiese don y se llamase do&ntilde;a Molinera, ofreci&eacute;ndole
+    nuevos servicios y mercedes.</p>  <p id="V_88" class="justificado texto-indentado">Hechas, pues, de galope y aprisa
+    las hasta all&iacute; nunca vistas ceremonias, no vio la
+    hora don Quijote de verse a caballo y salir buscando las
+    aventuras; y, ensillando luego a Rocinante, subi&oacute;
+    en &eacute;l y, abrazando a su hu&eacute;sped, le dijo cosas
+    tan extra&ntilde;as, agradeci&eacute;ndole la merced de haberle
+    armado caballero, que no es posible acertar a referirlas.
+    El ventero, por verle ya fuera de la venta, con no menos
+    ret&oacute;ricas, aunque con m&aacute;s breves palabras,
+    respondi&oacute; a las suyas y, sin pedirle la costa de la
+    posada, le dej&oacute; ir a la buen hora.</p>   
+    <div class="espacio-altura-doble"></div>
+
+    <div class="center"><h3><ul class="saltos" id="I_8_"><li><a href="#I_7_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_9_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Cap&iacute;tulo IV</h3></div>  <div class="center"><p>De lo que le sucedi&oacute; a nuestro caballero cuando
+    sali&oacute; de la venta</p></div>   <p id="V_89" class="justificado texto-indentado">La del alba ser&iacute;a cuando
+    don Quijote sali&oacute; de la venta, tan contento, tan gallardo,
+    tan alborozado por verse ya armado caballero, que el gozo
+    le reventaba por las cinchas del caballo. Mas, vini&eacute;ndole
+    a la memoria los consejos de su hu&eacute;sped cerca de las
+    prevenciones tan necesarias que hab&iacute;a de llevar consigo,
+    especial la de los dineros y camisas, determin&oacute; volver
+    a su casa y acomodarse de todo, y de un escudero, haciendo
+    cuenta de recebir a un labrador vecino suyo, que era pobre
+    y con hijos, pero muy a prop&oacute;sito para el oficio escuderil
+    de la caballer&iacute;a. Con este pensamiento gui&oacute;
+    a Rocinante hacia su aldea, el cual, casi conociendo la querencia,
+    con tanta gana comenz&oacute; a caminar, que parec&iacute;a
+    que no pon&iacute;a los pies en el suelo.</p>  <p id="V_90" class="justificado texto-indentado">No hab&iacute;a
+    andado mucho, cuando le pareci&oacute; que a su diestra mano,
+    de la espesura de un bosque que all&iacute; estaba, sal&iacute;an
+    unas voces delicadas, como de persona que se quejaba; y apenas
+    las hubo o&iacute;do, cuando dijo:</p>  <p id="V_91" class="justificado texto-indentado">-Gracias doy al cielo
+    por la merced que me hace, pues tan presto me pone ocasiones
+    delante donde yo pueda cumplir con lo que debo a mi profesi&oacute;n,
+    y donde pueda coger el fruto de mis buenos deseos. Estas
+    voces, sin duda, son de alg&uacute;n menesteroso, o menesterosa,
+    que ha menester mi favor y ayuda.</p>  <p id="V_92" class="justificado texto-indentado">Y volviendo las riendas,
+    encamin&oacute; a Rocinante hacia donde le pareci&oacute;
+    que las voces sal&iacute;an. Y a pocos pasos que entr&oacute;
+    por el bosque, vio atada una yegua a una encina, y atado
+    en otra a un muchacho, desnudo de medio cuerpo arriba, hasta
+    de edad de quince a&ntilde;os, que era el que las voces daba,
+    y no sin causa, porque le estaba dando con una pretina muchos
+    azotes un labrador de buen talle, y cada azote le acompa&ntilde;aba
+    con una reprehensi&oacute;n y consejo. Porque dec&iacute;a:</p>
+    <p id="V_93" class="justificado texto-indentado">-La lengua queda y los ojos listos.</p>  <p id="V_94" class="justificado texto-indentado">Y el muchacho respond&iacute;a:</p>
+    <p id="V_95" class="justificado texto-indentado">-No lo har&eacute; otra vez, se&ntilde;or m&iacute;o; por
+    la pasi&oacute;n de Dios, que no lo har&eacute; otra vez,
+    y yo prometo de tener de aqu&iacute; adelante m&aacute;s
+    cuidado con el hato.</p>  <p id="V_96" class="justificado texto-indentado">Y viendo don Quijote lo que pasaba,
+    con voz airada dijo:</p>  <p id="V_97" class="justificado texto-indentado">-Descort&eacute;s caballero, mal parece
+    tomaros con quien defender no se puede; subid sobre vuestro
+    caballo y tomad vuestra lanza -que tambi&eacute;n ten&iacute;a
+    una lanza arrimada a la encina adonde estaba arrendada la
+    yegua-; que yo os har&eacute; conocer ser de cobardes lo
+    que est&aacute;is haciendo.</p>  <p id="V_98" class="justificado texto-indentado">El labrador, que vio sobre s&iacute;
+    aquella figura llena de armas blandiendo la lanza sobre su
+    rostro, t&uacute;vose por muerto, y con buenas palabras respondi&oacute;:</p>
+    <p id="V_99" class="justificado texto-indentado">-Se&ntilde;or caballero, este muchacho que estoy castigando
+    es un mi criado, que me sirve de guardar una manada de ovejas
+    que tengo en estos contornos; el cual es tan descuidado,
+    que cada d&iacute;a me falta una; y porque castigo su descuido,
+    o bellaquer&iacute;a, dice que lo hago de miserable, por
+    no pagalle la soldada que le debo, y en Dios y en mi &aacute;nima
+    que miente.</p>  <p id="V_100" class="justificado texto-indentado">-&iquest;&laquo;Miente&raquo; delante de m&iacute;, ruin villano?
+    -dijo don Quijote-. Por el sol que nos alumbra, que estoy
+    por pasaros de parte a parte con esta lanza. Pagadle luego
+    sin m&aacute;s r&eacute;plica; si no, por el Dios que nos
+    rige, que os concluya y aniquile en este punto. Desatadlo
+    luego.</p>  <p id="V_101" class="justificado texto-indentado">El labrador baj&oacute; la cabeza y, sin responder
+    palabra, desat&oacute; a su criado, al cual pregunt&oacute;
+    don Quijote que cu&aacute;nto le deb&iacute;a su amo. &Eacute;l
+    dijo que nueve meses, a siete reales cada mes. Hizo la cuenta
+    don Quijote y hall&oacute; que montaban sesenta y tres reales,
+    y d&iacute;jole al labrador que al momento los desembolsase,
+    si no quer&iacute;a morir por ello. Respondi&oacute; el medroso
+    villano que para el paso en que estaba y juramento que hab&iacute;a
+    hecho (y a&uacute;n no hab&iacute;a jurado nada), que no
+    eran tantos; porque se le hab&iacute;an de descontar y recebir
+    en cuenta tres pares de zapatos que le hab&iacute;a dado,
+    y un real de dos sangr&iacute;as que le hab&iacute;an hecho
+    estando enfermo.</p>  <p id="V_102" class="justificado texto-indentado">-Bien est&aacute; todo eso -replic&oacute;
+    don Quijote-, pero qu&eacute;dense los zapatos y las sangr&iacute;as
+    por los azotes que sin culpa le hab&eacute;is dado; que si
+    &eacute;l rompi&oacute; el cuero de los zapatos que vos pagastes,
+    vos le hab&eacute;is rompido el de su cuerpo; y si le sac&oacute;
+    el barbero sangre estando enfermo, vos en sanidad se la hab&eacute;is
+    sacado; ans&iacute; que, por esta parte, no os debe nada.</p>
+    <p id="V_103" class="justificado texto-indentado">-El da&ntilde;o est&aacute;, se&ntilde;or caballero, en
+    que no tengo aqu&iacute; dineros: v&eacute;ngase Andr&eacute;s
+    conmigo a mi casa, que yo se los pagar&eacute; un real sobre
+    otro.</p>  <p id="V_104" class="justificado texto-indentado">-&iquest;Irme yo con &eacute;l -dijo el muchacho- m&aacute;s?
+    &iexcl;Mal a&ntilde;o! No, se&ntilde;or, ni por pienso; porque
+    en vi&eacute;ndose solo, me desollar&aacute; como a un San
+    Bartolom&eacute;.</p>  <p id="V_105" class="justificado texto-indentado">-No har&aacute; tal -replic&oacute; don
+    Quijote-: basta que yo se lo mande para que me tenga respeto;
+    y con que &eacute;l me lo jure por la ley de caballer&iacute;a
+    que ha recebido, le dejar&eacute; ir libre y asegurar&eacute;
+    la paga.</p>  <p id="V_106" class="justificado texto-indentado">-Mire vuestra merced, se&ntilde;or, lo que dice
+    -dijo el muchacho-: que este mi amo no es caballero, ni ha
+    recebido orden de caballer&iacute;a alguna; que es Juan Haldudo
+    el rico, el vecino del Quintanar.</p>  <p id="V_107" class="justificado texto-indentado">-Importa eso poco -respondi&oacute;
+    don Quijote-, que Haldudos puede haber caballeros; cuanto
+    m&aacute;s, que cada uno es hijo de sus obras.</p>  <p id="V_108" class="justificado texto-indentado">-As&iacute;
+    es verdad -dijo Andr&eacute;s-; pero este mi amo, &iquest;de qu&eacute;
+    obras es hijo, pues me niega mi soldada y mi sudor y trabajo?</p>
+    <p id="V_109" class="justificado texto-indentado">-No niego, hermano Andr&eacute;s -respondi&oacute; el labrador-;
+    y hacedme placer de veniros conmigo, que yo juro por todas
+    las &oacute;rdenes que de caballer&iacute;as hay en el mundo
+    de pagaros, como tengo dicho, un real sobre otro, y aun sahumados.</p>
+    <p id="V_110" class="justificado texto-indentado">-Del sahumerio os hago gracia -dijo don Quijote-; d&aacute;dselos
+    en reales, que con eso me contento; y mirad que lo cumpl&aacute;is
+    como lo hab&eacute;is jurado; si no, por el mismo juramento
+    os juro de volver a buscaros y a castigaros, y que os tengo
+    de hallar, aunque os escond&aacute;is m&aacute;s que una
+    lagartija. Y si quer&eacute;is saber qui&eacute;n os manda
+    esto, para quedar con m&aacute;s veras obligado a cumplirlo,
+    sabed que yo soy el valeroso don Quijote de la Mancha, el
+    desfacedor de agravios y sinrazones; y a Dios quedad, y no
+    se os parta de las mientes lo prometido y jurado, so pena
+    de la pena pronunciada.</p>  <p id="V_111" class="justificado texto-indentado">Y en diciendo esto, pic&oacute;
+    a su Rocinante, y en breve espacio se apart&oacute; dellos.
+    Sigui&oacute;le el labrador con los ojos y cuando vio que
+    hab&iacute;a traspuesto del bosque y que ya no parec&iacute;a,
+    volvi&oacute;se a su criado Andr&eacute;s, y d&iacute;jole:</p>
+    <p id="V_112" class="justificado texto-indentado">-Venid ac&aacute;, hijo m&iacute;o, que os quiero pagar
+    lo que os debo, como aquel deshacedor de agravios me dej&oacute;
+    mandado.</p>  <p id="V_113" class="justificado texto-indentado">-Eso juro yo -dijo Andr&eacute;s-; y &iexcl;c&oacute;mo
+    que andar&aacute; vuestra merced acertado en cumplir el mandamiento
+    de aquel buen caballero, que mil a&ntilde;os viva; que, seg&uacute;n
+    es de valeroso y de buen juez, vive Roque, que si no me paga,
+    que vuelva y ejecute lo que dijo!</p>  <p id="V_114" class="justificado texto-indentado">-Tambi&eacute;n lo juro
+    yo -dijo el labrador-; pero, por lo mucho que os quiero,
+    quiero acrecentar la deuda, por acrecentar la paga.</p>  <p id="V_115" class="justificado texto-indentado">Y asi&eacute;ndole
+    del brazo, le torn&oacute; a atar a la encina, donde le dio
+    tantos azotes, que le dej&oacute; por muerto.</p>  <p id="V_116" class="justificado texto-indentado">-Llamad, se&ntilde;or
+    Andr&eacute;s, ahora -dec&iacute;a el labrador- al desfacedor
+    de agravios, ver&eacute;is c&oacute;mo no desface aqu&eacute;ste.
+    Aunque creo que no est&aacute; acabado de hacer, porque me
+    viene gana de desollaros vivo, como vos tem&iacute;ades.</p>
+    <p id="V_117" class="justificado texto-indentado">Pero, al fin, le desat&oacute; y le dio licencia que fuese
+    a buscar su juez, para que ejecutase la pronunciada sentencia.
+    Andr&eacute;s se parti&oacute; algo moh&iacute;no, jurando
+    de ir a buscar al valeroso don Quijote de la Mancha, y contalle
+    punto por punto lo que hab&iacute;a pasado, y que se lo hab&iacute;a
+    de pagar con las setenas. Pero, con todo esto, &eacute;l
+    se parti&oacute; llorando y su amo se qued&oacute; riendo.
+    Y desta manera deshizo el agravio el valeroso don Quijote;
+    el cual, content&iacute;simo de lo sucedido, pareci&eacute;ndole
+    que hab&iacute;a dado felic&iacute;simo y alto principio
+    a sus caballer&iacute;as, con gran satisfaci&oacute;n de
+    s&iacute; mismo iba caminando hacia su aldea, diciendo a
+    media voz:</p>  <p id="V_118" class="justificado texto-indentado">-Bien te puedes llamar dichosa sobre cuantas
+    hoy viven en la tierra, &iexcl;oh sobre las bellas bella Dulcinea
+    del Toboso! pues te cupo en suerte tener sujeto y rendido
+    a toda tu voluntad e talante a un tan valiente y tan nombrado
+    caballero como lo es y ser&aacute; don Quijote de la Mancha;
+    el cual, como todo el mundo sabe, ayer rescibi&oacute; la
+    orden de caballer&iacute;a, y hoy ha desfecho el mayor tuerto
+    y agravio que form&oacute; la sinraz&oacute;n y cometi&oacute;
+    la crueldad: hoy quit&oacute; el l&aacute;tigo de la mano
+    a aquel despiadado enemigo que tan sin ocasi&oacute;n vapulaba
+    a aquel delicado infante.</p>  <p id="V_119" class="justificado texto-indentado">En esto, lleg&oacute; a un camino
+    que en cuatro se divid&iacute;a, y luego se le vino a la
+    imaginaci&oacute;n las encrucijadas donde los caballeros
+    andantes se pon&iacute;an a pensar cu&aacute;l camino de
+    aqu&eacute;llos tomar&iacute;an; y, por imitarlos, estuvo
+    un rato quedo, y al cabo de haberlo muy bien pensado, solt&oacute;
+    la rienda a Rocinante, dejando a la voluntad del roc&iacute;n
+    la suya, el cual sigui&oacute; su primer intento, que fue
+    el irse camino de su caballeriza. Y habiendo andado como
+    dos millas, descubri&oacute; don Quijote un grande tropel
+    de gente, que, como despu&eacute;s se supo, eran unos mercaderes
+    toledanos que iban a comprar seda a Murcia. Eran seis, y
+    ven&iacute;an con sus quitasoles, con otros cuatro criados
+    a caballo y tres mozos de mulas a pie. Apenas los divis&oacute;
+    don Quijote, cuando se imagin&oacute; ser cosa de nueva aventura;
+    y, por imitar en todo cuanto a &eacute;l le parec&iacute;a
+    posible los pasos que hab&iacute;a le&iacute;do en sus libros,
+    le pareci&oacute; venir all&iacute; de molde uno que pensaba
+    hacer. Y as&iacute;, con gentil continente y denuedo, se
+    afirm&oacute; bien en los estribos, apret&oacute; la lanza,
+    lleg&oacute; la adarga al pecho, y, puesto en la mitad del
+    camino, estuvo esperando que aquellos caballeros andantes
+    llegasen, que ya &eacute;l por tales los ten&iacute;a y juzgaba;
+    y cuando llegaron a trecho que se pudieron ver y o&iacute;r,
+    levant&oacute; don Quijote la voz, y con adem&aacute;n arrogante
+    dijo:</p>  <p id="V_120" class="justificado texto-indentado">-Todo el mundo se tenga, si todo el mundo no confiesa
+    que no hay en el mundo todo doncella m&aacute;s hermosa que
+    la emperatriz de la Mancha, la sin par Dulcinea del Toboso.</p>
+    <p id="V_121" class="justificado texto-indentado">Par&aacute;ronse los mercaderes al son destas razones, y
+    a ver la extra&ntilde;a figura del que las dec&iacute;a,
+    y por la figura y por las razones luego echaron de ver la
+    locura de su due&ntilde;o; mas quisieron ver despacio en
+    qu&eacute; paraba aquella confesi&oacute;n que se les ped&iacute;a,
+    y uno dellos, que era un poco burl&oacute;n y muy mucho discreto,
+    le dijo:</p>  <p id="V_122" class="justificado texto-indentado">-Se&ntilde;or caballero, nosotros no conocemos
+    qui&eacute;n sea esa buena se&ntilde;ora que dec&iacute;s;
+    mostr&aacute;dnosla: que si ella fuere de tanta hermosura
+    como signific&aacute;is, de buena gana y sin apremio alguno
+    confesaremos la verdad que por parte vuestra nos es pedida.</p>
+    <p id="V_123" class="justificado texto-indentado">-Si os la mostrara -replic&oacute; don Quijote-, &iquest;qu&eacute;
+    hici&eacute;rades vosotros en confesar una verdad tan notoria?
+    La importancia est&aacute; en que sin verla lo hab&eacute;is
+    de creer, confesar, afirmar, jurar y defender; donde no,
+    conmigo sois en batalla, gente descomunal y soberbia. Que,
+    ahora veng&aacute;is uno a uno, como pide la orden de caballer&iacute;a,
+    ahora todos juntos, como es costumbre y mala usanza de los
+    de vuestra ralea, aqu&iacute; os aguardo y espero, confiado
+    en la raz&oacute;n que de mi parte tengo.</p>  <p id="V_124" class="justificado texto-indentado">-Se&ntilde;or
+    caballero -replic&oacute; el mercader-, suplico a vuestra
+    merced, en nombre de todos estos pr&iacute;ncipes que aqu&iacute;
+    estamos, que, porque no encarguemos nuestras conciencias
+    confesando una cosa por nosotros jam&aacute;s vista ni o&iacute;da,
+    y m&aacute;s siendo tan en perjuicio de las emperatrices
+    y reinas del Alcarria y Extremadura, que vuestra merced sea
+    servido de mostrarnos alg&uacute;n retrato de esa se&ntilde;ora,
+    aunque sea tama&ntilde;o como un grano de trigo; que por
+    el hilo se sacar&aacute; el ovillo, y quedaremos con esto
+    satisfechos y seguros, y vuestra merced quedar&aacute; contento
+    y pagado; y aun creo que estamos ya tan de su parte que,
+    aunque su retrato nos muestre que es tuerta de un ojo y que
+    del otro le mana bermell&oacute;n y piedra azufre, con todo
+    eso, por complacer a vuestra merced, diremos en su favor
+    todo lo que quisiere.</p>  <p id="V_125" class="justificado texto-indentado">-No le mana, canalla infame -respondi&oacute;
+    don Quijote, encendido en c&oacute;lera-; no le mana, digo,
+    eso que dec&iacute;s, sino &aacute;mbar y algalia entre algodones;
+    y no es tuerta ni corcovada, sino m&aacute;s derecha que
+    un huso de Guadarrama. Pero &iexcl;vosotros pagar&eacute;is la
+    grande blasfemia que hab&eacute;is dicho contra tama&ntilde;a
+    beldad como es la de mi se&ntilde;ora!</p>  <p id="V_126" class="justificado texto-indentado">Y en diciendo esto,
+    arremeti&oacute; con la lanza baja contra el que lo hab&iacute;a
+    dicho, con tanta furia y enojo, que si la buena suerte no
+    hiciera que en la mitad del camino tropezara y cayera Rocinante,
+    lo pasara mal el atrevido mercader. Cay&oacute; Rocinante,
+    y fue rodando su amo una buena pieza por el campo; y queri&eacute;ndose
+    levantar, jam&aacute;s pudo: tal embarazo le causaban la
+    lanza, adarga, espuelas y celada, con el peso de las antiguas
+    armas. Y entre tanto que pugnaba por levantarse y no pod&iacute;a,
+    estaba diciendo:</p>  <p id="V_127" class="justificado texto-indentado">-Non fuy&aacute;is, gente cobarde; gente
+    cautiva, atended; que no por culpa m&iacute;a, sino de mi
+    caballo, estoy aqu&iacute; tendido.</p>  <p id="V_128" class="justificado texto-indentado">Un mozo de mulas de
+    los que all&iacute; ven&iacute;an, que no deb&iacute;a de
+    ser muy bien intencionado, oyendo decir al pobre ca&iacute;do
+    tantas arrogancias, no lo pudo sufrir sin darle la respuesta
+    en las costillas. Y lleg&aacute;ndose a &eacute;l, tom&oacute;
+    la lanza y, despu&eacute;s de haberla hecho pedazos, con
+    uno dellos comenz&oacute; a dar a nuestro don Quijote tantos
+    palos, que, a despecho y pesar de sus armas, le moli&oacute;
+    como cibera. D&aacute;banle voces sus amos que no le diese
+    tanto y que le dejase; pero estaba ya el mozo picado y no
+    quiso dejar el juego hasta envidar todo el resto de su c&oacute;lera;
+    y acudiendo por los dem&aacute;s trozos de la lanza, los
+    acab&oacute; de deshacer sobre el miserable ca&iacute;do,
+    que, con toda aquella tempestad de palos que sobre &eacute;l
+    v&iacute;a, no cerraba la boca, amenazando al cielo y a la
+    tierra, y a los malandrines, que tal le parec&iacute;an.</p>
+    <p id="V_129" class="justificado texto-indentado">Cans&oacute;se el mozo, y los mercaderes siguieron su camino,
+    llevando qu&eacute; contar en todo &eacute;l del pobre apaleado.
+    El cual, despu&eacute;s que se vio solo, torn&oacute; a probar
+    si pod&iacute;a levantarse; pero si no lo pudo hacer cuando
+    sano y bueno, &iquest;c&oacute;mo lo har&iacute;a molido y casi
+    deshecho? Y a&uacute;n se ten&iacute;a por dichoso, pareci&eacute;ndole
+    que aqu&eacute;lla era propia desgracia de caballeros andantes,
+    y toda la atribu&iacute;a a la falta de su caballo; y no
+    era posible levantarse, seg&uacute;n ten&iacute;a brumado
+    todo el cuerpo.</p>   
+    <div class="espacio-altura-doble"></div>
+
+    <div class="center"><h3><ul class="saltos" id="I_9_"><li><a href="#I_8_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_10_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Cap&iacute;tulo V</h3></div>  <div class="center"><p>Donde se prosigue la narraci&oacute;n de la desgracia de
+    nuestro caballero</p></div>   <p id="V_130" class="justificado texto-indentado">Viendo, pues, que, en efeto, no pod&iacute;a
+    menearse, acord&oacute; de acogerse a su ordinario remedio,
+    que era pensar en alg&uacute;n paso de sus libros; y tr&uacute;jole
+    su locura a la memoria aqu&eacute;l de Valdovinos y del marqu&eacute;s
+    de Mantua, cuando Carloto le dej&oacute; herido en la monti&ntilde;a,
+    historia sabida de los ni&ntilde;os, no ignorada de los mozos,
+    celebrada y aun cre&iacute;da de los viejos, y, con todo
+    esto, no m&aacute;s verdadera que los milagros de Mahoma.
+    &Eacute;sta, pues, le pareci&oacute; a &eacute;l que le ven&iacute;a
+    de molde para el paso en que se hallaba; y as&iacute;, con
+    muestras de grande sentimiento, se comenz&oacute; a volcar
+    por la tierra y a decir con debilitado aliento lo mesmo que
+    dicen dec&iacute;a el herido caballero del bosque:</p>   <div class="fragmento"><div id="V_131" class="versos-partidos"><div class="verso">&nbsp;&nbsp;&nbsp;    
+    -&iquest;Donde est&aacute;s, se&ntilde;ora m&iacute;a,</div><div class="numeracion-derecha"></div><br><div class="verso"> Que no te duele mi mal?</div><div class="numeracion-derecha"></div><br><div class="verso"> O no lo sabes, se&ntilde;ora,</div><div class="numeracion-derecha"></div><br><div class="verso">
+    O eres falsa y desleal.</div><div class="numeracion-derecha"></div><br></div><br></div><p id="V_132" class="justificado texto-indentado">Y desta manera fue prosiguiendo
+    el romance, hasta aquellos versos que dicen:</p>   <div class="fragmento"><div id="V_133" class="versos-partidos"><div class="verso">&nbsp;&nbsp;&nbsp;    
+    -&iexcl;Oh noble marqu&eacute;s de Mantua,</div><div class="numeracion-derecha"></div><br><div class="verso"> Mi
+    t&iacute;o y se&ntilde;or carnal!</div><div class="numeracion-derecha"></div><br></div><br></div><p id="V_134" class="justificado texto-indentado">Y quiso la suerte que,
+    cuando lleg&oacute; a este verso, acert&oacute; a pasar por
+    all&iacute; un labrador de su mesmo lugar y vecino suyo,
+    que ven&iacute;a de llevar una carga de trigo al molino;
+    el cual, viendo aquel hombre all&iacute; tendido, se lleg&oacute;
+    a &eacute;l y le pregunt&oacute; que qui&eacute;n era y qu&eacute;
+    mal sent&iacute;a, que tan tristemente se quejaba. Don Quijote
+    crey&oacute;, sin duda, que aqu&eacute;l era el marqu&eacute;s
+    de Mantua, su t&iacute;o, y as&iacute;, no le respondi&oacute;
+    otra cosa si no fue proseguir en su romance, donde le daba
+    cuenta de su desgracia y de los amores del hijo del Emperante
+    con su esposa, todo de la mesma manera que el romance lo
+    canta.</p>  <p id="V_135" class="justificado texto-indentado">El labrador estaba admirado oyendo aquellos disparates;
+    y quit&aacute;ndole la visera, que ya estaba hecha pedazos
+    de los palos, le limpi&oacute; el rostro, que le ten&iacute;a
+    cubierto de polvo, y apenas le hubo limpiado, cuando le conoci&oacute;
+    y le dijo:</p>  <p id="V_136" class="justificado texto-indentado">-Se&ntilde;or Quijana -que as&iacute; se deb&iacute;a
+    de llamar cuando &eacute;l ten&iacute;a juicio y no hab&iacute;a
+    pasado de hidalgo sosegado a caballero andante-, &iquest;qui&eacute;n
+    ha puesto a vuestra merced desta suerte?</p>  <p id="V_137" class="justificado texto-indentado">Pero &eacute;l
+    segu&iacute;a con su romance a cuanto le preguntaba. Viendo
+    esto el buen hombre, lo mejor que pudo le quit&oacute; el
+    peto y espaldar, para ver si ten&iacute;a alguna herida;
+    pero no vio sangre ni se&ntilde;al alguna. Procur&oacute;
+    levantarle del suelo, y no con poco trabajo le subi&oacute;
+    sobre su jumento, por parecer caballer&iacute;a m&aacute;s
+    sosegada. Recogi&oacute; las armas, hasta las astillas de
+    la lanza, y li&oacute;las sobre Rocinante, al cual tom&oacute;
+    de la rienda, y del cabestro al asno, y se encamin&oacute;
+    hacia su pueblo, bien pensativo de o&iacute;r los disparates
+    que don Quijote dec&iacute;a; y no menos iba don Quijote,
+    que, de puro molido y quebrantado, no se pod&iacute;a tener
+    sobre el borrico, y de cuando en cuando daba unos suspiros
+    que los pon&iacute;a en el cielo; de modo, que de nuevo oblig&oacute;
+    a que el labrador le preguntase le dijese qu&eacute; mal
+    sent&iacute;a; y no parece sino que el diablo le tra&iacute;a
+    a la memoria los cuentos acomodados a sus sucesos, porque,
+    en aquel punto, olvid&aacute;ndose de Valdovinos, se acord&oacute;
+    del moro Abindarr&aacute;ez, cuando el Alcaide de Antequera,
+    Rodrigo de Narv&aacute;ez, le prendi&oacute; y llev&oacute;
+    cautivo a su alcaid&iacute;a. De suerte que cuando el labrador
+    le volvi&oacute; a preguntar que c&oacute;mo estaba y qu&eacute;
+    sent&iacute;a, le respondi&oacute; las mesmas palabras y
+    razones que el cautivo abencerraje respond&iacute;a a Rodrigo
+    de Narv&aacute;ez, del mesmo modo que &eacute;l hab&iacute;a
+    le&iacute;do la historia en la <em>Diana</em> de Jorge de Montemayor,
+    donde se escribe; aprovech&aacute;ndose della tan a prop&oacute;sito,
+    que el labrador se iba dando al diablo, de o&iacute;r tanta
+    m&aacute;quina de necedades; por donde conoci&oacute; que
+    su vecino estaba loco, y d&aacute;bale priesa a llegar al
+    pueblo, por excusar el enfado que don Quijote le causaba
+    con su larga arenga. Al cabo de lo cual, dijo:</p>  <p id="V_138" class="justificado texto-indentado">-Sepa vuestra
+    merced, se&ntilde;or don Rodrigo de Narv&aacute;ez, que esta
+    hermosa Jarifa que he dicho es ahora la linda Dulcinea del
+    Toboso, por quien yo he hecho, hago y har&eacute; los m&aacute;s
+    famosos hechos de caballer&iacute;as que se han visto, vean
+    ni ver&aacute;n en el mundo.</p>  <p id="V_139" class="justificado texto-indentado">A esto respondi&oacute; el
+    labrador:</p>  <p id="V_140" class="justificado texto-indentado">-Mire vuestra merced, se&ntilde;or, pecador de
+    m&iacute;, que yo no soy don Rodrigo de Narv&aacute;ez, ni
+    el marqu&eacute;s de Mantua, sino Pedro Alonso, su vecino;
+    ni vuestra merced es Valdovinos, ni Abindarr&aacute;ez, sino
+    el honrado hidalgo del se&ntilde;or Quijana.</p>  <p id="V_141" class="justificado texto-indentado">-Yo s&eacute;
+    qui&eacute;n soy -respondi&oacute; don Quijote-, y s&eacute;
+    que puedo ser, no s&oacute;lo los que he dicho, sino todos
+    los doce Pares de Francia, y aun todos los Nueve de la Fama,
+    pues a todas las haza&ntilde;as que ellos todos juntos y
+    cada uno por s&iacute; hicieron se aventajar&aacute;n las
+    m&iacute;as.</p>  <p id="V_142" class="justificado texto-indentado">En estas pl&aacute;ticas y en otras semejantes
+    llegaron al lugar, a la hora que anochec&iacute;a; pero el
+    labrador aguard&oacute; a que fuese algo m&aacute;s noche,
+    porque no viesen al molido hidalgo tan mal caballero. Llegada,
+    pues, la hora que le pareci&oacute;, entr&oacute; en el pueblo,
+    y en la casa de don Quijote, la cual hall&oacute; toda alborotada;
+    y estaban en ella el cura y el barbero del lugar, que eran
+    grandes amigos de don Quijote, que estaba dici&eacute;ndoles
+    su ama a voces:</p>  <p id="V_143" class="justificado texto-indentado">-&iquest;Qu&eacute; le parece a vuestra merced,
+    se&ntilde;or licenciado Pero P&eacute;rez -que as&iacute;
+    se llamaba el Cura-, de la desgracia de mi se&ntilde;or?
+    Tres d&iacute;as ha que no parecen &eacute;l, ni el roc&iacute;n,
+    ni la adarga, ni la lanza ni las armas. &iexcl;Desventurada de
+    m&iacute;! que me doy a entender, y as&iacute; es ello la
+    verdad como nac&iacute; para morir, que estos malditos libros
+    de caballer&iacute;as que &eacute;l tiene y suele leer tan
+    de ordinario le han vuelto el juicio; que ahora me acuerdo
+    haberle o&iacute;do decir muchas veces, hablando entre s&iacute;,
+    que quer&iacute;a hacerse caballero andante, e irse a buscar
+    las aventuras por esos mundos. Encomendados sean a Satan&aacute;s
+    y a Barrab&aacute;s tales libros, que as&iacute; han echado
+    a perder el m&aacute;s delicado entendimiento que hab&iacute;a
+    en toda la Mancha.</p>  <p id="V_144" class="justificado texto-indentado">La Sobrina dec&iacute;a lo mesmo, y aun
+    dec&iacute;a m&aacute;s:</p>  <p id="V_145" class="justificado texto-indentado">-Sepa, se&ntilde;or maese Nicol&aacute;s
+    -que &eacute;ste era el nombre del barbero-, que muchas veces
+    le aconteci&oacute; a mi se&ntilde;or t&iacute;o estarse
+    leyendo en estos desalmados libros de desventuras dos d&iacute;as
+    con sus noches, al cabo de los cuales, arrojaba el libro
+    de las manos, y pon&iacute;a mano a la espada, y andaba a
+    cuchilladas con las paredes; y cuando estaba muy cansado
+    dec&iacute;a que hab&iacute;a muerto a cuatro gigantes como
+    cuatro torres, y el sudor que sudaba del cansancio dec&iacute;a
+    que era sangre de las feridas que hab&iacute;a recebido en
+    la batalla, y beb&iacute;ase luego un gran jarro de agua
+    fr&iacute;a, y quedaba sano y sosegado, diciendo que aquella
+    agua era una precios&iacute;sima bebida que le hab&iacute;a
+    tra&iacute;do el sabio Esquife, un grande encantador y amigo
+    suyo. Mas yo me tengo la culpa de todo, que no avis&eacute;
+    a vuestras mercedes de los disparates de mi se&ntilde;or
+    t&iacute;o, para que los remediaran antes de llegar a lo
+    que ha llegado, y quemaran todos estos descomulgados libros;
+    que tiene muchos que bien merecen ser abrasados, como si
+    fuesen de herejes.</p>  <p id="V_146" class="justificado texto-indentado">-Esto digo yo tambi&eacute;n -dijo el
+    Cura-, y a fee que no se pase el d&iacute;a de ma&ntilde;ana
+    sin que dellos no se haga acto p&uacute;blico, y sean condenados
+    al fuego, porque no den ocasi&oacute;n a quien los leyere
+    de hacer lo que mi buen amigo debe de haber hecho.</p>  <p id="V_147" class="justificado texto-indentado">Todo
+    esto estaban oyendo el labrador y don Quijote, con que acab&oacute;
+    de entender el labrador la enfermedad de su vecino, y as&iacute;,
+    comenz&oacute; a decir a voces:</p>  <p id="V_148" class="justificado texto-indentado">-Abran vuestras mercedes
+    al se&ntilde;or Valdovinos y al se&ntilde;or marqu&eacute;s
+    de Mantua, que viene mal ferido, y al se&ntilde;or moro Abindarr&aacute;ez,
+    que trae cautivo el valeroso Rodrigo de Narv&aacute;ez, alcaide
+    de Antequera.</p>  <p id="V_149" class="justificado texto-indentado">A estas voces salieron todos, y, como conocieron
+    los unos a su amigo, las otras a su amo y t&iacute;o, que
+    a&uacute;n no se hab&iacute;a apeado del jumento, porque
+    no pod&iacute;a, corrieron a abrazarle. &Eacute;l dijo:</p> 
+    <p id="V_150" class="justificado texto-indentado">-T&eacute;nganse todos, que vengo malferido, por la culpa
+    de mi caballo. Ll&eacute;venme a mi lecho y ll&aacute;mese,
+    si fuere posible, a la sabia Urganda, que cure y cate de
+    mis feridas.</p>  <p id="V_151" class="justificado texto-indentado">-&iexcl;Mir&aacute;, en hora maza -dijo a este punto
+    el Ama-, si me dec&iacute;a a m&iacute; bien mi coraz&oacute;n
+    del pie que cojeaba mi se&ntilde;or! Suba vuestra merced
+    en buen hora; que, sin que venga esa Hurgada, le sabremos
+    aqu&iacute; curar. &iexcl;Malditos, digo, sean otra vez y otras
+    ciento estos libros de caballer&iacute;as, que tal han parado
+    a vuestra merced!</p>  <p id="V_152" class="justificado texto-indentado">Llev&aacute;ronle luego a la cama, y,
+    cat&aacute;ndole las feridas, no le hallaron ninguna; y &eacute;l
+    dijo que todo era molimiento, por haber dado una gran ca&iacute;da
+    con Rocinante, su caballo, combati&eacute;ndose con diez
+    jayanes, los m&aacute;s desaforados y atrevidos que se pudieran
+    fallar en gran parte de la tierra.</p>  <p id="V_153" class="justificado texto-indentado">-&iexcl;Ta, ta! -dijo el Cura-.
+    &iquest;Jayanes hay en la danza? Para mi santiguada que yo los queme
+    ma&ntilde;ana antes que llegue la noche.</p>  <p id="V_154" class="justificado texto-indentado">Hici&eacute;ronle
+    a don Quijote mil preguntas, y a ninguna quiso responder
+    otra cosa sino que le diesen de comer y le dejasen dormir,
+    que era lo que m&aacute;s le importaba. H&iacute;zose as&iacute;,
+    y el Cura se inform&oacute; muy a la larga del labrador del
+    modo que hab&iacute;a hallado a don Quijote. &Eacute;l se
+    lo cont&oacute; todo, con los disparates que al hallarle
+    y al traerle hab&iacute;a dicho; que fue poner m&aacute;s
+    deseo en el Licenciado de hacer lo que otro d&iacute;a hizo,
+    que fue llamar a su amigo el barbero maese Nicol&aacute;s,
+    con el cual se vino a casa de don Quijote.</p>   
+    <div class="espacio-altura-doble"></div>
+
+    <div class="center"><h3><ul class="saltos" id="I_10_"><li><a href="#I_9_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_11_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Cap&iacute;tulo VI</h3></div>  <div class="center"><p>Del donoso y grande escrutinio que el Cura y el Barbero
+    hicieron en la librer&iacute;a de nuestro ingenioso hidalgo</p></div>
+    <p id="V_155" class="justificado texto-indentado">El cual a&uacute;n todav&iacute;a dorm&iacute;a. Pidi&oacute;
+    las llaves, a la Sobrina, del aposento donde estaban los
+    libros autores del da&ntilde;o, y ella se las dio de muy
+    buena gana; entraron dentro todos, y la Ama con ellos, y
+    hallaron m&aacute;s de cien cuerpos de libros grandes, muy
+    bien encuadernados, y otros peque&ntilde;os; y as&iacute;
+    como el Ama los vio, volvi&oacute;se a salir del aposento
+    con gran priesa, y torn&oacute; luego con una escudilla de
+    agua bendita y un hisopo, y dijo:</p>  <p id="V_156" class="justificado texto-indentado">-Tome vuestra merced,
+    se&ntilde;or licenciado; roc&iacute;e este aposento, no est&eacute;
+    aqu&iacute; alg&uacute;n encantador de los muchos que tienen
+    estos libros, y nos encanten, en pena de la que les queremos
+    dar ech&aacute;ndolos del mundo.</p>  <p id="V_157" class="justificado texto-indentado">Caus&oacute; risa al Licenciado
+    la simplicidad del Ama, y mand&oacute; al Barbero que le
+    fuese dando de aquellos libros uno a uno, para ver de qu&eacute;
+    trataban, pues pod&iacute;a ser hallar algunos que no mereciesen
+    castigo de fuego.</p>  <p id="V_158" class="justificado texto-indentado">-No -dijo la Sobrina-, no hay para qu&eacute;
+    perdonar a ninguno, porque todos han sido los da&ntilde;adores:
+    mejor ser&aacute; arrojallos por las ventanas al patio, y
+    hacer un rimero dellos y pegarles fuego; y si no, llevarlos
+    al corral, y all&iacute; se har&aacute; la hoguera, y no
+    ofender&aacute; el humo.</p>  <p id="V_159" class="justificado texto-indentado">Lo mismo dijo el Ama: tal era la
+    gana que las dos ten&iacute;an de la muerte de aquellos inocentes;
+    mas el Cura no vino en ello sin primero leer siquiera los
+    t&iacute;tulos. Y el primero que maese Nicol&aacute;s le
+    dio en las manos fue <em>Los cuatro de Amad&iacute;s de Gaula</em>,
+    y dijo el Cura:</p>  <p id="V_160" class="justificado texto-indentado">-Parece cosa de misterio &eacute;sta; porque,
+    seg&uacute;n he o&iacute;do decir, este libro fue el primero
+    de caballer&iacute;as que se imprimi&oacute; en Espa&ntilde;a,
+    y todos los dem&aacute;s han tomado principio y origen d&eacute;ste;
+    y as&iacute;, me parece que, como a dogmatizador de una secta
+    tan mala, le debemos, sin excusa alguna, condenar al fuego.</p>
+    <p id="V_161" class="justificado texto-indentado">-No, se&ntilde;or -dijo el Barbero-, que tambi&eacute;n
+    he o&iacute;do decir que es el mejor de todos los libros
+    que de este g&eacute;nero se han compuesto; y as&iacute;,
+    como a &uacute;nico en su arte, se debe perdonar.</p>  <p id="V_162" class="justificado texto-indentado">-As&iacute;
+    es verdad -dijo el Cura-, y por esa raz&oacute;n se le otorga
+    la vida por ahora. Veamos esotro que est&aacute; junto a
+    &eacute;l.</p>  <p id="V_163" class="justificado texto-indentado">-Es -dijo el Barbero- las <em>Sergas de Esplandi&aacute;n</em>,
+    hijo leg&iacute;timo de Amad&iacute;s de Gaula.</p>  <p id="V_164" class="justificado texto-indentado">-Pues, en
+    verdad -dijo el Cura- que no le ha de valer al hijo la bondad
+    del padre. Tomad, se&ntilde;ora Ama: abrid esa ventana y
+    echadle al corral, y d&eacute; principio al mont&oacute;n
+    de la hoguera que se ha de hacer.</p>  <p id="V_165" class="justificado texto-indentado">H&iacute;zolo as&iacute;
+    el Ama con mucho contento, y el bueno de Esplandi&aacute;n
+    fue volando al corral, esperando con toda paciencia el fuego
+    que le amenazaba.</p>  <p id="V_166" class="justificado texto-indentado">-Adelante -dijo el Cura.</p>  <p id="V_167" class="justificado texto-indentado">-&Eacute;ste
+    que viene -dijo el Barbero- es <em>Amad&iacute;s de Grecia</em>; y
+    aun todos los deste lado, a lo que creo, son del mesmo linaje
+    de Amad&iacute;s.</p>  <p id="V_168" class="justificado texto-indentado">-Pues vayan todos al corral -dijo el Cura-;
+    que a trueco de quemar a la reina Pintiquiniestra, y al pastor
+    Darinel, y a sus &eacute;glogas, y a las endiabladas y revueltas
+    razones de su autor, quemara con ellos al padre que me engendr&oacute;,
+    si anduviera en figura de caballero andante.</p>  <p id="V_169" class="justificado texto-indentado">-De ese parecer
+    soy yo -dijo el Barbero.</p>  <p id="V_170" class="justificado texto-indentado">-Y aun yo -a&ntilde;adi&oacute;
+    la Sobrina.</p>  <p id="V_171" class="justificado texto-indentado">-Pues as&iacute; es -dijo el Ama-, vengan, y
+    al corral con ellos.</p>  <p id="V_172" class="justificado texto-indentado">Di&eacute;ronselos, que eran muchos,
+    y ella ahorr&oacute; la escalera, y dio con ellos por la
+    ventana abajo.</p>  <p id="V_173" class="justificado texto-indentado">-&iquest;Qui&eacute;n es ese tonel? -dijo el Cura.</p>
+    <p id="V_174" class="justificado texto-indentado">-&Eacute;ste es -respondi&oacute; el Barbero- <em>Don Olivante
+    de Laura</em>.</p>  <p id="V_175" class="justificado texto-indentado">-El autor de ese libro -dijo el Cura- fue el mesmo
+    que compuso a <em>Jard&iacute;n de flores</em>; y en verdad que no
+    sepa determinar cu&aacute;l de los dos libros es m&aacute;s
+    verdadero, o, por decir mejor, menos mentiroso; s&oacute;lo
+    s&eacute; decir que &eacute;ste ir&aacute; al corral por
+    disparatado y arrogante.</p>  <p id="V_176" class="justificado texto-indentado">-&Eacute;ste que se sigue es <em>Florimorte
+    de Hircania</em> -dijo el Barbero.</p>  <p id="V_177" class="justificado texto-indentado">-&iquest;Ah&iacute; est&aacute; el
+    se&ntilde;or Florimorte? -replic&oacute; el Cura-. Pues a
+    fe que ha de parar presto en el corral, a pesar de su extra&ntilde;o
+    nacimiento y so&ntilde;adas aventuras; que no da lugar a
+    otra cosa la dureza y sequedad de su estilo. Al corral con
+    &eacute;l, y con esotro, se&ntilde;ora Ama.</p>  <p id="V_178" class="justificado texto-indentado">-Que me place,
+    se&ntilde;or m&iacute;o -respond&iacute;a ella; y con mucha
+    alegr&iacute;a ejecutaba lo que le era mandado.</p>  <p id="V_179" class="justificado texto-indentado">-&Eacute;ste
+    es <em>El Caballero Platir</em> -dijo el Barbero.</p>  <p id="V_180" class="justificado texto-indentado">-Antiguo libro
+    es &eacute;ste -dijo el Cura-, y no hallo en &eacute;l cosa
+    que merezca venia. Acompa&ntilde;e a los dem&aacute;s sin
+    r&eacute;plica.</p>  <p id="V_181" class="justificado texto-indentado">Y as&iacute; fue hecho. Abri&oacute;se otro
+    libro y vieron que ten&iacute;a por t&iacute;tulo <em>El Caballero
+    de la Cruz</em>.</p>  <p id="V_182" class="justificado texto-indentado">-Por nombre tan santo como este libro tiene
+    se pod&iacute;a perdonar su ignorancia; mas tambi&eacute;n
+    se suele decir, &laquo;tras la cruz est&aacute; el diablo&raquo;: vaya
+    al fuego.</p>  <p id="V_183" class="justificado texto-indentado">Tomando el Barbero otro libro, dijo:</p>  <p id="V_184" class="justificado texto-indentado">-&Eacute;ste
+    es <em>Espejo de caballer&iacute;as</em>.</p>  <p id="V_185" class="justificado texto-indentado">-Ya conozco a su merced
+    -dijo el Cura-. Ah&iacute; anda el se&ntilde;or Reinaldos
+    de Montalb&aacute;n con sus amigos y compa&ntilde;eros, m&aacute;s
+    ladrones que Caco, y los doce Pares, con el verdadero historiador
+    Turp&iacute;n; y en verdad que estoy por condenarlos no m&aacute;s
+    que a destierro perpetuo, siquiera porque tienen parte de
+    la invenci&oacute;n del famoso Mateo Boyardo, de donde tambi&eacute;n
+    teji&oacute; su tela el cristiano poeta Ludovico Ariosto;
+    al cual, si aqu&iacute; le hallo, y que habla en otra lengua
+    que la suya, no le guardar&eacute; respeto alguno; pero si
+    habla en su idioma, le pondr&eacute; sobre mi cabeza.</p>  <p id="V_186" class="justificado texto-indentado">-Pues
+    yo le tengo en italiano -dijo el Barbero-, mas no le entiendo.</p>
+    <p id="V_187" class="justificado texto-indentado">-Ni aun fuera bien que vos le entendi&eacute;rades -respondi&oacute;
+    el Cura-; y aqu&iacute; le perdon&aacute;ramos al se&ntilde;or
+    capit&aacute;n que no le hubiera tra&iacute;do a Espa&ntilde;a
+    y hecho castellano; que le quit&oacute; mucho de su natural
+    valor; y lo mesmo har&aacute;n todos aqu&eacute;llos que
+    los libros de verso quisieren volver en otra lengua: que,
+    por mucho cuidado que pongan y habilidad que muestren, jam&aacute;s
+    llegar&aacute;n al punto que ellos tienen en su primer nacimiento.
+    Digo, en efeto, que este libro, y todos los que se hallaren
+    que tratan destas cosas de Francia, se echen y depositen
+    en un pozo seco, hasta que con m&aacute;s acuerdo se vea
+    lo que se ha de hacer dellos, ecetuando a un <em>Bernardo del
+    Carpio</em> que anda por ah&iacute;, y a otro llamado <em>Roncesvalles</em>;
+    que &eacute;stos, en llegando a mis manos, han de estar en
+    las del Ama, y dellas en las del fuego, sin remisi&oacute;n
+    alguna.</p>  <p id="V_188" class="justificado texto-indentado">Todo lo confirm&oacute; el Barbero, y lo tuvo por
+    bien y por cosa muy acertada, por entender que era el Cura
+    tan buen cristiano y tan amigo de la verdad, que no dir&iacute;a
+    otra cosa por todas las del mundo. Y abriendo otro libro,
+    vio que era <em>Palmer&iacute;n de Oliva</em>, y junto a &eacute;l
+    estaba otro que se llamaba <em>Palmer&iacute;n de Ingalaterra</em>;
+    lo cual visto por el Licenciado, dijo:</p>  <p id="V_189" class="justificado texto-indentado">-Esa oliva se haga
+    luego rajas y se queme, que aun no queden della las cenizas:
+    y esa palma de Ingalaterra se guarde y se conserve como a
+    cosa &uacute;nica, y se haga para ello otra caja como la
+    que hall&oacute; Alejandro en los despojos de Dar&iacute;o,
+    que la diput&oacute; para guardar en ella las obras del poeta
+    Homero. Este libro, se&ntilde;or compadre, tiene autoridad
+    por dos cosas: la una, porque &eacute;l por s&iacute; es
+    muy bueno; y la otra, porque es fama que le compuso un discreto
+    rey de Portugal. Todas las aventuras del castillo de Miraguarda
+    son bon&iacute;simas y de grande artificio; las razones,
+    cortesanas y claras, que guardan y miran el decoro del que
+    habla con mucha propriedad y entendimiento. Digo, pues, salvo
+    vuestro buen parecer, se&ntilde;or maese Nicol&aacute;s,
+    que &eacute;ste y <em>Amad&iacute;s de Gaula</em> queden libres del
+    fuego, y todos los dem&aacute;s, sin hacer m&aacute;s cala
+    y cata, perezcan.</p>  <p id="V_190" class="justificado texto-indentado">-No, se&ntilde;or compadre -replic&oacute;
+    el Barbero-; que &eacute;ste que aqu&iacute; tengo es el
+    afamado <em>Don Belian&iacute;s</em>.</p>  <p id="V_191" class="justificado texto-indentado">-Pues &eacute;se -replic&oacute;
+    el Cura-, con la segunda, tercera y cuarta parte, tienen
+    necesidad de un poco de ruibarbo para purgar la demasiada
+    c&oacute;lera suya, y es menester quitarles todo aquello
+    del castillo de la Fama y otras impertinencias de m&aacute;s
+    importancia, para lo cual se les da t&eacute;rmino ultramarino,
+    y como se enmendaren, as&iacute; se usar&aacute; con ellos
+    de misericordia o de justicia; y en tanto, tenedlos vos,
+    compadre, en vuestra casa, mas no los dej&eacute;is leer
+    a ninguno.</p>  <p id="V_192" class="justificado texto-indentado">-Que me place -respondi&oacute; el Barbero.</p> 
+    <p id="V_193" class="justificado texto-indentado">Y sin querer cansarse m&aacute;s en leer libros de caballer&iacute;as,
+    mand&oacute; al Ama que tomase todos los grandes y diese
+    con ellos en el corral. No se dijo a tonta ni a sorda, sino
+    a quien ten&iacute;a m&aacute;s gana de quemallos que de
+    echar una tela, por grande y delgada que fuera; y asiendo
+    casi ocho de una vez, los arroj&oacute; por la ventana. Por
+    tomar muchos juntos, se le cay&oacute; uno a los pies del
+    Barbero, que le tom&oacute; gana de ver de qui&eacute;n era,
+    y vio que dec&iacute;a: <em>Historia del famoso caballero Tirante
+    el Blanco</em>.</p>  <p id="V_194" class="justificado texto-indentado">-&iexcl;V&aacute;lame Dios! -dijo el Cura, dando una
+    gran voz-. &iexcl;Que aqu&iacute; est&eacute; Tirante el Blanco!
+    D&aacute;dmele ac&aacute;, compadre; que hago cuenta que
+    he hallado en &eacute;l un tesoro de contento y una mina
+    de pasatiempos. Aqu&iacute; est&aacute; don Quirieleis&oacute;n
+    de Montalb&aacute;n, valeroso caballero, y su hermano Tom&aacute;s
+    de Montalb&aacute;n, y el caballero Fonseca, con la batalla
+    que el valiente de Tirante hizo con el alano, y las agudezas
+    de la doncella Placerdemivida, con los amores y embustes
+    de la viuda Reposada, y la se&ntilde;ora Emperatriz, enamorada
+    de Hip&oacute;lito, su escudero. D&iacute;goos verdad, se&ntilde;or
+    compadre, que, por su estilo, es &eacute;ste el mejor libro
+    del mundo: aqu&iacute; comen los caballeros, y duermen, y
+    mueren en sus camas, y hacen testamento antes de su muerte,
+    con otras cosas de que todos los dem&aacute;s libros deste
+    g&eacute;nero carecen. Con todo eso, os digo que merec&iacute;a
+    el que le compuso, pues no hizo tantas necedades de industria,
+    que le echaran a galeras por todos los d&iacute;as de su
+    vida. Llevadle a casa y leedle, y ver&eacute;is que es verdad
+    cuanto d&eacute;l os he dicho.</p>  <p id="V_195" class="justificado texto-indentado">-As&iacute; ser&aacute; -respondi&oacute;
+    el Barbero-; pero &iquest;qu&eacute; haremos destos peque&ntilde;os
+    libros que quedan?</p>  <p id="V_196" class="justificado texto-indentado">-&Eacute;stos -dijo el Cura- no deben
+    de ser de caballer&iacute;as, sino de poes&iacute;a.</p>  <p id="V_197" class="justificado texto-indentado">Y abriendo
+    uno, vio que era <em>La Diana</em> de Jorge de Montemayor, y dijo,
+    creyendo que todos los dem&aacute;s eran del mesmo g&eacute;nero:</p>
+    <p id="V_198" class="justificado texto-indentado">-&Eacute;stos no merecen ser quemados, como los dem&aacute;s,
+    porque no hacen ni har&aacute;n el da&ntilde;o que los de
+    caballer&iacute;as han hecho; que son libros de entendimiento,
+    sin perjuicio de tercero.</p>  <p id="V_199" class="justificado texto-indentado">-&iexcl;Ay se&ntilde;or! -dijo la Sobrina-.
+    Bien los puede vuestra merced mandar quemar, como a los dem&aacute;s;
+    porque no ser&iacute;a mucho que, habiendo sanado mi se&ntilde;or
+    t&iacute;o de la enfermedad caballeresca, leyendo &eacute;stos
+    se le antojase de hacerse pastor y andarse por los bosques
+    y prados cantando y ta&ntilde;endo, y, lo que ser&iacute;a
+    peor, hacerse poeta, que, seg&uacute;n dicen, es enfermedad
+    incurable y pegadiza.</p>  <p id="V_200" class="justificado texto-indentado">-Verdad dice esta doncella -dijo el
+    Cura-, y ser&aacute; bien quitarle a nuestro amigo este tropiezo
+    y ocasi&oacute;n delante. Y pues comenzamos por <em>La Diana</em>
+    de Montemayor, soy de parecer que no se queme, sino que se
+    le quite todo aquello que trata de la sabia Felicia y de
+    la agua encantada, y casi todos los versos mayores, y qu&eacute;desele
+    en hora buena la prosa, y la honra de ser primero en semejantes
+    libros.</p>  <p id="V_201" class="justificado texto-indentado">-&Eacute;ste que se sigue -dijo el Barbero- es <em>La
+    Diana</em> llamada <em>segunda del Salmantino</em>; y &eacute;ste otro
+    que tiene el mesmo nombre, cuyo autor es Gil Polo.</p>  <p id="V_202" class="justificado texto-indentado">-Pues
+    la del Salmantino -respondi&oacute; el Cura-, acompa&ntilde;e
+    y acreciente el n&uacute;mero de los condenados al corral,
+    y la de Gil Polo se guarde como si fuera del mesmo Apolo;
+    y pase adelante, se&ntilde;or compadre; y d&eacute;monos
+    prisa; que se va haciendo tarde.</p>  <p id="V_203" class="justificado texto-indentado">-Este libro es -dijo el
+    Barbero, abriendo otro- <em>Los diez libros de Fortuna de Amor</em>,
+    compuestos por Antonio de Lofraso, poeta sardo.</p>  <p id="V_204" class="justificado texto-indentado">-Por las
+    &oacute;rdenes que receb&iacute; -dijo el Cura-, que desde
+    que Apolo fue Apolo, y las musas musas, y los poetas poetas,
+    tan gracioso ni tan disparatado libro como &eacute;se no
+    se ha compuesto, y que, por su camino, es el mejor y el m&aacute;s
+    &uacute;nico de cuantos deste g&eacute;nero han salido a
+    la luz del mundo; y el que no le ha le&iacute;do puede hacer
+    cuenta que no ha le&iacute;do jam&aacute;s cosa de gusto.
+    D&aacute;dmele ac&aacute;, compadre; que precio m&aacute;s
+    haberle hallado que si me dieran una sotana de raja de Florencia.</p>
+    <p id="V_205" class="justificado texto-indentado">P&uacute;sole aparte con grand&iacute;simo gusto, y el Barbero
+    prosigui&oacute; diciendo:</p>  <p id="V_206" class="justificado texto-indentado">-&Eacute;stos que se siguen son
+    <em>El Pastor de Iberia</em>, <em>Ninfas de Henares</em> y <em>Desenga&ntilde;os
+    de celos</em>.</p>  <p id="V_207" class="justificado texto-indentado">-Pues no hay m&aacute;s que hacer -dijo el Cura-
+    sino entregarlos al brazo seglar del Ama; y no se me pregunte
+    el porqu&eacute;, que ser&iacute;a nunca acabar.</p>  <p id="V_208" class="justificado texto-indentado">-&Eacute;ste
+    que viene es <em>El Pastor de F&iacute;lida</em>.</p>  <p id="V_209" class="justificado texto-indentado">-No es &eacute;se
+    pastor -dijo el Cura-, sino muy discreto cortesano: gu&aacute;rdese
+    como joya preciosa.</p>  <p id="V_210" class="justificado texto-indentado">-Este grande que aqu&iacute; viene se
+    intitula -dijo el Barbero- <em>Tesoro de varias poes&iacute;as</em>.</p>
+    <p id="V_211" class="justificado texto-indentado">-Como ellas no fueran tantas -dijo el Cura-, fueran m&aacute;s
+    estimadas: menester es que este libro se escarde y limpie
+    de algunas bajezas que entre sus grandezas tiene. Gu&aacute;rdese,
+    porque su autor es amigo m&iacute;o, y por respeto de otras
+    m&aacute;s heroicas y levantadas obras que ha escrito.</p>  <p id="V_212" class="justificado texto-indentado">-&Eacute;ste
+    es -sigui&oacute; el Barbero- <em>El Cancionero de L&oacute;pez
+    Maldonado</em>.</p>  <p id="V_213" class="justificado texto-indentado">-Tambi&eacute;n el autor de ese libro -replic&oacute;
+    el Cura- es grande amigo m&iacute;o, y sus versos en su boca
+    admiran a quien los oye; y tal es la suavidad de la voz con
+    que los canta, que encanta. Algo largo es en las &eacute;glogas;
+    pero nunca lo bueno fue mucho: gu&aacute;rdese con los escogidos.
+    Pero, &iquest;qu&eacute; libro es &eacute;se que est&aacute; junto
+    a &eacute;l?</p>  <p id="V_214" class="justificado texto-indentado">-<em>La Galatea</em> de Miguel de Cervantes -dijo el
+    Barbero.</p>  <p id="V_215" class="justificado texto-indentado">-Muchos a&ntilde;os ha que es grande amigo m&iacute;o
+    ese Cervantes, y s&eacute; que es m&aacute;s versado en desdichas
+    que en versos. Su libro tiene algo de buena invenci&oacute;n;
+    propone algo, y no concluye nada: es menester esperar la
+    segunda parte que promete; quiz&aacute; con la emienda alcanzar&aacute;
+    del todo la misericordia que ahora se le niega; y entre tanto
+    que esto se ve, tenedle recluso en vuestra posada.</p>  <p id="V_216" class="justificado texto-indentado">-Se&ntilde;or
+    compadre, que me place -respondi&oacute; el Barbero-. Y aqu&iacute;
+    vienen tres, todos juntos: <em>La Araucana</em> de don Alonso de Ercilla;
+    <em>La Austr&iacute;ada</em> de Juan Rufo, jurado de C&oacute;rdoba,
+    y <em>El Monserrate</em> de Crist&oacute;bal de Viru&eacute;s, poeta
+    valenciano.</p>  <p id="V_217" class="justificado texto-indentado">-Todos esos tres libros -dijo el Cura- son los
+    mejores que, en verso heroico, en lengua castellana est&aacute;n
+    escritos, y pueden competir con los m&aacute;s famosos de
+    Italia; gu&aacute;rdense como las m&aacute;s ricas prendas
+    de poes&iacute;a que tiene Espa&ntilde;a.</p>  <p id="V_218" class="justificado texto-indentado">Cans&oacute;se
+    el Cura de ver m&aacute;s libros; y as&iacute;, a carga cerrada,
+    quiso que todos los dem&aacute;s se quemasen; pero ya ten&iacute;a
+    abierto uno el Barbero, que se llamaba <em>Las l&aacute;grimas
+    de Ang&eacute;lica</em>.</p>  <p id="V_219" class="justificado texto-indentado">-Llor&aacute;ralas yo -dijo el Cura
+    en oyendo el nombre- si tal libro hubiera mandado quemar;
+    porque su autor fue uno de los famosos poetas del mundo,
+    no s&oacute;lo de Espa&ntilde;a, y fue felic&iacute;simo
+    en la traducci&oacute;n de algunas f&aacute;bulas de Ovidio.</p>
+    
+    <div class="espacio-altura-doble"></div>
+
+    <div class="center"><h3><ul class="saltos" id="I_11_"><li><a href="#I_10_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_12_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Cap&iacute;tulo VII</h3></div>  <div class="center"><p>De la segunda salida de nuestro buen caballero don Quijote
+    de la Mancha</p></div>   <p id="V_220" class="justificado texto-indentado">Estando, en esto, comenz&oacute; a dar voces
+    don Quijote, diciendo:</p>  <p id="V_221" class="justificado texto-indentado">-Aqu&iacute;, aqu&iacute;, valerosos
+    caballeros; aqu&iacute; es menester mostrar la fuerza de
+    vuestros valerosos brazos; que los cortesanos llevan lo mejor
+    del torneo.</p>  <p id="V_222" class="justificado texto-indentado">Por acudir a este ruido y estruendo, no se pas&oacute;
+    adelante con el escrutinio de los dem&aacute;s libros que
+    quedaban; y as&iacute;, se cree que fueron al fuego, sin
+    ser vistos ni o&iacute;dos, <em>La Carolea</em> y <em>Le&oacute;n de Espa&ntilde;a</em>,
+    con los hechos del Emperador, compuestos por don Luis de
+    &Aacute;vila, que, sin duda, deb&iacute;an de estar entre
+    los que quedaban, y quiz&aacute;, si el Cura los viera, no
+    pasaran por tan rigurosa sentencia.</p>  <p id="V_223" class="justificado texto-indentado">Cuando llegaron a don
+    Quijote, ya &eacute;l estaba levantado de la cama, y prosegu&iacute;a
+    en sus voces y en sus desatinos, dando cuchilladas y reveses
+    a todas partes, estando tan despierto como si nunca hubiera
+    dormido. Abraz&aacute;ronse con &eacute;l y por fuerza le
+    volvieron al lecho; y despu&eacute;s que hubo sosegado un
+    poco, volvi&eacute;ndose a hablar con el Cura, le dijo:</p> 
+    <p id="V_224" class="justificado texto-indentado">-Por cierto, se&ntilde;or arzobispo Turp&iacute;n, que es
+    gran mengua de los que nos llamamos doce Pares dejar tan
+    sin m&aacute;s ni m&aacute;s, llevar la vitoria deste torneo
+    a los caballeros cortesanos, habiendo nosotros los aventureros
+    ganado el prez en los tres d&iacute;as antecedentes.</p>  <p id="V_225" class="justificado texto-indentado">-Calle
+    vuestra merced, se&ntilde;or compadre -dijo el Cura-; que
+    Dios ser&aacute; servido que la suerte se mude y que lo que
+    hoy se pierde se gane ma&ntilde;ana, y atienda vuestra merced
+    a su salud por agora; que me parece que debe de estar demasiadamente
+    cansado, si ya no es que est&aacute; malferido.</p>  <p id="V_226" class="justificado texto-indentado">-Ferido
+    no -dijo don Quijote-, pero molido y quebrantado, no hay
+    duda en ello; porque aquel bastardo de don Rold&aacute;n
+    me ha molido a palos con el tronco de una encina, y todo,
+    de envidia, porque ve que yo solo soy el opuesto de sus valent&iacute;as.
+    Mas no me llamar&iacute;a yo Reinaldos de Montalb&aacute;n
+    si, en levant&aacute;ndome deste lecho, no me lo pagare,
+    a pesar de todos sus encantamentos; y, por agora, tr&aacute;iganme
+    de yantar, que s&eacute; que es lo que m&aacute;s me har&aacute;
+    al caso, y qu&eacute;dese lo del vengarme a mi cargo.</p>  <p id="V_227" class="justificado texto-indentado">Hici&eacute;ronlo
+    ans&iacute;: di&eacute;ronle de comer, y qued&oacute;se otra
+    vez dormido, y ellos, admirados de su locura.</p>  <p id="V_228" class="justificado texto-indentado">Aquella noche
+    quem&oacute; y abras&oacute; el Ama cuantos libros hab&iacute;a
+    en el corral y en toda la casa, y tales debieron de arder
+    que merec&iacute;an guardarse en perpetuos archivos; mas
+    no lo permiti&oacute; su suerte y la pereza del escruti&ntilde;ador,
+    y as&iacute;, se cumpli&oacute; el refr&aacute;n en ellos
+    de que pagan a las veces justos por pecadores.</p>  <p id="V_229" class="justificado texto-indentado">Uno de los
+    remedios que el Cura y el Barbero dieron, por entonces, para
+    el mal de su amigo, fue que le murasen y tapiasen el aposento
+    de los libros, porque cuando se levantase no los hallase
+    (quiz&aacute; quitando la causa, cesar&iacute;a el efeto),
+    y que dijesen que un encantador se los hab&iacute;a llevado,
+    y el aposento y todo; y as&iacute; fue hecho con mucha presteza.
+    De all&iacute; a dos d&iacute;as se levant&oacute; don Quijote,
+    y lo primero que hizo fue ir a ver sus libros; y como no
+    hallaba el aposento donde le hab&iacute;a dejado, andaba
+    de una en otra parte busc&aacute;ndole. Llegaba adonde sol&iacute;a
+    tener la puerta, y tent&aacute;bala con las manos, y volv&iacute;a
+    y revolv&iacute;a los ojos por todo, sin decir palabra; pero
+    al cabo de una buena pieza, pregunt&oacute; a su ama que
+    hacia qu&eacute; parte estaba el aposento de sus libros.
+    El Ama, que ya estaba bien advertida de lo que hab&iacute;a
+    de responder, le dijo:</p>  <p id="V_230" class="justificado texto-indentado">-&iquest;Qu&eacute; aposento, o qu&eacute;
+    nada, busca vuestra merced? Ya no hay aposento ni libros
+    en esta casa, porque todo se lo llev&oacute; el mesmo diablo.</p>
+    <p id="V_231" class="justificado texto-indentado">-No era diablo -replic&oacute; la Sobrina-, sino un encantador
+    que vino sobre una nube una noche, despu&eacute;s del d&iacute;a
+    que vuestra merced de aqu&iacute; se parti&oacute;, y, ape&aacute;ndose
+    de una sierpe en que ven&iacute;a caballero, entr&oacute;
+    en el aposento, y no s&eacute; lo que se hizo dentro, que
+    a cabo de poca pieza sali&oacute; volando por el tejado,
+    y dej&oacute; la casa llena de humo; y cuando acordamos a
+    mirar lo que dejaba hecho, no vimos libro ni aposento alguno;
+    s&oacute;lo se nos acuerda muy bien a m&iacute; y al Ama,
+    que, al tiempo del partirse aquel mal viejo, dijo en altas
+    voces que por enemistad secreta que ten&iacute;a al due&ntilde;o
+    de aquellos libros y aposento, dejaba hecho el da&ntilde;o
+    en aquella casa que despu&eacute;s se ver&iacute;a. Dijo
+    tambi&eacute;n que se llamaba el sabio Mu&ntilde;at&oacute;n.</p>
+    <p id="V_232" class="justificado texto-indentado">-Frest&oacute;n dir&iacute;a -dijo don Quijote.</p>  <p id="V_233" class="justificado texto-indentado">-No s&eacute;
+    -respondi&oacute; el Ama- si se llamaba Frest&oacute;n o
+    Frit&oacute;n; s&oacute;lo s&eacute; que acab&oacute; en
+    <em>t&oacute;n</em> su nombre.</p>  <p id="V_234" class="justificado texto-indentado">-As&iacute; es -dijo don Quijote-;
+    que &eacute;se es un sabio encantador, grande enemigo m&iacute;o,
+    que me tiene ojeriza, porque sabe por sus artes y letras
+    que tengo de venir, andando los tiempos, a pelear en singular
+    batalla con un caballero a quien &eacute;l favorece, y le
+    tengo de vencer, sin que &eacute;l lo pueda estorbar, y por
+    esto procura hacerme todos los sinsabores que puede; y m&aacute;ndole
+    yo que mal podr&aacute; &eacute;l contradecir ni evitar lo
+    que por el cielo est&aacute; ordenado.</p>  <p id="V_235" class="justificado texto-indentado">-&iquest;Qui&eacute;n duda
+    de eso? -dijo la Sobrina-. Pero, &iquest;qui&eacute;n le mete a
+    vuestra merced, se&ntilde;or t&iacute;o, en esas pendencias?
+    &iquest;No ser&aacute; mejor estarse pac&iacute;fico en su casa
+    y no irse por el mundo a buscar pan de trastrigo, sin considerar
+    que muchos van por lana y vuelven tresquilados?</p>  <p id="V_236" class="justificado texto-indentado">-&iexcl;Oh sobrina
+    m&iacute;a -respondi&oacute; don Quijote-, y cu&aacute;n
+    mal que est&aacute;s en la cuenta! Primero que a m&iacute;
+    me tresquilen tendr&eacute; peladas y quitadas las barbas
+    a cuantos imaginaren tocarme en la punta de un solo cabello.</p>
+    <p id="V_237" class="justificado texto-indentado">No quisieron las dos replicarle m&aacute;s, porque vieron
+    que se le encend&iacute;a la c&oacute;lera.</p>  <p id="V_238" class="justificado texto-indentado">Es, pues, el
+    caso que &eacute;l estuvo quince d&iacute;as en casa muy
+    sosegado, sin dar muestras de querer segundar sus primeros
+    devaneos, en los cuales d&iacute;as pas&oacute; gracios&iacute;simos
+    cuentos con sus dos compadres el Cura y el Barbero, sobre
+    que &eacute;l dec&iacute;a que la cosa de que m&aacute;s
+    necesidad ten&iacute;a el mundo era de caballeros andantes
+    y de que en &eacute;l se resucitase la caballer&iacute;a
+    andantesca. El Cura algunas veces le contradec&iacute;a y
+    otras conced&iacute;a, porque si no guardaba este artificio,
+    no hab&iacute;a poder averiguarse con &eacute;l.</p>  <p id="V_239" class="justificado texto-indentado">En este
+    tiempo, solicit&oacute; don Quijote a un labrador vecino
+    suyo, hombre de bien (si es que este t&iacute;tulo se puede
+    dar al que es pobre), pero de muy poca sal en la mollera.
+    En resoluci&oacute;n, tanto le dijo, tanto le persuadi&oacute;
+    y prometi&oacute;, que el pobre villano se determin&oacute;
+    de salirse con &eacute;l y servirle de escudero. Dec&iacute;ale,
+    entre otras cosas, don Quijote que se dispusiese a ir con
+    &eacute;l de buena gana, porque tal vez le pod&iacute;a suceder
+    aventura, que ganase, en qu&iacute;tame all&aacute; esas
+    pajas, alguna &iacute;nsula, y le dejase a &eacute;l por
+    gobernador della. Con estas promesas y otras tales, Sancho
+    Panza, que as&iacute; se llamaba el labrador, dej&oacute;
+    su mujer y hijos y asent&oacute; por escudero de su vecino.</p>
+    <p id="V_240" class="justificado texto-indentado">Dio luego don Quijote orden en buscar dineros, y, vendiendo
+    una cosa, y empe&ntilde;ando otra, y malbarat&aacute;ndolas
+    todas, lleg&oacute; una razonable cantidad. Acomod&oacute;se
+    asimesmo de una rodela, que pidi&oacute; prestada a un su
+    amigo, y, pertrechando su rota celada lo mejor que pudo,
+    avis&oacute; a su escudero Sancho del d&iacute;a y la hora
+    que pensaba ponerse en camino, para que &eacute;l se acomodase
+    de lo que viese que m&aacute;s le era menester; sobre todo,
+    le encarg&oacute; que llevase alforjas. &Eacute;l dijo que
+    s&iacute; llevar&iacute;a, y que ansimesmo pensaba llevar
+    un asno que ten&iacute;a muy bueno, porque &eacute;l no estaba
+    duecho a andar mucho a pie. En lo del asno repar&oacute;
+    un poco don Quijote, imaginando si se le acordaba si alg&uacute;n
+    caballero andante hab&iacute;a tra&iacute;do escudero caballero
+    asnalmente, pero nunca le vino alguno a la memoria; mas,
+    con todo esto, determin&oacute; que le llevase, con presupuesto
+    de acomodarle de m&aacute;s honrada caballer&iacute;a en
+    habiendo ocasi&oacute;n para ello, quit&aacute;ndole el caballo
+    al primer descort&eacute;s caballero que topase. Provey&oacute;se
+    de camisas y de las dem&aacute;s cosas que &eacute;l pudo,
+    conforme al consejo que el ventero le hab&iacute;a dado;
+    todo lo cual hecho y cumplido, sin despedirse Panza de sus
+    hijos y mujer, ni don Quijote de su ama y sobrina, una noche
+    se salieron del lugar sin que persona los viese; en la cual
+    caminaron tanto, que al amanecer se tuvieron por seguros
+    de que no los hallar&iacute;an aunque los buscasen.</p>  <p id="V_241" class="justificado texto-indentado">Iba
+    Sancho Panza sobre su jumento como un patriarca, con sus
+    alforjas y bota, con mucho deseo de verse ya gobernador de
+    la &iacute;nsula que su amo le hab&iacute;a prometido. Acert&oacute;
+    don Quijote a tomar la misma derrota y camino que el que
+    &eacute;l hab&iacute;a tomado en su primer viaje, que fue
+    por el campo de Montiel, por el cual caminaba con menos pesadumbre
+    que la vez pasada, porque, por ser la hora de la ma&ntilde;ana
+    y herirles a soslayo los rayos del sol, no les fatigaban.
+    Dijo en esto Sancho Panza a su amo:</p>  <p id="V_242" class="justificado texto-indentado">-Mire vuestra merced,
+    se&ntilde;or caballero andante, que no se le olvide lo que
+    de la &iacute;nsula me tiene prometido; que yo la sabr&eacute;
+    gobernar, por grande que sea.</p>  <p id="V_243" class="justificado texto-indentado">A lo cual le respondi&oacute;
+    don Quijote:</p>  <p id="V_244" class="justificado texto-indentado">-Has de saber, amigo Sancho Panza, que fue
+    costumbre muy usada de los caballeros andantes antiguos hacer
+    gobernadores a sus escuderos de las &iacute;nsulas o reinos
+    que ganaban, y yo tengo determinado de que por m&iacute;
+    no falte tan agradecida usanza; antes pienso aventajarme
+    en ella: porque ellos algunas veces, y quiz&aacute; las m&aacute;s,
+    esperaban a que sus escuderos fuesen viejos, y ya despu&eacute;s
+    de hartos de servir y de llevar malos d&iacute;as y peores
+    noches, les daban alg&uacute;n t&iacute;tulo de conde, o,
+    por lo mucho, de marqu&eacute;s, de alg&uacute;n valle o
+    provincia de poco m&aacute;s a menos; pero si t&uacute; vives
+    y yo vivo, bien podr&iacute;a ser que antes de seis d&iacute;as
+    ganase yo tal reino, que tuviese otros a &eacute;l adherentes,
+    que viniesen de molde para coronarte por rey de uno dellos.
+    Y no lo tengas a mucho; que cosas y casos acontecen a los
+    tales caballeros, por modos tan nunca vistos ni pensados,
+    que con facilidad te podr&iacute;a dar a&uacute;n m&aacute;s
+    de lo que te prometo.</p>  <p id="V_245" class="justificado texto-indentado">-De esa manera -respondi&oacute; Sancho
+    Panza-, si yo fuese rey por alg&uacute;n milagro de los que
+    vuestra merced dice, por lo menos, Juana Guti&eacute;rrez,
+    mi o&iacute;slo, vendr&iacute;a a ser reina, y mis hijos
+    infantes.</p>  <p id="V_246" class="justificado texto-indentado">-Pues, &iquest;qui&eacute;n lo duda? -respondi&oacute;
+    don Quijote.</p>  <p id="V_247" class="justificado texto-indentado">-Yo lo dudo -replic&oacute; Sancho Panza-;
+    porque tengo para m&iacute; que, aunque lloviese Dios reinos
+    sobre la tierra, ninguno asentar&iacute;a bien sobre la cabeza
+    de Mari Guti&eacute;rrez. Sepa, se&ntilde;or, que no vale
+    dos maraved&iacute;s para reina; condesa le caer&aacute;
+    mejor, y aun Dios y ayuda.</p>  <p id="V_248" class="justificado texto-indentado">-Encomi&eacute;ndalo t&uacute;
+    a Dios, Sancho -respondi&oacute; don Quijote-, que &Eacute;l
+    le dar&aacute; lo que m&aacute;s le convenga; pero no apoques
+    tu &aacute;nimo tanto, que te vengas a contentar con menos
+    que con ser adelantado.</p>  <p id="V_249" class="justificado texto-indentado">-No lo har&eacute;, se&ntilde;or
+    m&iacute;o -respondi&oacute; Sancho-, y m&aacute;s teniendo
+    tan principal amo en vuestra merced, que me sabr&aacute;
+    dar todo aquello que me est&eacute; bien y yo pueda llevar.</p>
+    
+    <div class="espacio-altura-doble"></div>
+
+    <div class="center"><h3><ul class="saltos" id="I_12_"><li><a href="#I_11_"><span class="glyphicon glyphicon-triangle-left"></span><small class="anterior">Anterior</small></a></li><li><a href="#I_13_"><span class="glyphicon glyphicon-triangle-right"></span><small class="siguiente">Siguiente</small></a></li></ul>Cap&iacute;tulo VIII</h3></div>  <div class="center"><p>Del buen suceso que el valeroso don Quijote tuvo en la
+    espantable y jam&aacute;s imaginada aventura de los molinos
+    de viento, con otros sucesos dignos de felice recordaci&oacute;n</p></div>
+    <p id="V_250" class="justificado texto-indentado">En esto, descubrieron treinta o cuarenta molinos de viento
+    que hay en aquel campo, y as&iacute; como don Quijote los
+    vio, dijo a su escudero:</p>  <p id="V_251" class="justificado texto-indentado">-La ventura va guiando nuestras
+    cosas mejor de lo que acert&aacute;ramos a desear; porque
+    ves all&iacute;, amigo Sancho Panza, donde se descubren treinta,
+    o pocos m&aacute;s, desaforados gigantes, con quien pienso
+    hacer batalla y quitarles a todos las vidas, con cuyos despojos
+    comenzaremos a enriquecer; que &eacute;sta es buena guerra,
+    y es gran servicio de Dios quitar tan mala simiente de sobre
+    la faz de la tierra.</p>  <p id="V_252" class="justificado texto-indentado">-&iquest;Qu&eacute; gigantes? -dijo Sancho
+    Panza.</p>  <p id="V_253" class="justificado texto-indentado">-Aqu&eacute;llos que all&iacute; ves -respondi&oacute;
+    su amo- de los brazos largos, que los suelen tener algunos
+    de casi dos leguas.</p>  <p id="V_254" class="justificado texto-indentado">-Mire vuestra merced -respondi&oacute;
+    Sancho- que aqu&eacute;llos que all&iacute; se parecen no
+    son gigantes, sino molinos de viento, y lo que en ellos parecen
+    brazos son las aspas, que, volteadas del viento, hacen andar
+    la piedra del molino.</p>  <p id="V_255" class="justificado texto-indentado">-Bien parece -respondi&oacute; don
+    Quijote- que no est&aacute;s cursado en esto de las aventuras:
+    ellos son gigantes; y si tienes miedo, qu&iacute;tate de
+    ah&iacute;, y ponte en oraci&oacute;n en el espacio que yo
+    voy a entrar con ellos en fiera y desigual batalla.</p>  <p id="V_256" class="justificado texto-indentado">Y diciendo
+    esto, dio de espuelas a su caballo Rocinante, sin atender
+    a las voces que su escudero Sancho le daba, advirti&eacute;ndole
+    que, sin duda alguna, eran molinos de viento, y no gigantes,
+    aqu&eacute;llos que iba a acometer. Pero &eacute;l iba tan
+    puesto en que eran gigantes, que ni o&iacute;a las voces
+    de su escudero Sancho, ni echaba de ver, aunque estaba ya
+    bien cerca, lo que eran; antes iba diciendo en voces altas:</p>
+    <p id="V_257" class="justificado texto-indentado">-Non fuyades, cobardes y viles criaturas; que un solo caballero
+    es el que os acomete.</p>  <p id="V_258" class="justificado texto-indentado">Levant&oacute;se en esto un poco de
+    viento, y las grandes aspas comenzaron a moverse, lo cual
+    visto por don Quijote, dijo:</p>  <p id="V_259" class="justificado texto-indentado">-Pues aunque mov&aacute;is
+    m&aacute;s brazos que los del gigante Briareo, me lo hab&eacute;is
+    de pagar.</p>  <p id="V_260" class="justificado texto-indentado">Y diciendo esto, y encomend&aacute;ndose de todo
+    coraz&oacute;n a su se&ntilde;ora Dulcinea, pidi&eacute;ndole
+    que en tal trance le socorriese, bien cubierto de su rodela,
+    con la lanza en el ristre, arremeti&oacute; a todo el galope
+    de Rocinante y embisti&oacute; con el primero molino que
+    estaba delante; y d&aacute;ndole una lanzada en el aspa,
+    la volvi&oacute; el viento con tanta furia, que hizo la lanza
+    pedazos, llev&aacute;ndose tras s&iacute; al caballo y al
+    caballero, que fue rodando muy maltrecho por el campo. Acudi&oacute;
+    Sancho Panza a socorrerle, a todo el correr de su asno, y
+    cuando lleg&oacute; hall&oacute; que no se pod&iacute;a menear:
+    tal fue el golpe que dio con &eacute;l Rocinante.</p>  <p id="V_261" class="justificado texto-indentado">-&iexcl;V&aacute;lame
+    Dios! -dijo Sancho-. &iquest;No le dije yo a vuestra merced que
+    mirase bien lo que hac&iacute;a, que no eran sino molinos
+    de viento, y no lo pod&iacute;a ignorar sino quien llevase
+    otros tales en la cabeza?</p>  <p id="V_262" class="justificado texto-indentado">-Calla, amigo Sancho -respondi&oacute;
+    don Quijote-; que las cosas de la guerra, m&aacute;s que
+    otras, est&aacute;n sujetas a continua mudanza; cuanto m&aacute;s,
+    que yo pienso, y es as&iacute; verdad, que aquel sabio Frest&oacute;n
+    que me rob&oacute; el aposento y los libros ha vuelto estos
+    gigantes en molinos por quitarme la gloria de su vencimiento:
+    tal es la enemistad que me tiene; mas al cabo al cabo, han
+    de poder poco sus malas artes contra la bondad de mi espada.</p>
+    <p id="V_263" class="justificado texto-indentado">-Dios lo haga como puede -respondi&oacute; Sancho Panza.</p>
+    <p id="V_264" class="justificado texto-indentado">Y, ayud&aacute;ndole a levantar, torn&oacute; a subir sobre
+    Rocinante, que medio despaldado estaba. Y, hablando en la
+    pasada aventura, siguieron el camino del Puerto L&aacute;pice,
+    porque all&iacute; dec&iacute;a don Quijote que no era posible
+    dejar de hallarse muchas y diversas aventuras, por ser lugar
+    muy pasajero, sino que iba muy pesaroso, por haberle faltado
+    la lanza; y dici&eacute;ndoselo a su escudero, le dijo:</p> 
+    <p id="V_265" class="justificado texto-indentado">-Yo me acuerdo haber le&iacute;do que un caballero espa&ntilde;ol
+    llamado Diego P&eacute;rez de Vargas, habi&eacute;ndosele
+    en una batalla roto la espada, desgaj&oacute; de una encina
+    un pesado ramo o tronco, y con &eacute;l hizo tales cosas
+    aquel d&iacute;a, y machac&oacute; tantos moros, que le qued&oacute;
+    por sobrenombre Machuca, y as&iacute; &eacute;l como sus
+    decendientes se llamaron desde aquel d&iacute;a en adelante
+    Vargas y Machuca. Hete dicho esto porque de la primera encina
+    o roble que se me depare pienso desgajar otro tronco, tal
+    y tan bueno como aqu&eacute;l que me imagino; y pienso hacer
+    con &eacute;l tales haza&ntilde;as, que t&uacute; te tengas
+    por bien afortunado de haber merecido venir a vella, y a
+    ser testigo de cosas que apenas podr&aacute;n ser cre&iacute;das.</p>
+    <p id="V_266" class="justificado texto-indentado">-A la mano de Dios -dijo Sancho-; yo lo creo todo as&iacute;
+    como vuestra merced lo dice; pero ender&eacute;cese un poco;
+    que parece que va de medio lado, y debe de ser del molimiento
+    de la ca&iacute;da.</p>  <p id="V_267" class="justificado texto-indentado">-As&iacute; es la verdad -respondi&oacute;
+    don Quijote-; y si no me quejo del dolor, es porque no es
+    dado a los caballeros andantes quejarse de herida alguna,
+    aunque se le salgan las tripas por ella.</p>  <p id="V_268" class="justificado texto-indentado">-Si eso es as&iacute;,
+    no tengo yo qu&eacute; replicar -respondi&oacute; Sancho-;
+    pero sabe Dios si yo me holgara que vuestra merced se quejara
+    cuando alguna cosa le doliera. De m&iacute; s&eacute; decir
+    que me he de quejar del m&aacute;s peque&ntilde;o dolor que
+    tenga, si ya no se entiende tambi&eacute;n con los escuderos
+    de los caballeros andantes eso del no quejarse.</p>  <p id="V_269" class="justificado texto-indentado">No se dej&oacute;
+    de re&iacute;r don Quijote de la simplicidad de su escudero;
+    y as&iacute;, le declar&oacute; que pod&iacute;a muy bien
+    quejarse como y cuando quisiese, sin gana o con ella; que
+    hasta entonces no hab&iacute;a le&iacute;do cosa en contrario
+    en la orden de caballer&iacute;a. D&iacute;jole Sancho que
+    mirase que era hora de comer. Respondi&oacute;le su amo que
+    por entonces no le hac&iacute;a menester; que comiese &eacute;l
+    cuando se le antojase. Con esta licencia, se acomod&oacute;
+    Sancho lo mejor que pudo sobre su jumento, y sacando de las
+    alforjas lo que en ellas hab&iacute;a puesto, iba caminando
+    y comiendo detr&aacute;s de su amo muy de su espacio, y de
+    cuando en cuando empinaba la bota, con tanto gusto, que le
+    pudiera envidiar el m&aacute;s regalado bodegonero de M&aacute;laga.
+    Y en tanto que &eacute;l iba de aquella manera menudeando
+    tragos, no se le acordaba de ninguna promesa que su amo le
+    hubiese hecho, ni ten&iacute;a por ning&uacute;n trabajo,
+    sino por mucho descanso, andar buscando las aventuras, por
+    peligrosas que fuesen.</p>  <p id="V_270" class="justificado texto-indentado">En resoluci&oacute;n, aquella noche
+    la pasaron entre unos &aacute;rboles, y del uno dellos desgaj&oacute;
+    don Quijote un ramo seco que casi le pod&iacute;a servir
+    de lanza, y puso en &eacute;l el hierro que quit&oacute;
+    de la que se le hab&iacute;a quebrado. Toda aquella noche
+    no durmi&oacute; don Quijote, pensando en su se&ntilde;ora
+    Dulcinea, por acomodarse a lo que hab&iacute;a le&iacute;do
+    en sus libros, cuando los caballeros pasaban sin dormir muchas
+    noches en las florestas y despoblados, entretenidos con las
+    memorias de sus se&ntilde;oras. No la pas&oacute; ans&iacute;
+    Sancho Panza; que, como ten&iacute;a el est&oacute;mago lleno,
+    y no de agua de chicoria, de un sue&ntilde;o se la llev&oacute;
+    toda, y no fueran parte para despertarle, si su amo no lo
+    llamara, los rayos del sol, que le daban en el rostro, ni
+    el canto de las aves, que, muchas y muy regocijadamente,
+    la venida del nuevo d&iacute;a saludaban. Al levantarse dio
+    un tiento a la bota, y hall&oacute;la algo m&aacute;s flaca
+    que la noche antes, y afligi&oacute;sele el coraz&oacute;n,
+    por parecerle que no llevaban camino de remediar tan presto
+    su falta. No quiso desayunarse don Quijote, porque, como
+    est&aacute; dicho, dio en sustentarse de sabrosas memorias.
+    Tornaron a su comenzado camino del Puerto L&aacute;pice,
+    y a obra de las tres del d&iacute;a le descubrieron.</p>  <p id="V_271" class="justificado texto-indentado">-Aqu&iacute;
+    -dijo en vi&eacute;ndole don Quijote- podemos, hermano Sancho
+    Panza, meter las manos hasta los codos en esto que llaman
+    aventuras. Mas advierte que, aunque me veas en los mayores
+    peligros del mundo, no has de poner mano a tu espada para
+    defenderme, si ya no vieres que los que me ofenden es canalla
+    y gente baja, que en tal caso bien puedes ayudarme; pero
+    si fueren caballeros, en ninguna manera te es l&iacute;cito
+    ni concedido por las leyes de caballer&iacute;a que me ayudes,
+    hasta que seas armado caballero.</p>  <p id="V_272" class="justificado texto-indentado">-Por cierto, se&ntilde;or
+    -respondi&oacute; Sancho-, que vuestra merced sea muy bien
+    obedecido en esto; y m&aacute;s, que yo de m&iacute;o me
+    soy pac&iacute;fico y enemigo de meterme en ruidos ni pendencias;
+    bien es verdad que en lo que tocare a defender mi persona
+    no tendr&eacute; mucha cuenta con esas leyes, pues las divinas
+    y humanas permiten que cada uno se defienda de quien quisiere
+    agraviarle.</p>  <p id="V_273" class="justificado texto-indentado">-No digo yo menos -respondi&oacute; don Quijote-;
+    pero en esto de ayudarme contra caballeros has de tener a
+    raya tus naturales &iacute;mpetus.</p>  <p id="V_274" class="justificado texto-indentado">-Digo que as&iacute;
+    lo har&eacute; -respondi&oacute; Sancho- y que guardar&eacute;
+    ese preceto tan bien como el d&iacute;a del domingo.</p>  <p id="V_275" class="justificado texto-indentado">Estando
+    en estas razones, asomaron por el camino dos frailes de la
+    orden de San Benito, caballeros sobre dos dromedarios; que
+    no eran m&aacute;s peque&ntilde;as dos mulas en que ven&iacute;an.
+    Tra&iacute;an sus antojos de camino y sus quitasoles. Detr&aacute;s
+    dellos ven&iacute;a un coche, con cuatro o cinco de a caballo
+    que le acompa&ntilde;aban y dos mozos de mulas a pie. Ven&iacute;a
+    en el coche, como despu&eacute;s se supo, una se&ntilde;ora
+    vizca&iacute;na, que iba a Sevilla, donde estaba su marido,
+    que pasaba a las Indias con un muy honroso cargo. No ven&iacute;an
+    los frailes con ella, aunque iban el mesmo camino; mas apenas
+    los divis&oacute; don Quijote, cuando dijo a su escudero:</p>
+    <p id="V_276" class="justificado texto-indentado">-O yo me enga&ntilde;o, o &eacute;sta ha de ser la m&aacute;s
+    famosa aventura que se haya visto; porque aquellos bultos
+    negros que all&iacute; parecen deben de ser, y son, sin duda,
+    algunos encantadores que llevan hurtada alguna princesa en
+    aquel coche, y es menester deshacer este tuerto a todo mi
+    poder&iacute;o.</p>  <p id="V_277" class="justificado texto-indentado">-Peor ser&aacute; esto que los molinos de
+    viento -dijo Sancho-. Mire, se&ntilde;or, que aqu&eacute;llos
+    son frailes de San Benito, y el coche debe de ser de alguna
+    gente pasajera. Mire que digo que mire bien lo que hace,
+    no sea el diablo que le enga&ntilde;e.</p>  <p id="V_278" class="justificado texto-indentado">-Ya te he dicho,
+    Sancho -respondi&oacute; don Quijote-, que sabes poco de
+    achaque de aventuras; lo que yo digo es verdad, y ahora lo
+    ver&aacute;s.</p>  <p id="V_279" class="justificado texto-indentado">Y diciendo esto, se adelant&oacute; y se puso
+    en la mitad del camino por donde los frailes ven&iacute;an,
+    y, en llegando tan cerca que a &eacute;l le pareci&oacute;
+    que le podr&iacute;an o&iacute;r lo que dijese, en alta voz
+    dijo:</p>  <p id="V_280" class="justificado texto-indentado">-Gente endiablada y descomunal, dejad luego al punto
+    las altas princesas que en ese coche llev&aacute;is forzadas;
+    si no, aparejaos a recebir presta muerte, por justo castigo
+    de vuestras malas obras.</p>  <p id="V_281" class="justificado texto-indentado">Detuvieron los frailes las riendas,
+    y quedaron admirados, as&iacute; de la figura de don Quijote
+    como de sus razones, a las cuales respondieron:</p>  <p id="V_282" class="justificado texto-indentado">-Se&ntilde;or
+    caballero, nosotros no somos endiablados ni descomunales,
+    sino dos religiosos de San Benito que vamos nuestro camino,
+    y no sabemos si en este coche vienen, o no, ningunas forzadas
+    princesas.</p>  <p id="V_283" class="justificado texto-indentado">-Para conmigo no hay palabras blandas; que ya
+    yo os conozco, fementida canalla -dijo don Quijote.</p>  <p id="V_284" class="justificado texto-indentado">Y, sin
+    esperar m&aacute;s respuesta, pic&oacute; a Rocinante y,
+    la lanza baja, arremeti&oacute; contra el primero fraile,
+    con tanta furia y denuedo que, si el fraile no se dejara
+    caer de la mula, &eacute;l le hiciera venir al suelo mal
+    de su grado, y aun mal ferido, si no cayera muerto. El segundo
+    religioso, que vio del modo que trataban a su compa&ntilde;ero,
+    puso piernas al castillo de su buena mula, y comenz&oacute;
+    a correr por aquella campa&ntilde;a, m&aacute;s ligero que
+    el mesmo viento.</p>  <p id="V_285" class="justificado texto-indentado">Sancho Panza, que vio en el suelo al fraile,
+    ape&aacute;ndose ligeramente de su asno, arremeti&oacute;
+    a &eacute;l y le comenz&oacute; a quitar los h&aacute;bitos.
+    Llegaron en esto dos mozos de los frailes y pregunt&aacute;ronle
+    que por qu&eacute; le desnudaba. Respondi&oacute;les Sancho
+    que aquello le tocaba a &eacute;l leg&iacute;timamente, como
+    despojos de la batalla que su se&ntilde;or don Quijote hab&iacute;a
+    ganado. Los mozos, que no sab&iacute;an de burlas, ni entend&iacute;an
+    aquello de despojos ni batallas, viendo que ya don Quijote
+    estaba desviado de all&iacute;, hablando con las que en el
+    coche ven&iacute;an, arremetieron con Sancho y dieron con
+    &eacute;l en el suelo, y, sin dejarle pelo en las barbas,
+    le molieron a coces y le dejaron tendido en el suelo sin
+    aliento ni sentido; y, sin detenerse un punto, torn&oacute;
+    a subir el fraile, todo temeroso y acobardado y sin color
+    en el rostro; y cuando se vio a caballo, pic&oacute; tras
+    su compa&ntilde;ero, que un buen espacio de all&iacute; le
+    estaba aguardando, y esperando en qu&eacute; paraba aquel
+    sobresalto, y, sin querer aguardar el fin de todo aquel comenzado
+    suceso, siguieron su camino, haci&eacute;ndose m&aacute;s
+    cruces que si llevaran al diablo a las espaldas.</p>  <p id="V_286" class="justificado texto-indentado">Don Quijote
+    estaba, como se ha dicho, hablando con la se&ntilde;ora del
+    coche, dici&eacute;ndole:</p>  <p id="V_287" class="justificado texto-indentado">-La vuestra fermosura, se&ntilde;ora
+    m&iacute;a, puede facer de su persona lo que m&aacute;s le
+    viniere en talante, porque ya la soberbia de vuestros robadores
+    yace por el suelo, derribada por este mi fuerte brazo; y
+    porque no pen&eacute;is por saber el nombre de vuestro libertador,
+    sabed que yo me llamo don Quijote de la Mancha, caballero
+    andante y aventurero, y cautivo de la sin par y hermosa do&ntilde;a
+    Dulcinea del Toboso; y en pago del beneficio que de m&iacute;
+    hab&eacute;is recebido, no quiero otra cosa sino que volv&aacute;is
+    al Toboso, y que de mi parte os present&eacute;is ante esta
+    se&ntilde;ora y le dig&aacute;is lo que por vuestra libertad
+    he fecho.</p>  <p id="V_288" class="justificado texto-indentado">Todo esto que don Quijote dec&iacute;a escuchaba
+    un escudero de los que el coche acompa&ntilde;aban, que era
+    vizca&iacute;no, el cual, viendo que no quer&iacute;a dejar
+    pasar el coche adelante, sino que dec&iacute;a que luego
+    hab&iacute;a de dar la vuelta al Toboso, se fue para don
+    Quijote y, asi&eacute;ndole de la lanza, le dijo, en mala
+    lengua castellana y peor vizca&iacute;na, desta manera:</p> 
+    <p id="V_289" class="justificado texto-indentado">-Anda, caballero que mal andes; por el Dios que cri&oacute;me,
+    que, si no dejas coche, as&iacute; te matas como est&aacute;s
+    ah&iacute; vizca&iacute;no.</p>  <p id="V_290" class="justificado texto-indentado">Entendi&oacute;le muy bien don
+    Quijote, y con mucho sosiego le respondi&oacute;:</p>  <p id="V_291" class="justificado texto-indentado">-Si fueras
+    caballero, como no lo eres, ya yo hubiera castigado tu sandez
+    y atrevimiento, cautiva criatura.</p>  <p id="V_292" class="justificado texto-indentado">A lo cual replic&oacute;
+    el vizca&iacute;no:</p>  <p id="V_293" class="justificado texto-indentado">-&iquest;Yo no caballero? Juro a Dios tan mientes
+    como cristiano. Si lanza arrojas y espada sacas, &iexcl;el agua
+    cu&aacute;n presto ver&aacute;s que al gato llevas! Vizca&iacute;no
+    por tierra, hidalgo por mar, hidalgo por el diablo, y mientes
+    que mira si otra dices cosa.</p>  <p id="V_294" class="justificado texto-indentado">-Ahora lo veredes, dijo Agrajes
+    -respondi&oacute; don Quijote.</p>  <p id="V_295" class="justificado texto-indentado">Y arrojando la lanza en el
+    suelo, sac&oacute; su espada y embraz&oacute; su rodela,
+    y arremeti&oacute; al vizca&iacute;no, con determinaci&oacute;n
+    de quitarle la vida. El vizca&iacute;no, que as&iacute; le
+    vio venir, aunque quisiera apearse de la mula, que, por ser
+    de las malas de alquiler, no hab&iacute;a que fiar en ella,
+    no pudo hacer otra cosa sino sacar su espada; pero av&iacute;nole
+    bien que se hall&oacute; junto al coche, de donde pudo tomar
+    una almohada, que le sirvi&oacute; de escudo, y luego se
+    fueron el uno para el otro, como si fueran dos mortales enemigos.
+    La dem&aacute;s gente quisiera ponerlos en paz; mas no pudo,
+    porque dec&iacute;a el vizca&iacute;no en sus mal trabadas
+    razones que si no le dejaban acabar su batalla, que &eacute;l
+    mismo hab&iacute;a de matar a su ama y a toda la gente que
+    se lo estorbase. La se&ntilde;ora del coche, admirada y temerosa
+    de lo que ve&iacute;a, hizo al cochero que se desviase de
+    all&iacute; alg&uacute;n poco, y desde lejos se puso a mirar
+    la rigurosa contienda, en el discurso de la cual dio el vizca&iacute;no
+    una gran cuchillada a don Quijote, encima de un hombro, por
+    encima de la rodela, que, a d&aacute;rsela sin defensa, le
+    abriera hasta la cintura. Don Quijote, que sinti&oacute;
+    la pesadumbre de aquel desaforado golpe, dio una gran voz,
+    diciendo:</p>  <p id="V_296" class="justificado texto-indentado">-&iexcl;Oh se&ntilde;ora de mi alma, Dulcinea, flor
+    de la fermosura, socorred a este vuestro caballero, que por
+    satisfacer a la vuestra mucha bondad, en este riguroso trance
+    se halla!</p>  <p id="V_297" class="justificado texto-indentado">El decir esto, y el apretar la espada, y el cubrirse
+    bien de su rodela, y el arremeter al vizca&iacute;no, todo
+    fue en un tiempo, llevando determinaci&oacute;n de aventurarlo
+    todo a la de un golpe solo.</p>  <p id="V_298" class="justificado texto-indentado">El vizca&iacute;no, que as&iacute;
+    le vio venir contra &eacute;l, bien entendi&oacute; por su
+    denuedo su coraje, y determin&oacute; de hacer lo mesmo que
+    don Quijote; y as&iacute;, le aguard&oacute; bien cubierto
+    de su almohada, sin poder rodear la mula a una ni a otra
+    parte; que ya, de puro cansada y no hecha a semejantes ni&ntilde;er&iacute;as,
+    no pod&iacute;a dar un paso. Ven&iacute;a, pues, como se
+    ha dicho, don Quijote contra el cauto vizca&iacute;no, con
+    la espada en alto, con determinaci&oacute;n de abrirle por
+    medio, y el vizca&iacute;no le aguardaba ansimesmo levantada
+    la espada y aforrado con su almohada, y todos los circunstantes
+    estaban temerosos y colgados de lo que hab&iacute;a de suceder
+    de aquellos tama&ntilde;os golpes con que se amenazaban;
+    y la se&ntilde;ora del coche y las dem&aacute;s criadas suyas
+    estaban haciendo mil votos y ofrecimientos a todas las im&aacute;genes
+    y casas de devoci&oacute;n de Espa&ntilde;a, por que Dios
+    librase a su escudero y a ellas de aquel tan grande peligro
+    en que se hallaban. Pero est&aacute; el da&ntilde;o de todo
+    esto que en este punto y t&eacute;rmino deja pendiente el
+    autor desta historia esta batalla, disculp&aacute;ndose que
+    no hall&oacute; m&aacute;s escrito destas haza&ntilde;as
+    de don Quijote de las que deja referidas. Bien es verdad
+    que el segundo autor desta obra no quiso creer que tan curiosa
+    historia estuviese entregada a las leyes del olvido, ni que
+    hubiesen sido tan poco curiosos los ingenios de la Mancha,
+    que no tuviesen en sus archivos o en sus escritorios algunos
+    papeles que deste famoso caballero tratasen; y as&iacute;,
+    con esta imaginaci&oacute;n, no se desesper&oacute; de hallar
+    el fin desta apacible historia, el cual, si&eacute;ndole
+    el cielo favorable, le hall&oacute; del modo que se contar&aacute;
+    en la segunda parte.</p> 
+</body>
+    <script>
+        /*
+        Utilizamos el método find para buscar una palabra en concreto
+
+            let texto=prompt("Escriba la palabra que desea buscar:");
+            if(texto){
+                window.find(texto);
+            }
+        */
+
+        /**
+         *Función que busca en el texto una palabra
+         *@param {string} palabra: El texto o palabra a buscar
+         *@param {Element} elemento: El elemento en el que se quiere buscar texto introducido por el usuario
+         *@retuns {boolean} true si la palabra se encontró
+        **/
+
+        function marcarPalabra(palabra,elemento){
+            //textContent:Representa el contenido de texto de un nodo y sus descendientes
+            let texto=elemento.textContent;
+            //indexOf: Devuelve el lugar donde se enuentra un elemento (o -1 si no se encuentra)
+            //Combrobamos si la palabra está en el elemento
+            let pos=texto.indexOf(palabra);
+            if(pos!=-1){
+                //expReg --> Expresión Regular
+                //Modificadorg en una expresión regular: Es una busqueda global, es decir, 
+                  //no para tras haber encontrado una coincidencia
+                //Usamos una expresión regular para modificar todas las apariciones de la 
+                  //palabra con el modificador g
+                let  expReg=new RegExp(palabra, "g");
+                //innerHTML: Lee y manipula las etiquetas HTML
+                //replace: cadena.replace(RegExp, reemplazar)
+                //Usamos el método replace de los strings que admite expresiones regulares 
+                  //y se reemplazan todas las apariciones de la palabra contenido con el 
+                  //texto marcado
+                elemento.innerHTML=elemento.innerHTML.replace(expReg,"<mark>"+palabra+"</mark>");
+                return true;
+            }
+            else
+            return false;   
+        }
+
+        /**
+         *Función recursiva que usa la funcion marcarPalabra para buscar en todos los hijos del 
+         *elemento que se pase la palabra que se busca.
+         *Cuando un hijo tiene mas hijos, se invoca de nuevo a esta misma funcion
+         *@param{Element} elemento
+         *@param{string} palabra
+        **/
+       function buscarTextoEnElemento(elemento,palabra){
+            if(elemento.children){
+                //Recorrido de todos los hijos del elemento
+                for(let hijo of elemento.children){
+                    if(hijo.children.lenght>0){
+                        //Llamada recursiva si el elemento tiene hijos
+                        buscarTextoEnElemento(hijo);
+                    }
+                    else{
+                    marcarPalabra(palabra,hijo);
+                    }   
+                }
+            }
+       }
+
+       //Código principal
+       let texto=prompt("Escriba la palabra que desea buscar:");
+            if(texto){
+                //document.body --> Acceder a todos los elementos del body
+                buscarTextoEnElemento(document.body, texto);
+            }
+    </script>
+</html>

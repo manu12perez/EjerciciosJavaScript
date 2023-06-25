@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Trimestral 2</title>
+</head>
+<body>
+    <!-- Ejercicio 2:
+        •	Queremos crear una función para saber si un texto es un palíndromo. La función recibe un 
+            texto y devolverá verdadero si es un palíndromo y falso si no lo es.
+        •   Un palíndromo es un texto que se lee igual de derecha a izquierda que de izquierda a derecha.
+        •	Ejemplos de palíndromos:
+            o	Dabale arroz a la zorra el abad
+            o	Logre ver gol
+            o	Luz azul
+            o	¿Son mulas o cívicos alumnos?
+            o	Lose Dama de Sol
+        •	Hay que tener en cuenta que para que se consideren bien los palíndromos se ignoran los 
+            espacios. Para facilitar, supondremos que el texto introducido no lleva acentos ni signos 
+            de puntuación.
+        •	Prueba la función con un texto introducido por el usuario.
+    -->
+    <script>
+        function palindrome (s){    /*
+                                    Crearemos la función y le asignaremos por nombre “palindrome” 
+                                    y le asignaremos un parámetro llamado “s”.
+                                    */
+        let fraseModificada = s.toLowerCase().split(" ").join(""); //modificamos la frase para no distinguir entre minusculas y mayusculas ni espacios en blanco  
+        let arrayFrase = fraseModificada.split("") //recoge las modicaciones efectuadas en la frase 
+        let arrayReordenado = []; //creamos un array para la frase
+
+        for(i=arrayFrase.length; i > 0; i--){ //recorremos array en ambos sentidos
+            arrayReordenado.push(arrayFrase[i-1]); //guardamos informacion en el nuevo array
+        }
+        return arrayFrase.join("") === arrayReordenado.join(""); //devuelve la comparacion de la lectura de la frase en ambos sentidos
+        }
+
+        console.log(palindrome(prompt("Escribe una frase, devolveré si es palindromo o no"))); //nos pide por pantalla una frase y nos devolvera true o false en la consola si es palindromo o no
+    </script>     
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!-- 
+- Crea una aplicación web que pida al usuario un número enero positivo.
+- Si lo que el usuario escribe no es un número o no es positivo, la página no mostrará nada. 
+  Se quedará en blanco.
+- La aplicación escribirá un triángulo con tantos asteriscos como indique el número del usuario 
+  o usuaria.
+- Para que el efecto sea más efectivo usaremos, para escribir los asteriscos, una letra monoespaciada.
+- Ejemplo de resultado si el usuario indica el número 5: 
+  *
+  * *
+  * * *
+  * * * *
+  * * * * *
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica Triángulo</title>
+    <style>
+        *{
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let n; //Guardamos el valor que nos de el usuario
+        do{
+            n=prompt("Escribe el numero de asteriscos que deseas"+
+            (" debe ser un numero positivo"));
+        }while(isNaN(Number(n)) || n<=0);  /*   is not a number -> devuelve true si lo que se introduce no es un numero
+                                            *                 devuelve false si lo que se introduce si es un numero
+                                            *                 isNaN(hola) -> true
+                                            *                 isNaN(5) -> false
+                                            */
+        for(let i=1;i<=n;i++){ //bucle que recorre las filas
+            for(let j=1;j<=i;j++){ //buble que recorre las columnas
+                document.write("* ")
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+
+.calculator {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.result {
+  width: 100%;
+  padding: 10px;
+  font-size: 24px;
+  text-align: right;
+  border: none;
+  background-color: #f5f5f5;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.number {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.operator {
+  background-color: #ff9f1a;
+  color: #fff;
+}
+
+.clear {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+.calculate {
+  background-color: #388e3c;
+  color: #fff;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" class="result" id="result" readonly>
+    </div>
+    <div>
+        <button class="button number" data-number="7">7</button>
+        <button class="button number" data-number="8">8</button>
+        <button class="button number" data-number="9">9</button>
+        <button class="button operator" data-operator="+">+</button>
+    </div>
+    <div>
+        <button class="button number" data-number="4">4</button>
+        <button class="button number" data-number="5">5</button>
+        <button class="button number" data-number="6">6</button>
+        <button class="button operator" data-operator="-">-</button>
+    </div>
+    <div>
+        <button class="button number" data-number="1">1</button>
+        <button class="button number" data-number="2">2</button>
+        <button class="button number" data-number="3">3</button>
+        <button class="button operator" data-operator="*">*</button>
+    </div>
+    <div>
+        <button class="button number" data-number="0">0</button>
+        <button class="button clear">CE</button>
+        <button class="button calculate">=</button>
+        <button class="button operator" data-operator="/">/</button>
+    </div>
+    <script>
+        // Obtener referencia al elemento de resultado
+        const resultElement = document.getElementById('result');
+        // Variable para almacenar el resultado actual
+        let currentResult = '';
+        // Obtener botones
+        const numberButtons = document.querySelectorAll('.number');
+        const operatorButtons = document.querySelectorAll('.operator');
+        const clearButton = document.querySelector('.clear');
+        const calculateButton = document.querySelector('.calculate');
+
+        // Agregar evento de clic a cada botón numérico
+        numberButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                // Agregar el número pulsado al resultado
+                appendNumber(button.getAttribute('data-number'));
+            });
+        });
+        // Agregar evento de clic a cada botón operador
+        operatorButtons.forEach((button) => {
+            button.addEventListener('click', () => {
+                operation(button.getAttribute('data-operator'));
+            });
+        });
+        // Agregar el evento de clic al botón CE
+        clearButton.addEventListener('click', clearResult);
+        // Agregar evento de clic al botón de cálculo
+        calculateButton.addEventListener('click', calculateResult);
+
+        // Función para agregar un número al resultado actual
+        function appendNumber(number) {
+            currentResult += number;
+            resultElement.value = currentResult;
+        }
+        // Función para limpiar el resultado actual
+        function clearResult() {
+            currentResult = '';
+            resultElement.value = '';
+        }
+        // Función para agregar un operador al resultado actual
+        function operation(operator) {
+            currentResult += operator;
+            resultElement.value = currentResult;
+        }
+        // Función para calcular el resultado actual
+        function calculateResult() {
+            try {
+                // Función eval()
+                currentResult = eval(currentResult);
+                resultElement.value = currentResult;
+            } catch {
+                // Si hay alguna operación matemática o tipo de dato erróneo
+                resultElement.value = 'Error';
+            }
+        } 
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!-- 
+  Queremos realizar una aplicación que nos permita comprobar hasta qué punto la función Math.random es realmente aleatoria.
+  Para ello calculamos 10000 veces números aleatorios del 1 al 10.
+  Mostraremos en una página web la frecuencia con la que ha salido cada número.
+  Ejemplo de resultado:
+  FRECUENCIAS:
+  Número 1: 1016
+  Número 2: 1019
+  Número 3: 1059
+  Número 4: 992
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FRECUENCIA DE NUMEROS ALEATORIOS</title>
+    <script src="../../../../Working%20files/Manuel%20P�rez%20Benavent/TAREA%20U3%20FRECUENCIAS%20DE%20N�MEROS/aleatorio.js" ></script>
+</head>
+<body>
+   <script>
+    
+      function aleatorio(min, max){
+      return Math.round(Math.random()*(max-min)+(min)); 
+      }
+
+      let arrayNumerosAleatorios = [];
+      const numeroRepeticiones = 10000;
+      for (let i = 1; i <= numeroRepeticiones; i++) {
+        let numero = aleatorio(1, 10);
+        arrayNumerosAleatorios.push(numero);
+        document.write(`<p> ${numero} </p>`);
+      }
+      document.write(`<p> Hay ${numeroRepeticiones} números aleatorios</p>`);
+
+      for (let i = 1; i <= 10; i++) {
+        let total = 0;
+        for (let j = 0; j < arrayNumerosAleatorios.length; j++) {
+          if (arrayNumerosAleatorios[j] === i) {
+            total++;
+          }
+        }
+        document.write(`<p> El número ${i} se repite ${total} veces </p> `);
+      }
+   </script>  
+</body>
+</html>

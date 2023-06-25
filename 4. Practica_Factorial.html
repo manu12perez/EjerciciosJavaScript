@@ -1,0 +1,41 @@
+<!--
+    Crea una página web que pida un número entero positivo al usuario y calcule su factorial.
+	El factorial de 5 (se suele denotar como 5!) es el resultado de multiplicar 1*2*3*4*5, es decir: 120
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea U2 Factorial</title>
+    
+</head>
+<body>
+    
+   <script>
+    
+        let n; 
+            do{
+                n = prompt("Escribe un número entero para factorizarlo");
+
+            }while(isNaN(Number(n)) || n<=0);   /*   is not a number->devuelve true si lo que se introduce no es un numero
+                                                                       devuelve false si lo que se introduce si es un numero
+                                                                       isNaN(hola) -> true
+                                                                       isNaN(5) -> false
+                                                */
+            
+        let resultado = 1;
+            for(let i=n; i>0;i--){
+                resultado *= i;             /*  El operador *= multiplica primero el valor de la expresión 
+                                                en el lado derecho del operador) por el valor de la variable 
+                                                o propiedad (en el lado izquierdo del operador). A continuación, 
+                                                el operador asigna el resultado de esa operación a la variable o 
+                                                propiedad.
+                                            */
+            }
+        document.write(resultado);    
+    </script> 
+</body>
+</html>

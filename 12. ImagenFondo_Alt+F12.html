@@ -1,0 +1,54 @@
+<!-- 
+	Crea una página web que tenga un texto que indique que al pulsar Alt+F12, podremos 
+	colocar una imagen de fondo. El texto tiene que salir centrado.
+	La idea es que inicialmente aparezca una pantalla negra con el texto y hasta que 
+	el usuario no pulse esa tecla, la imagen no se muestre.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagen de fondo con Alt+F12</title>
+    <style>
+		body {
+			background-color: black;
+			text-align: center;
+			color: white;
+			font-size: 24px;
+			padding-top: 200px;
+		}
+	</style>
+</head>
+<body>
+    <p>Presiona Alt+F12 para mostrar la imagen de fondo</p>
+    <input type="file" id="fileInput">
+	<img id="fondo" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:-1;">
+	<script>
+		const fileInput = document.getElementById("fileInput");
+		let fondo = null;
+
+		fileInput.addEventListener("change", function() {
+			const file = fileInput.files[0];
+			const reader = new FileReader();
+			reader.addEventListener("load", function() {
+				fondo = new Image();
+				fondo.src = reader.result;
+			});
+			reader.readAsDataURL(file);
+		});
+
+		document.addEventListener("keydown", function(event) {
+			if (event.altKey && event.code === "F12") {
+				if (fondo) {
+					document.body.style.backgroundImage = `url(${fondo.src})`;
+					document.body.style.backgroundSize = "contain";
+					document.body.style.backgroundPosition = "center";
+				}
+			}
+		});
+	</script>
+    
+</body>
+</html>

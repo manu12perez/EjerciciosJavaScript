@@ -1,0 +1,55 @@
+<!-- 
+    Haz una página que pida una fecha usando la notación, día/mes/año.
+    Si hay fallo en la fecha se pide de nuevo. No se comprobará la corrección de la fecha, pero sí que tenga dos dígitos para el día, dos para el mes y dos para el año.
+    Se pedirá una segunda fecha y se validará también.
+    Finalmente se crearán dos fechas de tipo Date y se mostrará la diferencia en días entre ellas.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Fechas</title>
+</head>
+<body>
+    <script>
+        //Funcion que obtiene un objeto Date de un texto tipo dd/mm/yyyy
+        function getFecha(fechaString){
+            const VAL_FECHA_G=/(\d{2})\/(\d{2})\/(\d{4})/;
+            let res=VAL_FECHA_G.exec(fechaString);
+            if(res==null)
+            return null;
+            else{
+                //.exec extraera en un array cada apartado entre paréntesis. Empezando por el elemento 1.
+                //Así en el 1 trendremos el día, en el 2 el mes y en el 3 el año.
+                //Recordad que los objetos Date requieren pasar este orden al revés.
+                //Al mes le restamos 1 (Enero=0, Febrero=1)
+                return new Date(res[3],res[2]-1,res[1]);
+                }
+        }
+            const VAL_FECHA=/(\d{2})\/(\d{2})\/(\d{4})/;
+            var fecha1;
+            var fecha2;
+
+            do{
+                fecha1=prompt("Escriba una fecha en formato dd/mm/yyyy : ");
+
+            }while(VAL_FECHA.test(fecha1)==false);
+            do{
+                fecha2=prompt("Escriba una segunda fecha: ");
+            }while(VAL_FECHA.test(fecha2)==false);
+            
+            //getFecha --> Función creada
+            //getTime --> sirve para obtener los milisegundos desde 1970 hasta la fecha que pongamos
+            
+           let msFecha1=getFecha(fecha1).getTime();
+           let msFecha2=getFecha(fecha2).getTime();
+
+           //Restamos los milisegundos y los pasamos a días
+           let diferencia=(msFecha1 - msFecha2)/(1000*60*60*24);
+           alert(` La diferencia en días de esa fecha es ${diferencia} `);
+        
+    </script>
+</body>
+</html>
